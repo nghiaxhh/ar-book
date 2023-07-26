@@ -3,7 +3,13 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "extends": [
+    // "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "eslint-config-prettier",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,5 +18,22 @@
     "sourceType": "module"
   },
   "plugins": [],
-  "rules": {}
+  "rules": {
+    "no-unused-vars": "error",
+    // Tăng cường một số rule prettier (copy từ file .prettierrc qua)
+    "prettier/prettier": [
+      "warn",
+      {
+        "arrowParens": "always",
+        "semi": true,
+        "trailingComma": "none",
+        "tabWidth": 2,
+        "endOfLine": "auto",
+        "useTabs": false,
+        "singleQuote": true,
+        "printWidth": 80,
+        "jsxSingleQuote": true
+      }
+    ]
+  }
 }
