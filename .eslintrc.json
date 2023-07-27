@@ -34,6 +34,7 @@
         "printWidth": 80,
         "jsxSingleQuote": true
       }
-    ]
+    ],
+    "react/no-unknown-property": "off"
   }
 }
