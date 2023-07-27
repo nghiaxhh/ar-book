@@ -5,16 +5,20 @@ const ModelViewer = () => {
   return (
     <ModelViewerWrapper>
       <model-viewer
+        poster={process.env.PUBLIC_URL + '/images/loading.gif'}
         id='hotspot-camera-view-demo'
-        src='/models/Stomach/Stomach03.glb'
-        ios-src='/models/Stomach/Stomach03.usdz'
+        src={process.env.PUBLIC_URL + '/images/Stomach03.glb'}
+        ios-src={process.env.PUBLIC_URL + '/images/Stomach03.usdz'}
+        // src={process.env.PUBLIC_URL + '/images/comission_230717'}
+        // ios-src={process.env.PUBLIC_URL + '/images/comission_230717.usdz'}
         alt='A 3D model of an astronaut'
         shadow-intensity='1'
         camera-controls
         auto-rotate
         ar
       >
-        <button
+        <button slot='ar-button'>👋 Activate AR</button>
+        {/* <button
           class='view-button'
           slot='hotspot-0'
           data-position='-0.0569m 0.0969m -0.1398m'
@@ -23,8 +27,9 @@ const ModelViewer = () => {
           data-target='-0.04384604m 0.07348397m -0.1213202m'
         >
           The Fighters
-        </button>
+        </button> */}
       </model-viewer>
+      {/* <img src={process.env.PUBLIC_URL + '/images/a1.jpg'} alt='' /> */}
     </ModelViewerWrapper>
   );
 };

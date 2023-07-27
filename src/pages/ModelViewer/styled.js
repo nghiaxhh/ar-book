@@ -2,9 +2,11 @@ import { styled } from 'styled-components';
 
 export const ModelViewerWrapper = styled.div`
   model-viewer {
+    background-color: gray;
     margin: 0 auto;
-    width: 300px !important;
-    height: 50vh !important;
+    width: 100% !important;
+    height: 100vh !important;
+    max-width: 1200px;
   }
 
   .view-button {
@@ -25,5 +27,11 @@ export const ModelViewerWrapper = styled.div`
     width: max-content;
     height: max-content;
     transform: translate3d(-50%, -50%, 0);
+  }
+
+  @media screen and (max-width: 480px) {
+    model-viewer {
+      max-width: 300px;
+    }
   }
 `;
