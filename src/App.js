@@ -1,13 +1,9 @@
-import React, { Suspense } from 'react';
-import './App.css';
-import ModelViewer from '~/pages/ModelViewer';
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/routes';
 
 function App() {
-  return (
-    <Suspense fallback={null}>
-      <ModelViewer />
-    </Suspense>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

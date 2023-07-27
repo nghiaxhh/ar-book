@@ -6,7 +6,7 @@ export const ModelViewerWrapper = styled.div`
     margin: 0 auto;
     width: 100% !important;
     height: 100vh !important;
-    max-width: 1200px;
+    /* max-width: 1200px; */
   }
 
   .view-button {
