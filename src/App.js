@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import './App.css';
-import ModelViewer from './pages/ModelViewer';
+import ModelViewer from '~/pages/ModelViewer';
 
 function App() {
   return (
