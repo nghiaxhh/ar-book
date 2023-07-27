@@ -6,11 +6,10 @@ const ModelViewer = () => {
     <ModelViewerWrapper>
       <model-viewer
         poster={process.env.PUBLIC_URL + '/images/loading.gif'}
-        id='hotspot-camera-view-demo'
-        src={process.env.PUBLIC_URL + '/images/Stomach03.glb'}
-        ios-src={process.env.PUBLIC_URL + '/images/Stomach03.usdz'}
-        // src={process.env.PUBLIC_URL + '/images/comission_230717'}
-        // ios-src={process.env.PUBLIC_URL + '/images/comission_230717.usdz'}
+        src={process.env.PUBLIC_URL + '/models/Stomach03.glb'}
+        ios-src={process.env.PUBLIC_URL + '/models/Stomach03.usdz'}
+        // src={process.env.PUBLIC_URL + '/models/comission_230717'}
+        // ios-src={process.env.PUBLIC_URL + '/models/comission_230717.usdz'}
         alt='A 3D model of an astronaut'
         shadow-intensity='1'
         camera-controls
@@ -29,7 +28,7 @@ const ModelViewer = () => {
           The Fighters
         </button> */}
       </model-viewer>
-      {/* <img src={process.env.PUBLIC_URL + '/images/a1.jpg'} alt='' /> */}
+      {/* <img src={process.env.PUBLIC_URL + '/models/a1.jpg'} alt='' /> */}
     </ModelViewerWrapper>
   );
 };
