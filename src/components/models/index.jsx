@@ -22,7 +22,6 @@ const ModelPreViewer = (props) => {
       class='w-full'
       style={{ height: '40rem' }}
       id='hotspot-camera-view-demo'
-      poster={process.env.PUBLIC_URL + '/images/loading.gif'}
       // src={process.env.PUBLIC_URL + '/models/Stomach03.glb'}
       // ios-src={process.env.PUBLIC_URL + '/models/Stomach03.usdz'}
       src={src}
@@ -33,6 +32,8 @@ const ModelPreViewer = (props) => {
       auto-rotate
       ar
     >
+      <div id='lazy-load-poster' slot='poster' className='h-full w-full relative'></div>
+
       {/* <button slot='ar-button'>👋 Activate AR</button> */}
       <button
         class='view-button'

@@ -4,12 +4,22 @@ import { Button, Card } from 'antd';
 import ModelPreViewer from '~/components/models';
 
 const PreviewModel = () => {
-  const [showStomach, setShowStomach] = useState(true);
-  const [showComission, setShowComission] = useState(false);
+  const [showStomach, setShowStomach] = useState(false);
+  const [showComission, setShowComission] = useState(true);
 
   return (
     <HomePageWrapper>
       <Card>
+        <Button
+          type={showComission && 'primary'}
+          className='mr-3'
+          onClick={() => {
+            setShowComission(true);
+            setShowStomach(false);
+          }}
+        >
+          Comission Model
+        </Button>
         <Button
           type={showStomach && 'primary'}
           className='mr-3'
@@ -19,16 +29,6 @@ const PreviewModel = () => {
           }}
         >
           Stomatch Model
-        </Button>
-        <Button
-          type={showComission && 'primary'}
-          className=''
-          onClick={() => {
-            setShowComission(true);
-            setShowStomach(false);
-          }}
-        >
-          Comission Model
         </Button>
       </Card>
 

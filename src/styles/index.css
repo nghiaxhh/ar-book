@@ -23,3 +23,13 @@ canvas {
   margin: 0 auto;
   /* overflow: hidden; */
 }
+#lazy-load-poster {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../../public/images/loading.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
