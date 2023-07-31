@@ -23,3 +23,6 @@ canvas {
   margin: 0 auto;
   /* overflow: hidden; */
 }
+:where(.css-dev-only-do-not-override-txh9fw).ant-btn-primary {
+  background-color: #1677ff !important;
+}
