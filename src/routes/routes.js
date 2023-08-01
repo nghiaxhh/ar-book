@@ -4,8 +4,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import { ROUTE_PATH } from './route.constant';
 import ModelViewer from '~/pages/ModelViewer';
 import PageNotFound from '~/pages/PageNotFound';
-// import HomePage from '~/pages/HomePage';
-import PreviewModel from '~/pages/PreviewModel';
+import HomePage from '~/pages/HomePage';
+// import PreviewModel from '~/pages/PreviewModel';
 
 export const router = createBrowserRouter([
   {
@@ -20,8 +20,8 @@ export const router = createBrowserRouter([
             path: ROUTE_PATH.HOME,
             element: (
               <Suspense fallback={null}>
-                {/* <HomePage /> */}
-                <PreviewModel />
+                <HomePage />
+                {/* <PreviewModel /> */}
               </Suspense>
             )
           },
