@@ -19,7 +19,7 @@
   },
   "plugins": [],
   "rules": {
-    "no-unused-vars": "warn",
+    "no-unused-vars": "error",
     // Tăng cường một số rule prettier (copy từ file .prettierrc qua)
     "prettier/prettier": [
       "warn",
