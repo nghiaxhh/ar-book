@@ -32,7 +32,7 @@ const PreviewModel = () => {
         </Button>
       </Card>
 
-      <div className='w-full h-full'>
+      <div className='w-full h-full'>``
         {showStomach && (
           <ModelPreViewer
             src={process.env.PUBLIC_URL + '/models/Stomach03.glb'}
