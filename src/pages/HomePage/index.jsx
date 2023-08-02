@@ -2,8 +2,8 @@ import React from 'react';
 import { HeaderWrapper, HomePageWrapper } from './styled';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_PATH } from '~/routes/route.constant';
-import { Col, Row } from 'antd';
 import { LayoutCommon } from '~/styles/genaralStyled';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -13,16 +13,31 @@ const HomePage = () => {
 
   return (
     <HomePageWrapper>
-      <HeaderWrapper
-        style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/HomeImg.png)`
-        }}
-      />
+      <HeaderWrapper>
+        <img src={`${process.env.PUBLIC_URL}/images/HomeImg.png`} />
+      </HeaderWrapper>
       <LayoutCommon>
-        <div className='ptop-50'>
-          <div className='text-base'>Trending</div>
-          <Row gutter={20}>
-            <Col span={8}>
+        <div className=''>
+          <div className='text-primary text-base md:text-[26px]'>Trending</div>
+          <Splide
+            options={{
+              width: '100%',
+              rewind: true,
+              perPage: 3,
+              perMove: '1',
+              gap: '1rem',
+              arrows: true,
+              type: 'loop',
+              pagination: true,
+              breakpoints: {
+                1000: {
+                  perPage: 1,
+                  arrows: false
+                }
+              }
+            }}
+          >
+            <SplideSlide>
               <div
                 onClick={() => {
                   navigate(ROUTE_PATH.CHARACTER);
@@ -34,8 +49,8 @@ const HomePage = () => {
                   width={'100%'}
                 />
               </div>
-            </Col>
-            <Col span={8}>
+            </SplideSlide>
+            <SplideSlide>
               <div
                 onClick={() => {
                   navigate(ROUTE_PATH.CHARACTER);
@@ -47,8 +62,9 @@ const HomePage = () => {
                   width={'100%'}
                 />
               </div>
-            </Col>
-            <Col span={8}>
+            </SplideSlide>
+
+            <SplideSlide>
               <div
                 onClick={() => {
                   navigate(ROUTE_PATH.CHARACTER);
@@ -60,74 +76,131 @@ const HomePage = () => {
                   width={'100%'}
                 />
               </div>
-            </Col>
-          </Row>
+            </SplideSlide>
+          </Splide>
         </div>
-        <div className='ptop-50'>
-          <div className='text-base'>Latest</div>
-          <Row gutter={20}>
+        <div className=''>
+          <div className='text-primary text-base md:text-[26px] '>Latest</div>
+          <Splide
+            options={{
+              width: '100%',
+              rewind: true,
+              perPage: 4,
+              perMove: '1',
+              gap: '1rem',
+              arrows: false,
+              type: 'loop',
+              pagination: 'true',
+              breakpoints: {
+                1000: {
+                  perPage: 2
+                }
+              }
+            }}
+          >
             {listGame.map((item, idx) => {
               return (
-                <Col key={idx} span={4}>
+                <SplideSlide key={idx}>
                   <div
                     onClick={() => {
                       navigate(ROUTE_PATH.CHARACTER);
                     }}
+                    className='relative h-[140px]	md:h-[180px]'
                   >
                     <img
+                      className='object-fill h-[140px]	md:h-[180px]'
                       src={process.env.PUBLIC_URL + '/images/Game.png'}
                       alt=''
                       width={'100%'}
+                      height={'100%'}
                     />
                   </div>
-                </Col>
+                </SplideSlide>
               );
             })}
-          </Row>
+          </Splide>
         </div>
-        <div className='ptop-50'>
-          <div className='text-base'>History</div>
-          <Row gutter={20}>
+        <div className=''>
+          <div className='text-primary text-base md:text-[26px] '>History</div>
+          <Splide
+            options={{
+              width: '100%',
+              rewind: true,
+              perPage: 4,
+              perMove: '1',
+              gap: '1rem',
+              arrows: false,
+              type: 'loop',
+              pagination: 'true',
+              breakpoints: {
+                1000: {
+                  perPage: 2
+                }
+              }
+            }}
+          >
             {listGame.map((item, idx) => {
               return (
-                <Col key={idx} span={4}>
+                <SplideSlide key={idx}>
                   <div
                     onClick={() => {
                       navigate(ROUTE_PATH.CHARACTER);
                     }}
+                    className='relative h-[140px]	md:h-[180px]'
                   >
                     <img
+                      className='object-fill h-[140px]	md:h-[180px]'
                       src={process.env.PUBLIC_URL + '/images/Game.png'}
                       alt=''
                       width={'100%'}
+                      height={'100%'}
                     />
                   </div>
-                </Col>
+                </SplideSlide>
               );
             })}
-          </Row>
+          </Splide>
         </div>
-        <div className='ptop-50'>
-          <div className='text-base'>Science</div>
-          <Row gutter={20}>
+        <div className='sm:'>
+          <div className='text-primary text-base md:text-[26px] '>Science</div>
+          <Splide
+            options={{
+              width: '100%',
+              rewind: true,
+              perPage: 4,
+              perMove: '1',
+              gap: '1rem',
+              arrows: false,
+              type: 'loop',
+              pagination: 'true',
+              breakpoints: {
+                1000: {
+                  perPage: 2
+                }
+              }
+            }}
+          >
             {listGame.map((item, idx) => {
               return (
-                <Col key={idx} span={4}>
+                <SplideSlide key={idx}>
                   <div
                     onClick={() => {
                       navigate(ROUTE_PATH.CHARACTER);
                     }}
+                    className='relative h-[140px]	md:h-[180px]'
                   >
                     <img
+                      className='object-fill h-[140px]	md:h-[180px]'
                       src={process.env.PUBLIC_URL + '/images/Game.png'}
                       alt=''
                       width={'100%'}
+                      height={'100%'}
                     />
                   </div>
-                </Col>
+                </SplideSlide>
               );
             })}
-          </Row>
+          </Splide>
         </div>
       </LayoutCommon>
 
@@ -138,7 +211,7 @@ const HomePage = () => {
           <div className='home-footer'>
             <div className='text-logo'>LOGO</div>
             <div className='d-flex p-3'>
-              <div className='service-item'>Support</div>
+              <div classNam2='service-item'>Support</div>
               <div className='service-item'>Privacy Policy</div>
               <div className='service-item'>Website</div>
               <div className='service-item'>Terms of Use</div>

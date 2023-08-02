@@ -48,8 +48,26 @@ export const HomePageWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
-  height: 1080px;
+  height: auto;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  //Ipad
+  img {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 1080px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 `;

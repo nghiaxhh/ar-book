@@ -1,9 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
 
-.text-base {
+.text-primary {
   color: #096dd9;
-  font-size: 26px;
   font-weight: 700;
-  padding-bottom: 20px;
   font-family: 'Open Sans', sans-serif;
+  padding: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .text-primary {
+    padding: 20px 0;
+  }
+}
+
+.splide__arrow {
+  background: #0072ce;
+  svg {
+    fill: #fff;
+  }
+}
+.splide__arrow--prev {
+  left: -1em;
+}
+.splide__arrow--next {
+  right: -1em;
 }
