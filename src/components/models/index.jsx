@@ -36,7 +36,9 @@ const ModelPreViewer = (props) => {
         id='lazy-load-poster'
         slot='poster'
         className='h-full w-full relative'
-      ></div>
+      >
+        <div className='text-loading text-2xl	font-bold'>Loading...</div>
+      </div>
 
       {/* <button slot='ar-button'>👋 Activate AR</button> */}
       {/* <button

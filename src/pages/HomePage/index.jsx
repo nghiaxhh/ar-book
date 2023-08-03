@@ -25,8 +25,8 @@ const HomePage = () => {
               perPage: 3,
               perMove: '1',
               gap: '1rem',
-              arrows: true,
               type: 'loop',
+              arrows: true,
               pagination: true,
               breakpoints: {
                 1000: {
@@ -91,7 +91,6 @@ const HomePage = () => {
               perMove: '1',
               gap: '1rem',
               arrows: false,
-              type: 'loop',
               pagination: 'true',
               breakpoints: {
                 1000: {
@@ -132,7 +131,6 @@ const HomePage = () => {
               perMove: '1',
               gap: '1rem',
               arrows: false,
-              type: 'loop',
               pagination: 'true',
               breakpoints: {
                 1000: {
@@ -173,7 +171,6 @@ const HomePage = () => {
               perMove: '1',
               gap: '1rem',
               arrows: false,
-              type: 'loop',
               pagination: 'true',
               breakpoints: {
                 1000: {
