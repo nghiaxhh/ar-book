@@ -1,4 +1,5 @@
 export const ROUTE_PATH = {
   HOME: '/',
-  CHARACTER: '/character'
+  CHARACTER: '/character',
+  PREVIEW_MODEL: '/preview'
 };

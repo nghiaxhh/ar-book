@@ -20,6 +20,7 @@
   "plugins": [],
   "rules": {
     "no-unused-vars": "error",
+    "react/prop-types": "off",
     // Tăng cường một số rule prettier (copy từ file .prettierrc qua)
     "prettier/prettier": [
       "warn",

@@ -1,11 +1,10 @@
-import { Suspense } from 'react';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import { ROUTE_PATH } from './route.constant';
-import ModelViewer from '~/pages/ModelViewer';
 import PageNotFound from '~/pages/PageNotFound';
+import { ROUTE_PATH } from './route.constant';
 import HomePage from '~/pages/HomePage';
-// import PreviewModel from '~/pages/PreviewModel';
+import ModelCharacter from '~/pages/ModalCharacter';
+import PreviewModel from '~/pages/PreviewModel';
 
 export const router = createBrowserRouter([
   {
@@ -26,10 +25,18 @@ export const router = createBrowserRouter([
             )
           },
           {
+            path: ROUTE_PATH.PREVIEW_MODEL,
+            element: (
+              <Suspense fallback={null}>
+                <PreviewModel />
+              </Suspense>
+            )
+          },
+          {
             path: ROUTE_PATH.CHARACTER,
             element: (
               <Suspense fallback={null}>
-                <ModelViewer />
+                <ModelCharacter />
               </Suspense>
             )
           }
