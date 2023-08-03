@@ -1,12 +1,11 @@
-import React from 'react';
-import { HeaderWrapper, HomePageWrapper } from './styled';
-import { useNavigate } from 'react-router-dom';
-import { ROUTE_PATH } from '~/routes/route.constant';
-import { LayoutCommon } from '~/styles/genaralStyled';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import React, { useState } from 'react';
+import { LayoutCommon } from '~/styles/genaralStyled';
+import PopupDetail from '../ModelViewer/components/PopupDetail';
+import { HeaderWrapper, HomePageWrapper } from './styled';
 
 const HomePage = () => {
-  const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
   const listGame = new Array(6).fill(1).map((_, idx) => {
     return idx + 1;
   });
@@ -40,8 +39,9 @@ const HomePage = () => {
             <SplideSlide>
               <div
                 onClick={() => {
-                  navigate(ROUTE_PATH.CHARACTER);
+                  setOpenModal(true);
                 }}
+                className='cursor-pointer'
               >
                 <img
                   src={process.env.PUBLIC_URL + '/images/Fallguys.png'}
@@ -53,8 +53,9 @@ const HomePage = () => {
             <SplideSlide>
               <div
                 onClick={() => {
-                  navigate(ROUTE_PATH.CHARACTER);
+                  setOpenModal(true);
                 }}
+                className='cursor-pointer'
               >
                 <img
                   src={process.env.PUBLIC_URL + '/images/CallofDuty.png'}
@@ -67,8 +68,9 @@ const HomePage = () => {
             <SplideSlide>
               <div
                 onClick={() => {
-                  navigate(ROUTE_PATH.CHARACTER);
+                  setOpenModal(true);
                 }}
+                className='cursor-pointer'
               >
                 <img
                   src={process.env.PUBLIC_URL + '/images/Demon.png'}
@@ -103,9 +105,9 @@ const HomePage = () => {
                 <SplideSlide key={idx}>
                   <div
                     onClick={() => {
-                      navigate(ROUTE_PATH.CHARACTER);
+                      setOpenModal(true);
                     }}
-                    className='relative h-[140px]	md:h-[180px]'
+                    className='relative h-[140px]	md:h-[180px] cursor-pointer'
                   >
                     <img
                       className='object-fill h-[140px]	md:h-[180px]'
@@ -144,9 +146,9 @@ const HomePage = () => {
                 <SplideSlide key={idx}>
                   <div
                     onClick={() => {
-                      navigate(ROUTE_PATH.CHARACTER);
+                      setOpenModal(true);
                     }}
-                    className='relative h-[140px]	md:h-[180px]'
+                    className='relative h-[140px]	md:h-[180px] cursor-pointer'
                   >
                     <img
                       className='object-fill h-[140px]	md:h-[180px]'
@@ -185,9 +187,9 @@ const HomePage = () => {
                 <SplideSlide key={idx}>
                   <div
                     onClick={() => {
-                      navigate(ROUTE_PATH.CHARACTER);
+                      setOpenModal(true);
                     }}
-                    className='relative h-[140px]	md:h-[180px]'
+                    className='relative h-[140px]	md:h-[180px] cursor-pointer'
                   >
                     <img
                       className='object-fill h-[140px]	md:h-[180px]'
@@ -211,7 +213,7 @@ const HomePage = () => {
           <div className='home-footer'>
             <div className='text-logo'>LOGO</div>
             <div className='d-flex p-3'>
-              <div classNam2='service-item'>Support</div>
+              <div className='service-item'>Support</div>
               <div className='service-item'>Privacy Policy</div>
               <div className='service-item'>Website</div>
               <div className='service-item'>Terms of Use</div>
@@ -230,6 +232,13 @@ const HomePage = () => {
           </div>
         </LayoutCommon>
       </div>
+
+      {openModal && (
+        <PopupDetail
+          openModal={openModal}
+          onCancel={() => setOpenModal(false)}
+        />
+      )}
     </HomePageWrapper>
   );
 };

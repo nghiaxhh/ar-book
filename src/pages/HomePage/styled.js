@@ -55,7 +55,7 @@ export const HeaderWrapper = styled.div`
 
   //Ipad
   img {
-    padding: 20px;
+    /* padding: 20px; */
     width: 100%;
     height: 100%;
     object-fit: contain;

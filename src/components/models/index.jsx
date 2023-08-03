@@ -32,10 +32,14 @@ const ModelPreViewer = (props) => {
       auto-rotate
       ar
     >
-      <div id='lazy-load-poster' slot='poster' className='h-full w-full relative'></div>
+      <div
+        id='lazy-load-poster'
+        slot='poster'
+        className='h-full w-full relative'
+      ></div>
 
       {/* <button slot='ar-button'>👋 Activate AR</button> */}
-      <button
+      {/* <button
         class='view-button'
         slot='hotspot-0'
         data-position='-0.0569m 0.0969m -0.1398m'
@@ -44,7 +48,7 @@ const ModelPreViewer = (props) => {
         data-target='-0.04384604m 0.07348397m -0.1213202m'
       >
         The Fighters
-      </button>
+      </button> */}
     </model-viewer>
   );
 };
