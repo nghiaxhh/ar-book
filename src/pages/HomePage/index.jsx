@@ -212,7 +212,10 @@ const HomePage = () => {
         <LayoutCommon>
           <div className='home-footer'>
             <div className='text-logo'>LOGO</div>
-            <div className='d-flex p-3'>
+            <div
+              className='d-flex p-3'
+              style={{ flexWrap: 'wrap', justifyContent: 'center' }}
+            >
               <div className='service-item'>Support</div>
               <div className='service-item'>Privacy Policy</div>
               <div className='service-item'>Website</div>
@@ -220,7 +223,10 @@ const HomePage = () => {
               <div className='service-item'>Sitemap</div>
               <div className='service-item'>Legal</div>
             </div>
-            <div className='d-flex pb-3'>
+            <div
+              className='d-flex pb-3'
+              style={{ flexWrap: 'wrap', justifyContent: 'center' }}
+            >
               <div className='service-item'>Facebook </div>
               <div className='service-item'>Twitter </div>
               <div className='service-item'>YouTube </div>
