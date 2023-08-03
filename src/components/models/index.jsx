@@ -27,10 +27,13 @@ const ModelPreViewer = (props) => {
       src={src}
       ios-src={iosSrc}
       alt='A 3D model of an astronaut'
-      shadow-intensity='1'
       camera-controls
-      auto-rotate
+      touch-action='pan-y'
+      autoplay
       ar
+      // ar-modes='webxr scene-viewer'
+      scale='0.5 0.5 0.5'
+      shadow-intensity='1'
     >
       <div
         id='lazy-load-poster'

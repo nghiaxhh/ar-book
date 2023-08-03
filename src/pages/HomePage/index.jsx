@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { LayoutCommon } from '~/styles/genaralStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper, HomePageWrapper } from './styled';
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
 const HomePage = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -12,6 +14,28 @@ const HomePage = () => {
 
   return (
     <HomePageWrapper>
+      <LayoutCommon>
+        <div className='d-flex justify-between items-center h-[80px]'>
+          <div className=' text-logo text-logo-blue'>LOGO</div>
+          <div className='select-option'>
+            <div className='text-option'>Trending</div>
+            <div className='text-option'>Latest</div>
+            <div className='text-option'>Popular</div>
+            <div className='text-option'>History</div>
+            <div className='text-option'>Science</div>
+          </div>
+
+          <Input
+            placeholder='search'
+            suffix={<SearchOutlined />}
+            allowClear
+            style={{
+              width: 500,
+              height: '40px'
+            }}
+          />
+        </div>
+      </LayoutCommon>
       <HeaderWrapper>
         <img src={`${process.env.PUBLIC_URL}/images/HomeImg.png`} />
       </HeaderWrapper>

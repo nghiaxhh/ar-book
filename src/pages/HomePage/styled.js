@@ -5,11 +5,39 @@ export const HomePageWrapper = styled.div`
     padding-top: 50px;
   }
 
+  .ant-input-affix-wrapper {
+    background-color: #f0f0f0;
+  }
+
+  .ant-input {
+    background-color: #f0f0f0;
+    color: #fff;
+  }
+
+  .select-option {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+
+  .text-option {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    color: black;
+  }
+
   .text-logo {
     color: #fff;
     font-size: 32px;
     font-weight: 700;
     line-height: 43.58px;
+
+    &-blue {
+      font-size: 20px;
+      color: #096dd9;
+      line-height: 16px;
+    }
   }
 
   .service-item {
