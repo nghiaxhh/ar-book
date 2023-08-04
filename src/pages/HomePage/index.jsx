@@ -1,16 +1,23 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { LayoutCommon } from '~/styles/genaralStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper, HomePageWrapper } from './styled';
 import { Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+// import { useCommon } from '../redux/hooks/useCommon';
 
 const HomePage = () => {
   const [openModal, setOpenModal] = useState(false);
-  const listGame = new Array(6).fill(1).map((_, idx) => {
-    return idx + 1;
-  });
+  const listGame = []
+
+  // const {
+  //   actions: actionsCommon
+  // } = useCommon();
+
+  // useEffect(() => {
+  //   actionsCommon.getRole({ type: 'USER' });
+  // }, []);
 
   return (
     <HomePageWrapper>

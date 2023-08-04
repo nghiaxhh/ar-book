@@ -1,0 +1,18 @@
+export const SIDE_NAV_WIDTH = 250;
+export const SIDE_NAV_COLLAPSED_WIDTH = 80;
+export const SIDE_NAV_LIGHT = 'SIDE_NAV_LIGHT';
+export const SIDE_NAV_DARK = 'SIDE_NAV_DARK';
+export const NAV_TYPE_SIDE = 'SIDE';
+export const NAV_TYPE_TOP = 'TOP';
+export const DIR_LTR = 'ltr';
+export const DIR_RTL = 'rtl';
+
+export const TOGGLE_COLLAPSED_NAV = 'TOGGLE_COLLAPSED_NAV';
+export const CHANGE_LOCALE = 'CHANGE_LOCALE';
+export const SIDE_NAV_STYLE_CHANGE = 'SIDE_NAV_STYLE_CHANGE';
+export const NAV_TYPE_CHANGE = 'NAV_TYPE_CHANGE';
+export const TOP_NAV_COLOR_CHANGE = 'TOP_NAV_COLOR_CHANGE';
+export const HEADER_NAV_COLOR_CHANGE = 'HEADER_NAV_COLOR_CHANGE';
+export const TOGGLE_MOBILE_NAV = 'TOGGLE_MOBILE_NAV';
+export const SWITCH_THEME = 'SWITCH_THEME';
+export const DIRECTION_CHANGE = 'DIRECTION_CHANGE';
