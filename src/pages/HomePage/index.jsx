@@ -1,15 +1,17 @@
+import { SearchOutlined } from '@ant-design/icons';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import React, { useEffect, useState } from 'react';
+import { Input } from 'antd';
+import React, { useState } from 'react';
 import { LayoutCommon } from '~/styles/genaralStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper, HomePageWrapper } from './styled';
-import { Input } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
 // import { useCommon } from '../redux/hooks/useCommon';
 
 const HomePage = () => {
   const [openModal, setOpenModal] = useState(false);
-  const listGame = []
+  const listGame = new Array(6).fill(1).map((_, idx) => {
+    return idx + 1;
+  });
 
   // const {
   //   actions: actionsCommon
@@ -37,7 +39,7 @@ const HomePage = () => {
             suffix={<SearchOutlined />}
             allowClear
             style={{
-              width: 500,
+              width: 400,
               height: '40px'
             }}
           />
