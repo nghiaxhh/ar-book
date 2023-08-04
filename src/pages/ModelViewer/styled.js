@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 
 export const ModelViewerWrapper = styled.div`
   model-viewer {
-    background-color: gray;
+    background-color: #f1f3f4;
     margin: 0 auto;
     width: 100% !important;
     height: 100vh !important;
@@ -34,6 +34,50 @@ export const ModelViewerWrapper = styled.div`
     model-viewer {
       max-width: 300px;
     }
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    border: 2px solid #fff;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
   }
 `;
 

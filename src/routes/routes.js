@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import PageNotFound from '~/pages/PageNotFound';
-import { ROUTE_PATH } from './route.constant';
 import HomePage from '~/pages/HomePage';
 import ModelCharacter from '~/pages/ModalCharacter';
-import PreviewModel from '~/pages/PreviewModel';
+import ModelViewer from '~/pages/ModelViewer';
+import PageNotFound from '~/pages/PageNotFound';
+import { ROUTE_PATH } from './route.constant';
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
             path: ROUTE_PATH.PREVIEW_MODEL,
             element: (
               <Suspense fallback={null}>
-                <PreviewModel />
+                <ModelViewer />
               </Suspense>
             )
           },

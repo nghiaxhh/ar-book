@@ -11,7 +11,7 @@ export const HomePageWrapper = styled.div`
 
   .ant-input {
     background-color: #f0f0f0;
-    color: #fff;
+    /* color: #fff; */
   }
 
   .select-option {
