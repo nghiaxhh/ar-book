@@ -13,8 +13,6 @@ import {
  */
 const getRoleApi = (props) => {
   var uri = `/admin/roles`;
-
-  console.log(uri);
   return api.get(uri, props);
 };
 

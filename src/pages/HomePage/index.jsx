@@ -1,10 +1,10 @@
-import { SearchOutlined } from '@ant-design/icons';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { Input } from 'antd';
 import React, { useState } from 'react';
 import { LayoutCommon } from '~/styles/genaralStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper, HomePageWrapper } from './styled';
+import BaseLayout from '~/layouts';
+
 // import { useCommon } from '../redux/hooks/useCommon';
 
 const HomePage = () => {
@@ -22,31 +22,11 @@ const HomePage = () => {
   // }, []);
 
   return (
-    <HomePageWrapper>
-      <LayoutCommon>
-        <div className='d-flex justify-between items-center h-[80px]'>
-          <div className=' text-logo text-logo-blue'>LOGO</div>
-          <div className='select-option'>
-            <div className='text-option'>Trending</div>
-            <div className='text-option'>Latest</div>
-            <div className='text-option'>Popular</div>
-            <div className='text-option'>History</div>
-            <div className='text-option'>Science</div>
-          </div>
-
-          <Input
-            placeholder='search'
-            suffix={<SearchOutlined />}
-            allowClear
-            style={{
-              width: 400,
-              height: '40px'
-            }}
-          />
-        </div>
-      </LayoutCommon>
+    <BaseLayout>
       <HeaderWrapper>
-        <img src={`${process.env.PUBLIC_URL}/images/HomeImg.png`} />
+        <div className='rounded-3xl h-full box-banner'>
+          <img src={`${process.env.PUBLIC_URL}/images/HomeImg.png`} alt='' />
+        </div>
       </HeaderWrapper>
       <LayoutCommon>
         <div className=''>
@@ -235,47 +215,13 @@ const HomePage = () => {
           </Splide>
         </div>
       </LayoutCommon>
-
-      <div
-        style={{ backgroundColor: '#065BAA', marginTop: '50px', padding: 20 }}
-      >
-        <LayoutCommon>
-          <div className='home-footer'>
-            <div className='text-logo'>LOGO</div>
-            <div
-              className='d-flex p-3'
-              style={{ flexWrap: 'wrap', justifyContent: 'center' }}
-            >
-              <div className='service-item'>Support</div>
-              <div className='service-item'>Privacy Policy</div>
-              <div className='service-item'>Website</div>
-              <div className='service-item'>Terms of Use</div>
-              <div className='service-item'>Sitemap</div>
-              <div className='service-item'>Legal</div>
-            </div>
-            <div
-              className='d-flex pb-3'
-              style={{ flexWrap: 'wrap', justifyContent: 'center' }}
-            >
-              <div className='service-item'>Facebook </div>
-              <div className='service-item'>Twitter </div>
-              <div className='service-item'>YouTube </div>
-              <div className='service-item'>Instagram </div>
-              <div className='service-item'>Android App</div>
-              <div className='service-item'>iOS App</div>
-            </div>
-            <div className='copyright'>© 2023</div>
-          </div>
-        </LayoutCommon>
-      </div>
-
       {openModal && (
         <PopupDetail
           openModal={openModal}
           onCancel={() => setOpenModal(false)}
         />
       )}
-    </HomePageWrapper>
+    </BaseLayout>
   );
 };
 

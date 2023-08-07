@@ -24,6 +24,7 @@ const PopupDetail = ({ openModal, onCancel }) => {
       }
     >
       <img
+        alt=''
         src={`${process.env.PUBLIC_URL}/images/imgTitle.png`}
         width={'100%'}
       />

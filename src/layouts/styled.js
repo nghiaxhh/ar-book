@@ -81,11 +81,9 @@ export const HeaderWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  .box-banner {
-    margin: 0 20px;
-  }
   //Ipad
   img {
+    /* padding: 20px; */
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -93,12 +91,11 @@ export const HeaderWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     height: 1080px;
-    img {
-      object-fit: fill;
-    }
 
-    .box-banner {
-      margin: 0 40px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 `;
