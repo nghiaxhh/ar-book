@@ -7,11 +7,13 @@ import { LayoutCommon } from '~/styles/genaralStyled';
 import NavPanel from './NavPanel';
 import Tippy from '@tippyjs/react';
 import { useSpring, motion } from 'framer-motion';
+import { useTranslation } from '~/common/hooks/useTranslation';
 
 const springConfig = { damping: 15, stiffness: 300 };
 const initialScale = 0.9;
 
 const Header = () => {
+  const { t } = useTranslation();
   const opacity = useSpring(0, springConfig);
   const scale = useSpring(initialScale, springConfig);
   const [visible, setVisible] = useState(false);
@@ -38,7 +40,7 @@ const Header = () => {
   return (
     <LayoutCommon>
       <div className='d-flex justify-between items-center h-[80px]'>
-        <div className=' text-logo text-logo-blue'>LOGO</div>
+        <div className=' text-logo text-logo-blue'>{t('logo')}</div>
 
         {!isMobile && (
           <>
@@ -59,6 +61,8 @@ const Header = () => {
                 height: '40px'
               }}
             />
+
+            {/* <NavLanguage configDisplay /> */}
           </>
         )}
 

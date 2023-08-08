@@ -1,12 +1,16 @@
 import React, { Suspense } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import HomePage from '~/pages/HomePage';
 import ModelCharacter from '~/pages/ModalCharacter';
 import ModelViewer from '~/pages/ModelViewer';
 import PageNotFound from '~/pages/PageNotFound';
 import { ROUTE_PATH } from './route.constant';
+import { IntlProvider } from 'react-intl';
+import { useTheme } from '~/common/theme/redux/hooks/useTheme';
+import AppLocale from '~/common/langs';
+import { ConfigProvider } from 'antd';
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     // element: <AppLayout />,
@@ -45,3 +49,25 @@ export const router = createBrowserRouter([
     ]
   }
 ]);
+
+export const Routes = () => {
+  const {
+    data: { locale, direction }
+  } = useTheme();
+
+  const currentAppLocale = AppLocale[locale];
+  return (
+    <IntlProvider
+      locale={currentAppLocale.locale}
+      messages={currentAppLocale.messages}
+    >
+      <ConfigProvider
+        locale={currentAppLocale.antd}
+        direction={direction}
+        autoInsertSpaceInButton={false}
+      >
+        <RouterProvider router={router} />;
+      </ConfigProvider>
+    </IntlProvider>
+  );
+};

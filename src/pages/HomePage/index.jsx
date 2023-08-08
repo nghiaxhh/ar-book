@@ -2,7 +2,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import React, { useState } from 'react';
 import { LayoutCommon } from '~/styles/genaralStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
-import { HeaderWrapper, HomePageWrapper } from './styled';
+import { HeaderWrapper } from './styled';
 import BaseLayout from '~/layouts';
 
 // import { useCommon } from '../redux/hooks/useCommon';
