@@ -76,7 +76,7 @@ export const HomePageWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
-  height: auto;
+  height: 500px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

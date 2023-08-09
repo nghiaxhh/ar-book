@@ -23,11 +23,11 @@ const HomePage = () => {
 
   return (
     <BaseLayout>
-      <HeaderWrapper>
-        <div className='rounded-3xl h-full box-banner'>
-          <img src={`${process.env.PUBLIC_URL}/images/HomeImg.png`} alt='' />
-        </div>
-      </HeaderWrapper>
+      <HeaderWrapper
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/HomeImg.png)`
+        }}
+      />
       <LayoutCommon>
         <div className=''>
           <div className='text-primary text-base md:text-[26px]'>Trending</div>
