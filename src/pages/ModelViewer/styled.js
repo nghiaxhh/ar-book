@@ -32,7 +32,7 @@ export const ModelViewerWrapper = styled.div`
 
   @media screen and (max-width: 480px) {
     model-viewer {
-      max-width: 300px;
+      max-width: auto;
     }
   }
 
@@ -50,6 +50,7 @@ export const ModelViewerWrapper = styled.div`
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    margin: 0 10px;
   }
 
   .slide {

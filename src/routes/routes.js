@@ -66,7 +66,7 @@ export const Routes = () => {
         direction={direction}
         autoInsertSpaceInButton={false}
       >
-        <RouterProvider router={router} />;
+        <RouterProvider router={router} />
       </ConfigProvider>
     </IntlProvider>
   );

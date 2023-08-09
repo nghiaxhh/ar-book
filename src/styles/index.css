@@ -36,9 +36,46 @@ canvas {
   background-position: center;
 }
 
-.text-loading{
+.text-loading {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.box-arrow {
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(
+      #ffffff 13.44%,
+      rgba(255, 255, 255, 0) 50.74%,
+      #ffffff 86.59%
+    )
+    border-box;
+}
+
+.arrow {
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 3px solid;
+  background: linear-gradient(90deg, #4ba9ff 0%, #c54bff 100%);
+  color: white;
+}
+
+.box-arrow:hover,
+.box-arrow:focus,
+.box-arrow:active {
+  background: linear-gradient(90deg, #4ba9ff 0%, #c54bff 100%);
+}
+.box-arrow:hover .arrow,
+.box-arrow:focus .arrow,
+.box-arrow:active .arrow {
+  background: white;
+}
+
+.box-arrow:hover svg,
+.box-arrow:focus svg,
+.box-arrow:active svg {
+  background: transparent;
+  color: #c54bff;
 }
