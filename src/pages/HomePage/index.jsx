@@ -4,10 +4,13 @@ import { LayoutCommon } from '~/styles/genaralStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper } from './styled';
 import BaseLayout from '~/layouts';
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_PATH } from '~/routes/route.constant';
 
 // import { useCommon } from '../redux/hooks/useCommon';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const listGame = new Array(6).fill(1).map((_, idx) => {
     return idx + 1;
@@ -52,7 +55,7 @@ const HomePage = () => {
             <SplideSlide>
               <div
                 onClick={() => {
-                  setOpenModal(true);
+                  navigate(ROUTE_PATH.INTRODUCE);
                 }}
                 className='cursor-pointer'
               >
@@ -66,7 +69,7 @@ const HomePage = () => {
             <SplideSlide>
               <div
                 onClick={() => {
-                  setOpenModal(true);
+                  navigate(ROUTE_PATH.INTRODUCE);
                 }}
                 className='cursor-pointer'
               >
@@ -81,7 +84,7 @@ const HomePage = () => {
             <SplideSlide>
               <div
                 onClick={() => {
-                  setOpenModal(true);
+                  navigate(ROUTE_PATH.INTRODUCE);
                 }}
                 className='cursor-pointer'
               >
