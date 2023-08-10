@@ -11,7 +11,11 @@ const ModelCharacter = () => {
         <Model />
         {/* <ModelViewer /> */}
         <OrbitControls />
-        <Environment preset='sunset' background />
+        <Environment
+          preset='forest'
+          // files={[process.env.PUBLIC_URL + '/images/Fallguys.png']}
+          background
+        />
       </Canvas>
     </div>
   );

@@ -9,6 +9,7 @@ import { IntlProvider } from 'react-intl';
 import { useTheme } from '~/common/theme/redux/hooks/useTheme';
 import AppLocale from '~/common/langs';
 import { ConfigProvider } from 'antd';
+import Introduce from '~/pages/Introduce';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
             element: (
               <Suspense fallback={null}>
                 <ModelViewer />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.INTRODUCE,
+            element: (
+              <Suspense fallback={null}>
+                <Introduce />
               </Suspense>
             )
           },

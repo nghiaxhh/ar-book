@@ -21,9 +21,11 @@ const ModelViewer = () => {
   const listPathIOS = [null, process.env.PUBLIC_URL + '/models/Stomach03.usdz'];
 
   return (
-    <ModelViewerWrapper>
-      {console.log(getRandomInt(animations?.length))}
-
+    <ModelViewerWrapper
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/images/HomeImg.png)`
+      }}
+    >
       <model-viewer
         class='w-full'
         style={{ height: '40rem' }}
@@ -31,10 +33,9 @@ const ModelViewer = () => {
         poster={process.env.PUBLIC_URL + '/images/loading.gif'}
         src={listPathSrc[itemSelected]}
         ios-src={listPathIOS[itemSelected]}
-        scale='0.5 0.5 0.5'
+        // scale='0.2 0.2 0.2'
         shadow-intensity='1'
         camera-controls
-        auto-rotate
         ar
         autoplay
         animation-name={action}
@@ -56,7 +57,7 @@ const ModelViewer = () => {
               style={{
                 backgroundImage: `url(${process.env.PUBLIC_URL}/images/Game.png`
               }}
-            ></button>
+            />
             <button
               onClick={() => setItemSelected(1)}
               className={`slide ${itemSelected === 1 && 'selected'}`}
