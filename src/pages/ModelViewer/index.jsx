@@ -15,6 +15,17 @@ const ModelViewer = () => {
     process.env.PUBLIC_URL + '/models/intestine.glb'
   ];
 
+  const listConversation = [
+    [],
+    [
+      {
+        id: 1,
+        key: 1,
+        content: 'うわ～、なんかプールみたい！泳いじゃってもいい？？'
+      }
+    ],
+    []
+  ];
   const listPathIOS = [
     null,
     process.env.PUBLIC_URL + '/models/Stomach03.usdz',
@@ -76,6 +87,8 @@ const ModelViewer = () => {
           </div>
         </div>
       </div>
+
+      
     </ModelViewerWrapper>
   );
 };

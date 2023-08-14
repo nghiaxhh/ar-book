@@ -9,7 +9,7 @@ const ModelsCommon = (props) => {
       class='w-full'
       style={{ height: '40rem' }}
       id='hotspot-camera-view-demo'
-      poster={process.env.PUBLIC_URL + '/images/loading.gif'}
+      poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
       src={src}
       ios-src={iosSrc}
       // scale='0.2 0.2 0.2'

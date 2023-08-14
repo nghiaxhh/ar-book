@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 
 export const ModelViewerWrapper = styled.div`
   model-viewer {
-    background-color: #f1f3f4;
+    background-color: #fff;
     margin: 0 auto;
     width: 100% !important;
     height: 100vh !important;
