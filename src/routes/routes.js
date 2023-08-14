@@ -32,7 +32,19 @@ const router = createBrowserRouter([
           {
             path: ROUTE_PATH.PREVIEW_MODEL,
             element: (
-              <Suspense fallback={null}>
+              <Suspense
+                fallback={
+                  <div
+                    id='lazy-load-poster'
+                    slot='poster'
+                    className='h-full w-full relative'
+                  >
+                    <div className='text-loading text-2xl	font-bold'>
+                      Loading...
+                    </div>
+                  </div>
+                }
+              >
                 <ModelViewer />
               </Suspense>
             )

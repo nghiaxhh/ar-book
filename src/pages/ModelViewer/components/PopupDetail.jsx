@@ -14,7 +14,7 @@ const PopupDetail = ({ openModal, onCancel }) => {
       footer={
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Button
-            onClick={() => navigate(ROUTE_PATH.PREVIEW_MODEL)}
+            onClick={() => navigate(ROUTE_PATH.INTRODUCE)}
             key='submit'
             type='primary'
           >

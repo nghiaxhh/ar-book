@@ -1,11 +1,15 @@
 import React from 'react';
 import { IntroduceWrapper } from './styled';
-import { ICON_LEFT } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_PATH } from '~/routes/route.constant';
+import { CloseOutlined } from '@ant-design/icons';
 
 const Introduce = () => {
+  const navigate = useNavigate();
   return (
     <IntroduceWrapper
+      className='relative'
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg-moon.png)`
       }}
@@ -28,19 +32,26 @@ const Introduce = () => {
             <br />
             どんな夢かというと…
           </div>
-          <div className='slides justify-between'>
-            <div className='box-arrow cursor-pointer'>
-              <div className='arrow'>
-                <ICON_LEFT />
-              </div>
-            </div>
-
-            <div className='box-arrow cursor-pointer'>
+          <div className='slides justify-center'>
+            <div
+              className='box-arrow cursor-pointer'
+              onClick={() => {
+                navigate(ROUTE_PATH.PREVIEW_MODEL);
+              }}
+            >
               <div className='arrow'>
                 <ICON_RIGHT />
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className='absolute top-[1rem] right-[1rem]'>
+        <div className='flex items-center justify-center rounded-full bg-white cursor-pointer w-[44px] h-[44px]' onClick={()=>{
+          navigate(ROUTE_PATH.HOME)
+        }}>
+          <CloseOutlined />
         </div>
       </div>
     </IntroduceWrapper>
