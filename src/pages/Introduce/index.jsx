@@ -18,7 +18,7 @@ const Introduce = () => {
         <div className='relative'>
           <img
             src={process.env.PUBLIC_URL + '/images/character.png'}
-            width={'200px'}
+            width={'400rem'}
             alt=''
           />
         </div>
