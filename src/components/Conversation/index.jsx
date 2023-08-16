@@ -4,7 +4,7 @@ import { ConversationWrapper } from './styled';
 const Conversation = ({ content }) => {
   return (
     <ConversationWrapper>
-      <div className='container'>
+      <div className='box-container'>
         <img
           src={process.env.PUBLIC_URL + '/images/character.png'}
           width={'100px'}

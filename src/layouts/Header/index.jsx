@@ -3,7 +3,7 @@ import { Input } from 'antd';
 import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { SCREEN_SIZE } from '~/common/constants';
-import { LayoutCommon } from '~/styles/genaralStyled';
+import { LayoutCommon } from '~/styles/generalStyled';
 import NavPanel from './NavPanel';
 import Tippy from '@tippyjs/react';
 import { useSpring, motion } from 'framer-motion';

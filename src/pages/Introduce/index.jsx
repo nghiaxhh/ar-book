@@ -32,15 +32,13 @@ const Introduce = () => {
             <br />
             どんな夢かというと…
           </div>
-          <div className='slides justify-center'>
-            <div
-              className='box-arrow cursor-pointer'
-              onClick={() => {
-                navigate(ROUTE_PATH.PREVIEW_MODEL);
-              }}
-            >
-              <IconNextMessage />
-            </div>
+          <div
+            className='slides justify-center  cursor-pointer'
+            onClick={() => {
+              navigate(ROUTE_PATH.PREVIEW_MODEL);
+            }}
+          >
+            <IconNextMessage />
           </div>
         </div>
       </div>

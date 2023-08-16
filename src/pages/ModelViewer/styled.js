@@ -41,7 +41,7 @@ export const ModelViewerWrapper = styled.div`
     text-align: center;
     overflow: hidden;
     position: absolute;
-    bottom: 16px;
+    bottom: 30px;
   }
 
   .slides {
