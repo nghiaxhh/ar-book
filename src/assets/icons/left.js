@@ -15,3 +15,30 @@ export const ICON_LEFT = () => {
     </svg>
   );
 };
+
+export const IconNextMessage = () => {
+  return (
+    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'50px'} />
+  );
+};
+
+export const IconNextStage = () => {
+  return (
+    <img
+      src={process.env.PUBLIC_URL + '/images/10.png'}
+      alt=''
+      width={'50px'}
+    />
+  );
+};
+
+export const IconPreviousStage = () => {
+  return (
+    <img
+      style={{ transform: 'rotate(180deg)' }}
+      src={process.env.PUBLIC_URL + '/images/10.png'}
+      alt=''
+      width={'50px'}
+    />
+  );
+};

@@ -4,6 +4,7 @@ export const LayoutCommon = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+
   .main-title {
     font-weight: 700;
     font-size: 36px;
