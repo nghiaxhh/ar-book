@@ -1,9 +1,7 @@
 import Conversation from '~/components/Conversation';
 import { BoxMessageWrapper } from './styled';
 
-const ModalStomach = ({ indexMessage, action }) => {
-  const listMessage = new Array(8).fill(1).map((_, idx) => idx + 1);
-
+const ModalStomach = ({ indexMessage, action, arrayMessage }) => {
   return (
     <BoxMessageWrapper>
       <model-viewer
@@ -29,7 +27,7 @@ const ModalStomach = ({ indexMessage, action }) => {
         </div>
       </model-viewer>
       <div className='box-message'>
-        {listMessage.map((item, idx) => {
+        {arrayMessage.map((item, idx) => {
           return indexMessage === idx ? (
             <div
               key={idx + 1}
@@ -37,9 +35,7 @@ const ModalStomach = ({ indexMessage, action }) => {
                 idx % 2 === 0 ? 'justify-start' : 'justify-end'
               }`}
             >
-              <Conversation
-                content={`うわ～、なんかプールみたい！ 泳いじゃってもいい？ message${item}`}
-              />
+              <Conversation content={item.content} />
             </div>
           ) : null;
         })}

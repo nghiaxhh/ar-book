@@ -1,6 +1,6 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import React, { useState } from 'react';
-import { LayoutCommon } from '~/styles/genaralStyled';
+import { LayoutCommon } from '~/styles/generalStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper } from './styled';
 import BaseLayout from '~/layouts';

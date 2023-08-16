@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutCommon } from '~/styles/genaralStyled';
+import { LayoutCommon } from '~/styles/generalStyled';
 
 const Footer = () => {
   return (

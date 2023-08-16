@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 
 export const ConversationWrapper = styled.div`
-  width: 420px;
+  width: 400px;
+  margin: 20px;
 
   .img-character {
     position: relative;
@@ -12,11 +13,13 @@ export const ConversationWrapper = styled.div`
     display: flex;
     background-color: #dfdfdf;
     border-radius: 20px;
-    padding: 20px 20px 20px 100px;
+    padding: 20px 20px 50px 100px;
     z-index: 9;
-
+    width: 400px;
+    max-height: 100px;
+    overflow-y: auto;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
