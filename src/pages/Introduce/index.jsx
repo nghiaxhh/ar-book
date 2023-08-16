@@ -1,9 +1,9 @@
-import React from 'react';
-import { IntroduceWrapper } from './styled';
-import { ICON_RIGHT } from '~/assets/icons/right';
-import { useNavigate } from 'react-router-dom';
-import { ROUTE_PATH } from '~/routes/route.constant';
 import { CloseOutlined } from '@ant-design/icons';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { IconNextMessage } from '~/assets/icons/left';
+import { ROUTE_PATH } from '~/routes/route.constant';
+import { IntroduceWrapper } from './styled';
 
 const Introduce = () => {
   const navigate = useNavigate();
@@ -39,18 +39,19 @@ const Introduce = () => {
                 navigate(ROUTE_PATH.PREVIEW_MODEL);
               }}
             >
-              <div className='arrow'>
-                <ICON_RIGHT />
-              </div>
+              <IconNextMessage />
             </div>
           </div>
         </div>
       </div>
 
       <div className='absolute top-[1rem] right-[1rem]'>
-        <div className='flex items-center justify-center rounded-full bg-white cursor-pointer w-[44px] h-[44px]' onClick={()=>{
-          navigate(ROUTE_PATH.HOME)
-        }}>
+        <div
+          className='flex items-center justify-center rounded-full bg-white cursor-pointer w-[44px] h-[44px]'
+          onClick={() => {
+            navigate(ROUTE_PATH.HOME);
+          }}
+        >
           <CloseOutlined />
         </div>
       </div>

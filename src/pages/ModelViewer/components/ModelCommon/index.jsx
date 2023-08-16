@@ -1,9 +1,6 @@
 const ModelsCommon = (props) => {
   const { src, iosSrc, action } = props;
 
-  console.log(src);
-
-  console.log(iosSrc);
   return (
     <model-viewer
       class='w-full'
