@@ -16,7 +16,7 @@ export const ConversationWrapper = styled.div`
     padding: 20px 20px 50px 100px;
     z-index: 9;
     width: 400px;
-    max-height: 100px;
+    max-height: 120px;
     overflow-y: auto;
     position: absolute;
     bottom: 20px;

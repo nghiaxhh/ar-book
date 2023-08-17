@@ -1,22 +1,29 @@
-import { Environment, OrbitControls } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
 import React from 'react';
-// import ModelViewer from '../ModelViewer';
-import Model from './Stomach';
 
 const ModelCharacter = () => {
   return (
     <div>
-      <Canvas>
-        <Model />
-        {/* <ModelViewer /> */}
-        <OrbitControls />
-        <Environment
-          preset='forest'
-          // files={[process.env.PUBLIC_URL + '/images/Fallguys.png']}
-          background
-        />
-      </Canvas>
+      <model-viewer
+        class='w-full'
+        style={{ height: '40rem' }}
+        id='hotspot-camera-view-demo'
+        poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
+        src={process.env.PUBLIC_URL + '/models/comission_230717'}
+        ios-src={null}
+        // scale='0.2 0.2 0.2'
+        shadow-intensity='1'
+        camera-controls
+        // ar
+        autoplay
+      >
+        <div
+          id='lazy-load-poster'
+          slot='poster'
+          className='h-full w-full relative'
+        >
+          <div className='text-loading text-2xl	font-bold'>Loading...</div>
+        </div>
+      </model-viewer>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 export const ConversationList = [
-  [],
   [
     {
       key: 1,
@@ -237,5 +236,6 @@ export const ConversationList = [
       content: 'それは次のお話しかな？'
     }
   ],
+  [],
   []
 ];

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { IconNextMessage } from '~/assets/icons/left';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { IntroduceWrapper } from './styled';
+import ModelCharacter from '../ModalCharacter';
 
 const Introduce = () => {
   const navigate = useNavigate();
@@ -15,12 +16,13 @@ const Introduce = () => {
       }}
     >
       <div className='d-flex justify-center items-center'>
-        <div className='relative'>
-          <img
+        <div className='relative w-full'>
+          {/* <img
             src={process.env.PUBLIC_URL + '/images/character.png'}
             width={'400rem'}
             alt=''
-          />
+          /> */}
+          <ModelCharacter />
         </div>
         <div className='right-box'>
           <div className='box-content'>
