@@ -60,7 +60,7 @@ export const IntroduceWrapper = styled.div`
     border-radius: 20px;
     border: 2px solid gray;
     padding: 24px;
-    margin-bottom: 20px;
+    margin: 20px;
     max-width: 525px;
   }
 `;
