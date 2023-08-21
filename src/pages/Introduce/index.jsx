@@ -16,12 +16,7 @@ const Introduce = () => {
       }}
     >
       <div className='d-flex justify-center items-center'>
-        <div className='relative w-full'>
-          {/* <img
-            src={process.env.PUBLIC_URL + '/images/character.png'}
-            width={'400rem'}
-            alt=''
-          /> */}
+        <div className='relative'>
           <ModelCharacter />
         </div>
         <div className='right-box'>

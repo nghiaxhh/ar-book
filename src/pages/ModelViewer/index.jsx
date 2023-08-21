@@ -17,14 +17,15 @@ const ModelViewer = () => {
   const [itemSelected, setItemSelected] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
   const listPathSrc = [
-    process.env.PUBLIC_URL + '/models/Stomach03.glb',
+    process.env.PUBLIC_URL + '/models/Stomach.glb',
     process.env.PUBLIC_URL + '/models/intestine.glb',
     process.env.PUBLIC_URL + '/models/LittlestTokyo.glb',
     process.env.PUBLIC_URL + '/models/comission_230717'
   ];
 
   const listPathIOS = [
-    process.env.PUBLIC_URL + '/models/Stomach03.usdz',
+    // process.env.PUBLIC_URL + '/models/Stomach03.usdz',
+    null,
     null,
     null,
     null
