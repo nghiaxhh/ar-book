@@ -8,9 +8,10 @@ import {
 } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
 import { ROUTE_PATH } from '~/routes/route.constant';
-import { ModelViewerWrapper } from '../ModelViewer/styled';
+import Conversation from '~/components/Conversation';
+import { ModalBrainWrapper } from './styled';
 
-const Conversation = [
+const listConversation = [
   {
     key: 1,
     content: 'ここはどこなの？なんか工場みたいだけど'
@@ -158,12 +159,8 @@ const ModelBrain = () => {
   const [itemSelected, setItemSelected] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
   return (
-    <ModelViewerWrapper
-    // style={{
-    //   backgroundImage: `url(${process.env.PUBLIC_URL}/images/HomeImg.png)`
-    // }}
-    >
-      <divm className={'absolute right-5 top-5 z-50'}>
+    <ModalBrainWrapper>
+      <div className={'absolute right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[44px] h-[44px]'
           onClick={() => {
@@ -172,7 +169,7 @@ const ModelBrain = () => {
         >
           <CloseOutlined />
         </div>
-      </divm>
+      </div>
       <model-viewer
         class='w-full relative'
         style={{ height: '40rem' }}
@@ -193,6 +190,21 @@ const ModelBrain = () => {
           <div className='text-loading text-2xl	font-bold'>Loading...</div>
         </div>
       </model-viewer>
+
+      <div className='box-message'>
+        {listConversation.map((item, idx) => {
+          return indexMessage === idx ? (
+            <div
+              key={idx + 1}
+              className={`w-full d-flex ${
+                idx % 2 === 0 ? 'justify-start' : 'justify-end'
+              }`}
+            >
+              <Conversation content={item.content} />
+            </div>
+          ) : null;
+        })}
+      </div>
 
       <div className='slider'>
         <div className='slides justify-between'>
@@ -251,7 +263,7 @@ const ModelBrain = () => {
           </div>
         </div>
       </div>
-    </ModelViewerWrapper>
+    </ModalBrainWrapper>
   );
 };
 

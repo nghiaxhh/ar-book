@@ -1,14 +1,6 @@
 import { styled } from 'styled-components';
 
-export const BoxMessageWrapper = styled.div`
-  .box-message {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-  }
-`;
-
-export const ModelViewerWrapper = styled.div`
+export const ModalStomachWrapper = styled.div`
   model-viewer {
     background-color: #fff;
     margin: 0 auto;
@@ -41,6 +33,12 @@ export const ModelViewerWrapper = styled.div`
     model-viewer {
       max-width: auto;
     }
+  }
+
+  .box-message {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
   }
 
   .slider {

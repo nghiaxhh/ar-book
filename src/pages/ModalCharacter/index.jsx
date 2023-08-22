@@ -9,8 +9,9 @@ import {
 import { ICON_RIGHT } from '~/assets/icons/right';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModelCharacterWrapper } from './styled';
+import Conversation from '~/components/Conversation';
 
-const Conversation = [
+const listConversation = [
   {
     key: 1,
     content: 'うわ～、なんかプールみたい！泳いじゃってもいい？？'
@@ -112,7 +113,7 @@ const ModelCharacter = () => {
   const [indexMessage, setindexMessage] = useState(0);
   return (
     <ModelCharacterWrapper>
-      <divm className={'absolute right-5 top-5 z-50'}>
+      <div className={'absolute right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[44px] h-[44px]'
           onClick={() => {
@@ -121,7 +122,7 @@ const ModelCharacter = () => {
         >
           <CloseOutlined />
         </div>
-      </divm>
+      </div>
       <model-viewer
         class='w-full relative'
         style={{ height: '40rem' }}
@@ -142,6 +143,21 @@ const ModelCharacter = () => {
           <div className='text-loading text-2xl	font-bold'>Loading...</div>
         </div>
       </model-viewer>
+
+      <div className='box-message'>
+        {listConversation.map((item, idx) => {
+          return indexMessage === idx ? (
+            <div
+              key={idx + 1}
+              className={`w-full d-flex ${
+                idx % 2 === 0 ? 'justify-start' : 'justify-end'
+              }`}
+            >
+              <Conversation content={item.content} />
+            </div>
+          ) : null;
+        })}
+      </div>
 
       <div className='slider'>
         <div className='slides justify-between'>
@@ -176,7 +192,7 @@ const ModelCharacter = () => {
               <div style={{ width: '50px' }} />
             )}
 
-            {indexMessage + 1 < Conversation.length ? (
+            {indexMessage + 1 < listConversation.length ? (
               <div
                 className='cursor-pointer  mx-10'
                 onClick={() => {
