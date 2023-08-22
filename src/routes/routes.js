@@ -1,15 +1,18 @@
+import { ConfigProvider } from 'antd';
 import React, { Suspense } from 'react';
+import { IntlProvider } from 'react-intl';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import AppLocale from '~/common/langs';
+import { useTheme } from '~/common/theme/redux/hooks/useTheme';
 import HomePage from '~/pages/HomePage';
-import ModelCharacter from '~/pages/ModalCharacter';
-import ModelViewer from '~/pages/ModelViewer';
+import Introduce from '~/pages/Introduce';
 import PageNotFound from '~/pages/PageNotFound';
 import { ROUTE_PATH } from './route.constant';
-import { IntlProvider } from 'react-intl';
-import { useTheme } from '~/common/theme/redux/hooks/useTheme';
-import AppLocale from '~/common/langs';
-import { ConfigProvider } from 'antd';
-import Introduce from '~/pages/Introduce';
+
+const ModelBrain = React.lazy(() => import('~/pages/ModelBrain'));
+const ModelIntestine = React.lazy(() => import('~/pages/ModelIntestine'));
+const ModelStomach = React.lazy(() => import('~/pages/ModelStomach'));
+const ModalCharacter = React.lazy(() => import('~/pages/ModalCharacter'));
 
 const router = createBrowserRouter([
   {
@@ -29,26 +32,7 @@ const router = createBrowserRouter([
               </Suspense>
             )
           },
-          {
-            path: ROUTE_PATH.PREVIEW_MODEL,
-            element: (
-              <Suspense
-                fallback={
-                  <div
-                    id='lazy-load-poster'
-                    slot='poster'
-                    className='h-full w-full relative'
-                  >
-                    <div className='text-loading text-2xl	font-bold'>
-                      Loading...
-                    </div>
-                  </div>
-                }
-              >
-                <ModelViewer />
-              </Suspense>
-            )
-          },
+
           {
             path: ROUTE_PATH.INTRODUCE,
             element: (
@@ -58,10 +42,42 @@ const router = createBrowserRouter([
             )
           },
           {
-            path: ROUTE_PATH.CHARACTER,
+            path: ROUTE_PATH.MODEL_BRAIN,
             element: (
               <Suspense fallback={null}>
-                <ModelCharacter />
+                <ModelBrain />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.MODEL_BRAIN,
+            element: (
+              <Suspense fallback={null}>
+                <ModelBrain />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.MODEL_STOMACH,
+            element: (
+              <Suspense fallback={null}>
+                <ModelStomach />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.MODEL_INTESTINE,
+            element: (
+              <Suspense fallback={null}>
+                <ModelIntestine />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.MODEL_CHARACTER,
+            element: (
+              <Suspense fallback={null}>
+                <ModalCharacter />
               </Suspense>
             )
           }

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { IconNextMessage } from '~/assets/icons/left';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { IntroduceWrapper } from './styled';
-import ModelCharacter from '../ModalCharacter';
 
 const Introduce = () => {
   const navigate = useNavigate();
@@ -17,7 +16,26 @@ const Introduce = () => {
     >
       <div className='d-flex justify-center items-center'>
         <div className='relative'>
-          <ModelCharacter />
+          <model-viewer
+            class='w-full'
+            style={{ height: '40rem' }}
+            id='hotspot-camera-view-demo'
+            poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
+            src={process.env.PUBLIC_URL + '/models/comission_230717'}
+            // scale='0.2 0.2 0.2'
+            shadow-intensity='1'
+            camera-controls
+            ar
+            autoplay
+          >
+            <div
+              id='lazy-load-poster'
+              slot='poster'
+              className='h-full w-full relative'
+            >
+              <div className='text-loading text-2xl	font-bold'>Loading...</div>
+            </div>
+          </model-viewer>
         </div>
         <div className='right-box'>
           <div className='box-content'>
@@ -32,7 +50,7 @@ const Introduce = () => {
           <div
             className='slides justify-center  cursor-pointer'
             onClick={() => {
-              navigate(ROUTE_PATH.PREVIEW_MODEL);
+              navigate(ROUTE_PATH.MODEL_CHARACTER);
             }}
           >
             <IconNextMessage />

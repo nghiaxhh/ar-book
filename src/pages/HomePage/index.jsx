@@ -1,13 +1,11 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BaseLayout from '~/layouts';
+import { ROUTE_PATH } from '~/routes/route.constant';
 import { LayoutCommon } from '~/styles/generalStyled';
 import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper } from './styled';
-import BaseLayout from '~/layouts';
-import { useNavigate } from 'react-router-dom';
-import { ROUTE_PATH } from '~/routes/route.constant';
-
-// import { useCommon } from '../redux/hooks/useCommon';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -15,14 +13,6 @@ const HomePage = () => {
   const listGame = new Array(6).fill(1).map((_, idx) => {
     return idx + 1;
   });
-
-  // const {
-  //   actions: actionsCommon
-  // } = useCommon();
-
-  // useEffect(() => {
-  //   actionsCommon.getRole({ type: 'USER' });
-  // }, []);
 
   return (
     <BaseLayout>
