@@ -1,6 +1,6 @@
 export const ROUTE_PATH = {
   HOME: '/',
-  CHARACTER: '/character',
+  MODEL_TOKYO: '/model-tokyo',
   PREVIEW_MODEL: '/preview',
   INTRODUCE: '/introduce',
   MODEL_BRAIN: '/model-brain',

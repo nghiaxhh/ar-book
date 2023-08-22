@@ -109,7 +109,6 @@ const listConversation = [
 
 const ModelCharacter = () => {
   const navigate = useNavigate();
-  const [itemSelected, setItemSelected] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
   return (
     <ModelCharacterWrapper>
@@ -161,22 +160,15 @@ const ModelCharacter = () => {
 
       <div className='slider'>
         <div className='slides justify-between'>
-          {itemSelected !== 0 ? (
-            <div
-              className='cursor-pointer d-flex items-center'
-              onClick={() => {
-                if (itemSelected === 1) {
-                  navigate(ROUTE_PATH.INTRODUCE);
-                } else {
-                  setItemSelected(1);
-                }
-              }}
-            >
-              <IconPreviousStage />
-            </div>
-          ) : (
-            <div style={{ width: '50px' }} />
-          )}
+          <div
+            className='cursor-pointer d-flex items-center'
+            onClick={() => {
+              navigate(ROUTE_PATH.MODEL_TOKYO);
+            }}
+          >
+            <IconPreviousStage />
+          </div>
+
           <div className='d-flex justify-between w-full '>
             {indexMessage !== 0 ? (
               <div
