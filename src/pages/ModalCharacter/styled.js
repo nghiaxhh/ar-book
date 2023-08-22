@@ -1,12 +1,6 @@
 import { styled } from 'styled-components';
 
-export const BoxMessageWrapper = styled.div`
-  .box-message {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-  }
-`;
+export const BoxMessageWrapper = styled.div``;
 
 export const ModelCharacterWrapper = styled.div`
   model-viewer {
@@ -15,6 +9,12 @@ export const ModelCharacterWrapper = styled.div`
     width: 100% !important;
     height: 100vh !important;
     /* max-width: 1200px; */
+  }
+
+  .box-message {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
   }
 
   .view-button {

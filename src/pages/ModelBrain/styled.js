@@ -1,14 +1,13 @@
 import { styled } from 'styled-components';
 
-export const BoxMessageWrapper = styled.div`
+export const BoxMessageWrapper = styled.div``;
+
+export const ModalBrainWrapper = styled.div`
   .box-message {
     position: absolute;
     bottom: 100px;
     width: 100%;
   }
-`;
-
-export const ModelViewerWrapper = styled.div`
   model-viewer {
     background-color: #fff;
     margin: 0 auto;

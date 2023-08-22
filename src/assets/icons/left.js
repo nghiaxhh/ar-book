@@ -10,7 +10,7 @@ export const ICON_LEFT = () => {
 
 export const IconNextMessage = () => {
   return (
-    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'50px'} />
+    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'80px'} />
   );
 };
 

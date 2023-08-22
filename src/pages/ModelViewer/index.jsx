@@ -39,7 +39,7 @@ const ModelViewer = () => {
     //   backgroundImage: `url(${process.env.PUBLIC_URL}/images/HomeImg.png)`
     // }}
     >
-      <divm className={'absolute right-5 top-5 z-50'}>
+      <div className={'absolute right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[44px] h-[44px]'
           onClick={() => {
@@ -48,7 +48,7 @@ const ModelViewer = () => {
         >
           <CloseOutlined />
         </div>
-      </divm>
+      </div>
       <ModelsCommon
         src={listPathSrc[itemSelected]}
         iosSrc={listPathIOS[itemSelected]}
