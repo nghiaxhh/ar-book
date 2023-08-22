@@ -98,7 +98,7 @@ const ModelEsophagus = () => {
               <div style={{ width: '50px' }} />
             )}
 
-            {indexMessage + 1 < Conversation.length ? (
+            {indexMessage + 1 < listConversation.length ? (
               <div
                 className='cursor-pointer  mx-10'
                 onClick={() => {
