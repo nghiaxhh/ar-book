@@ -163,7 +163,7 @@ const ModalStomach = () => {
           <div
             className='cursor-pointer d-flex items-center'
             onClick={() => {
-              navigate(ROUTE_PATH.MODEL_BRAIN);
+              navigate(-1);
             }}
           >
             <IconPreviousStage />

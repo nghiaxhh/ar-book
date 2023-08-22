@@ -1,164 +1,112 @@
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  ICON_LEFT,
-  IconNextStage,
-  IconPreviousStage
-} from '~/assets/icons/left';
+import { ICON_LEFT, IconNextStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
-import { ROUTE_PATH } from '~/routes/route.constant';
 import Conversation from '~/components/Conversation';
-import { ModalBrainWrapper } from './styled';
+import { ROUTE_PATH } from '~/routes/route.constant';
+import { ModelLifeTokyoWrapper } from './styled';
 
 const listConversation = [
   {
     key: 1,
-    content: 'ここはどこなの？なんか工場みたいだけど'
+    content:
+      'これって夢見たこともない部屋に迷い込んじゃったみたいここはどこだろう'
   },
   {
     key: 2,
-    content: 'ここは腸だよ？'
+    content: 'ここは元気くんの頭の中ですよ'
   },
   {
     key: 3,
-    content: '腸？'
+    content: 'あなたは誰？'
   },
   {
     key: 4,
     content:
-      'さっき胃で食べ物がドロドロになっていたでしょ？そのドロドロのなかから体に必要なものを体に戻して（柔毛アームが動く）、余った要らないものをぎゅっと（ウンチプレス機が動く）まとめてウンチにして体に送り出す（肛門が開いてウンチがポンと飛び出す）のが腸の役目なんだ'
+      '僕は脳の妖精「のうポン」だよみんなの頭の中にいるんだけど、夢の中だけに出てこれるんだよ'
   },
   {
     key: 5,
-    content: 'ウンチ…　言うのは恥ずかしいし、僕の体の中で作ってるなんて…'
+    content: 'やっぱり夢の中だったんだ'
   },
   {
     key: 6,
     content:
-      'はずかしくもなんともないよ！ウンチが出るってとっても大事なこと。余ったいらないものが体の中に溜まり続けたら？'
+      '僕は、元気くんをいつも見てるんだけど、元気に勉強して遊んでるねこれからも元気に大きくなってほしいから、体の中を案内したいんだ'
   },
   {
     key: 7,
     content:
-      'そうかもしれない。ところで、入り口の近くにる、ロボットの腕みたいなのは何だろう？？（柔毛アームが動く）'
+      '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
   },
   {
     key: 8,
-    content:
-      'それは、体に必要なものを選び出して、からだの中に戻しているんだよ（柔毛アームと、アームの向こうのベルトコンベアが動く）。'
+    content: 'えーそんなことできるの？'
   },
   {
     key: 9,
-    content: '必要なもの？？'
+    content: '夢の中なら何でも ありデス'
   },
+
   {
     key: 10,
-    content:
-      'うん、それはおもにブドウ糖やアミノ酸だね。ブドウ糖はからだを動かすもと、アミノ酸は筋肉などのもとなんだ。'
+    content: '溶かしてどうするの？'
   },
+
   {
     key: 11,
-    content: 'ふーん。元気のもとってことだね！'
+    content: '食べ物から栄養を取り出すためだよ。'
   },
+
   {
     key: 12,
     content:
-      'そうそう。それから、体にとっていらないもの、たとえば悪いバイ菌は体の中にあると元気がなくなっちゃうから入り口のヤリと剣（ヤリと剣が動く）でやっつけているんだよ。'
+      'ふーん。あのプールの中でグルグル回っているの（プロペラが回る）、あれで食べ物と胃液がグルグル混ぜられているね。'
   },
+
   {
     key: 13,
-    content: 'すごい大事なところだね！'
+    content:
+      'その通り！　胃液と混ざった食べ物をプロペラがかき混ぜてドロドロにするんだ。あれ？　胃の中にりんごがぷかぷか浮いているね。'
   },
+
   {
     key: 14,
-    content:
-      'そうだよ。それから、体には、栄養以外にもとっても大事なものがあるよね。わかるかな。'
+    content: 'さっき食べたんだよ！'
   },
   {
     key: 15,
-    content: 'うーん。'
+    content: 'しっかり噛んでいないでしょ。わかっちゃうよ。'
   },
   {
     key: 16,
     content:
-      'それはお水だよ。腸は、栄養のほかにお水も体のなかに入れる大事な働きがあるんだ。'
+      'うーん。ごめんなさい。でも、なんでちゃんと噛まなきゃいけないの？　胃液とプロペラがあったら大丈夫じゃない？'
   },
   {
     key: 17,
     content:
-      '知らなかった！　飲んだらすぐに体の中に水が染み込んでいくんだと思ってたよ！'
+      'しっかり噛まずに飲み込まれた食べ物を細かくするために、プロペラはいつもよりたくさん動かないといけないよね。そうすると胃が疲れちゃうでしょ？'
   },
   {
     key: 18,
-    content: 'その仕組みは、また後で説明しようかな？'
+    content:
+      'そっか。ちゃんともぐもぐ噛むと、美味しいなーってずっと思えるもんね。やっぱりちゃんと噛むよ！'
   },
   {
     key: 19,
-    content: 'ところで元気くんはお腹の音って聞いたことある？'
-  },
-  {
-    key: 20,
-    content: '時々キュルキュル音がしているのは聞いたことがあるよ！'
-  },
-  {
-    key: 21,
     content:
-      'その音は、腸が食べ物を運ぶために元気に動いてくれているしるしなんだ。'
-  },
-  {
-    key: 22,
-    content: '元気に動いてくれているなら安心な音なんだね？'
-  },
-  {
-    key: 23,
-    content:
-      'そう！　でもお腹が痛いときにも聞こえるときがないかい？　ぐるぐるぐるーって。それは、腸が危険信号を出している時 なんだ。気を付けてね。'
-  },
-  {
-    key: 24,
-    content: 'わかった！最後の方にあるスタンプと出口みたいなところは何？'
-  },
-  {
-    key: 25,
-    content:
-      'ここは、ウンチを外に出すために準備をしているところなんだ。トイレに行ったときにはこの出口からウンチが出るようになるんだよ！'
-  },
-  {
-    key: 26,
-    content:
-      'ご飯を食べてウンチになるまでを教えてもらったけど、どのくらいの時間がかかるの？30分？1時間？'
-  },
-  {
-    key: 27,
-    content: '正解は1日から2日くらいかかるんだ。'
-  },
-  {
-    key: 28,
-    content:
-      'そんなに時間がかかるの？じゃあ、今日の食べたご飯は明日か明後日にウンチになるの？？'
-  },
-  {
-    key: 29,
-    content:
-      'そうなんだ。食べたものが体の中をゆっくり動いていって、必要なものと要らないものに分けたりして、元気に過ごせるように見えないところで頑張ってくれているんだよ。'
-  },
-  {
-    key: 30,
-    content:
-      '僕が栄養をとるぞー、ウンチ作るぞーって思っていないのに、なんで勝手にやってくるの？'
-  },
-  {
-    key: 31,
-    content: 'それは次のお話しかな？'
+      'そうそう。美味しいなって思えると、食べ過ぎないから体にいいんだ。それに、よく噛むと歯が健康になるし、噛むことで頭の中にある脳に血がめぐりやすくなって脳が元気になるんだ（脳くんぐるぐる回る）'
   }
 ];
 
-const ModelBrain = () => {
+const ModelLifeTokyo = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
+
   return (
-    <ModalBrainWrapper>
+    <ModelLifeTokyoWrapper>
       <div className={'absolute right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[44px] h-[44px]'
@@ -170,10 +118,11 @@ const ModelBrain = () => {
         </div>
       </div>
       <model-viewer
-        class='w-full relative h-[80vh] md:h-[100vh]'
+        class='w-full relative'
+        style={{ height: '40rem' }}
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
-        src={process.env.PUBLIC_URL + '/models/thor.glb'}
+        src={process.env.PUBLIC_URL + '/models/LittlestTokyo.glb'}
         // scale='0.2 0.2 0.2'
         shadow-intensity='1'
         camera-controls
@@ -206,19 +155,11 @@ const ModelBrain = () => {
 
       <div className='slider'>
         <div className='slides justify-between'>
-          <div
-            className='cursor-pointer d-flex items-center'
-            onClick={() => {
-              navigate(ROUTE_PATH.MODEL_CHARACTER);
-            }}
-          >
-            <IconPreviousStage />
-          </div>
-
+          <div className='cursor-pointer d-flex items-center'></div>
           <div className='d-flex justify-between w-full '>
             {indexMessage !== 0 ? (
               <div
-                className='cursor-pointer mx-6'
+                className='cursor-pointer  mx-10'
                 onClick={() => {
                   setindexMessage(0);
                   setindexMessage(indexMessage - 1);
@@ -229,22 +170,10 @@ const ModelBrain = () => {
             ) : (
               <div style={{ width: '50px' }} />
             )}
-            <div className='d-flex items-center w-[80px]'>
-              <div
-                className='text-center w-full p-1 shadow-lg'
-                style={{
-                  borderRadius: '100px',
-                  border: '1px solid #FFFFFF',
-                  background: '#dfdfdf'
-                }}
-              >
-                {`${indexMessage + 1} of ${listConversation.length}`}
-              </div>
-            </div>
 
             {indexMessage + 1 < listConversation.length ? (
               <div
-                className='cursor-pointer mx-6'
+                className='cursor-pointer  mx-10'
                 onClick={() => {
                   setindexMessage(indexMessage + 1);
                 }}
@@ -259,15 +188,15 @@ const ModelBrain = () => {
           <div
             className='cursor-pointer  d-flex items-center'
             onClick={() => {
-              navigate(ROUTE_PATH.MODEL_STOMACH);
+              navigate(ROUTE_PATH.MODEL_ESOPHAGUS);
             }}
           >
             <IconNextStage />
           </div>
         </div>
       </div>
-    </ModalBrainWrapper>
+    </ModelLifeTokyoWrapper>
   );
 };
 
-export default ModelBrain;
+export default ModelLifeTokyo;
