@@ -24,6 +24,8 @@ const Introduce = () => {
               src={process.env.PUBLIC_URL + '/models/comission_230717'}
               shadow-intensity='1'
               autoplay
+              disable-tap
+              interaction-prompt='none'
               camera-controls
               disable-zoom
             >

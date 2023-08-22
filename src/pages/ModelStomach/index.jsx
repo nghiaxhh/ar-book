@@ -111,6 +111,9 @@ const ModalStomach = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
 
+  const ModelViewerElement = customElements.get('model-viewer');
+  ModelViewerElement.minimumRenderScale = 1;
+
   return (
     <ModalStomachWrapper>
       <div className={'absolute right-5 top-5 z-50'}>
@@ -132,6 +135,8 @@ const ModalStomach = () => {
         shadow-intensity='1'
         camera-controls
         ar
+        disable-tap
+        interaction-prompt='none'
         autoplay
       >
         <div
@@ -181,11 +186,11 @@ const ModalStomach = () => {
                 <ICON_LEFT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
             <div className='d-flex items-center w-[80px]'>
               <div
-                className='text-center w-full p-1 shadow-lg'
+                className='text-center w-full p-1 '
                 style={{
                   borderRadius: '100px',
                   border: '1px solid #FFFFFF',
@@ -205,7 +210,7 @@ const ModalStomach = () => {
                 <ICON_RIGHT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
           </div>
 

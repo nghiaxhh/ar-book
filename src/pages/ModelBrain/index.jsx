@@ -124,9 +124,11 @@ const ModelLifeTokyo = () => {
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/LittlestTokyo.glb'}
         // scale='0.2 0.2 0.2'
-        shadow-intensity='1'
+        // shadow-intensity='1'
         camera-controls
         ar
+        disable-tap
+        interaction-prompt='none'
         autoplay
       >
         <div
@@ -155,11 +157,11 @@ const ModelLifeTokyo = () => {
 
       <div className='slider'>
         <div className='slides justify-between'>
-          <div className='cursor-pointer d-flex items-center'></div>
+          <div className='w-[80px]' />
           <div className='d-flex justify-between w-full '>
             {indexMessage !== 0 ? (
               <div
-                className='cursor-pointer  mx-10'
+                className='cursor-pointer  mx-6'
                 onClick={() => {
                   setindexMessage(0);
                   setindexMessage(indexMessage - 1);
@@ -168,12 +170,25 @@ const ModelLifeTokyo = () => {
                 <ICON_LEFT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
+
+            <div className='d-flex items-center w-[80px]'>
+              <div
+                className='text-center w-full p-1 '
+                style={{
+                  borderRadius: '100px',
+                  border: '1px solid #FFFFFF',
+                  background: '#dfdfdf'
+                }}
+              >
+                {`${indexMessage + 1} of ${listConversation.length}`}
+              </div>
+            </div>
 
             {indexMessage + 1 < listConversation.length ? (
               <div
-                className='cursor-pointer  mx-10'
+                className='cursor-pointer  mx-6'
                 onClick={() => {
                   setindexMessage(indexMessage + 1);
                 }}
@@ -181,7 +196,7 @@ const ModelLifeTokyo = () => {
                 <ICON_RIGHT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
           </div>
 

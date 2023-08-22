@@ -178,6 +178,8 @@ const ModelIntestine = () => {
         shadow-intensity='1'
         camera-controls
         ar
+        disable-tap
+        interaction-prompt='none'
         autoplay
       >
         <div
@@ -227,11 +229,11 @@ const ModelIntestine = () => {
                 <ICON_LEFT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
             <div className='d-flex items-center w-[80px]'>
               <div
-                className='text-center w-full p-1 shadow-lg'
+                className='text-center w-full p-1 '
                 style={{
                   borderRadius: '100px',
                   border: '1px solid #FFFFFF',
@@ -252,7 +254,7 @@ const ModelIntestine = () => {
                 <ICON_RIGHT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
           </div>
 

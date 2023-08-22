@@ -31,6 +31,8 @@ const ModelPreViewer = (props) => {
       touch-action='pan-y'
       autoplay
       ar
+      disable-tap
+      interaction-prompt='none'
       // ar-modes='webxr scene-viewer'
       scale='0.5 0.5 0.5'
       shadow-intensity='1'
