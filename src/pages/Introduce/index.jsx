@@ -50,7 +50,7 @@ const Introduce = () => {
           <div
             className='slides justify-center  cursor-pointer'
             onClick={() => {
-              navigate(ROUTE_PATH.MODEL_TOKYO);
+              navigate(ROUTE_PATH.MODEL_BRAIN);
             }}
           >
             <IconNextMessage />
