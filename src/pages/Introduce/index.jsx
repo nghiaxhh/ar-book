@@ -17,16 +17,16 @@ const Introduce = () => {
       <div className='d-flex justify-center items-center'>
         <div className='relative'>
           <model-viewer
-            class='w-full'
-            style={{ height: '40rem' }}
+            class='w-[500px]'
+            style={{ height: '100vh' }}
             id='hotspot-camera-view-demo'
             poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
             src={process.env.PUBLIC_URL + '/models/comission_230717'}
-            // scale='0.2 0.2 0.2'
             shadow-intensity='1'
-            camera-controls
             ar
             autoplay
+            camera-controls
+            disable-zoom
           >
             <div
               id='lazy-load-poster'
@@ -50,7 +50,7 @@ const Introduce = () => {
           <div
             className='slides justify-center  cursor-pointer'
             onClick={() => {
-              navigate(ROUTE_PATH.MODEL_CHARACTER);
+              navigate(ROUTE_PATH.MODEL_TOKYO);
             }}
           >
             <IconNextMessage />
