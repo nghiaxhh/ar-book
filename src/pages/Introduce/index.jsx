@@ -1,12 +1,15 @@
 import { CloseOutlined } from '@ant-design/icons';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IconNextMessage } from '~/assets/icons/left';
+import { IconNextMessage, IconNextMessageMobile } from '~/assets/icons/left';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { IntroduceWrapper } from './styled';
+import { useMediaQuery } from 'react-responsive';
+import { SCREEN_SIZE } from '~/common/constants';
 
 const Introduce = () => {
   const navigate = useNavigate();
+  const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
   return (
     <IntroduceWrapper
       className='relative'
@@ -41,7 +44,7 @@ const Introduce = () => {
         </div>
 
         <div className='right-box'>
-          <div className='box-content'>
+          <div className={`box-content ${isMobile && '!text-[14px]'}`}>
             僕の名前は●●
             <br /> 最近おなかの調子が良くなくて…
             <br />
@@ -49,15 +52,28 @@ const Introduce = () => {
             <br />
             <br />
             どんな夢かというと…
+            {isMobile && (
+              <div
+                className='slides justify-center cursor-pointer mt-3'
+                onClick={() => {
+                  navigate(ROUTE_PATH.MODEL_BRAIN);
+                }}
+              >
+                <IconNextMessageMobile />
+              </div>
+            )}
           </div>
-          <div
-            className='slides justify-center  cursor-pointer'
-            onClick={() => {
-              navigate(ROUTE_PATH.MODEL_BRAIN);
-            }}
-          >
-            <IconNextMessage />
-          </div>
+
+          {!isMobile && (
+            <div
+              className='slides justify-center  cursor-pointer'
+              onClick={() => {
+                navigate(ROUTE_PATH.MODEL_BRAIN);
+              }}
+            >
+              <IconNextMessage />
+            </div>
+          )}
         </div>
       </div>
 

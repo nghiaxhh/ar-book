@@ -109,9 +109,9 @@ const ModelLifeTokyo = () => {
 
   return (
     <ModelLifeTokyoWrapper>
-      <div className={'absolute right-5 top-5 z-50'}>
+      <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
         <div
-          className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[44px] h-[44px]'
+          className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[40px] h-[40px]'
           onClick={() => {
             navigate(ROUTE_PATH.INTRODUCE);
           }}
@@ -174,7 +174,7 @@ const ModelLifeTokyo = () => {
             ) : (
               <div style={{ width: '50px' }} />
             )}
-            <div className='d-flex items-center w-[80px]'>
+            <div className='d-flex items-center w-[100px]'>
               <div
                 className='text-center w-full p-1 shadow-lg'
                 style={{
