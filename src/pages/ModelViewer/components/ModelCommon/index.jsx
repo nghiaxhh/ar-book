@@ -18,6 +18,8 @@ const ModelsCommon = (props) => {
         camera-controls
         ar
         autoplay
+        disable-tap
+        interaction-prompt='none'
         animation-name={action}
       >
         <div

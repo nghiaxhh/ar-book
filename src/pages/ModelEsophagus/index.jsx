@@ -86,7 +86,7 @@ const ModelEsophagus = () => {
           <div className='d-flex justify-between w-full '>
             {indexMessage !== 0 ? (
               <div
-                className='cursor-pointer  mx-10'
+                className='cursor-pointer  mx-6'
                 onClick={() => {
                   setindexMessage(0);
                   setindexMessage(indexMessage - 1);
@@ -95,12 +95,25 @@ const ModelEsophagus = () => {
                 <ICON_LEFT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
+
+            <div className='d-flex items-center w-[80px]'>
+              <div
+                className='text-center w-full p-1 '
+                style={{
+                  borderRadius: '100px',
+                  border: '1px solid #FFFFFF',
+                  background: '#dfdfdf'
+                }}
+              >
+                {`${indexMessage + 1} of ${listConversation.length}`}
+              </div>
+            </div>
 
             {indexMessage + 1 < listConversation.length ? (
               <div
-                className='cursor-pointer  mx-10'
+                className='cursor-pointer  mx-6'
                 onClick={() => {
                   setindexMessage(indexMessage + 1);
                 }}
@@ -108,7 +121,7 @@ const ModelEsophagus = () => {
                 <ICON_RIGHT />
               </div>
             ) : (
-              <div style={{ width: '50px' }} />
+              <div className='w-[80px] mx-6' />
             )}
           </div>
 

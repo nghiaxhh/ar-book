@@ -128,6 +128,8 @@ const ModelLifeTokyo = () => {
         shadow-intensity='1'
         camera-controls
         ar
+        disable-tap
+        interaction-prompt='none'
         autoplay
       >
         <div
