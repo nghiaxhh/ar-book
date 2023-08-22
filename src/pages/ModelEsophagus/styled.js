@@ -1,6 +1,13 @@
 import { styled } from 'styled-components';
 
-export const ModelLifeTokyoWrapper = styled.div`
+export const BoxMessageWrapper = styled.div``;
+
+export const ModelEsophagusWrapper = styled.div`
+  .box-message {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+  }
   model-viewer {
     background-color: #fff;
     margin: 0 auto;
@@ -27,11 +34,6 @@ export const ModelLifeTokyoWrapper = styled.div`
     width: max-content;
     height: max-content;
     transform: translate3d(-50%, -50%, 0);
-  }
-  .box-message {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
   }
 
   @media screen and (max-width: 480px) {

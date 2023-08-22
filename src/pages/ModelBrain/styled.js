@@ -1,13 +1,6 @@
 import { styled } from 'styled-components';
 
-export const BoxMessageWrapper = styled.div``;
-
-export const ModalBrainWrapper = styled.div`
-  .box-message {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-  }
+export const ModelLifeTokyoWrapper = styled.div`
   model-viewer {
     background-color: #fff;
     margin: 0 auto;
@@ -34,6 +27,11 @@ export const ModalBrainWrapper = styled.div`
     width: max-content;
     height: max-content;
     transform: translate3d(-50%, -50%, 0);
+  }
+  .box-message {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
   }
 
   @media screen and (max-width: 480px) {
