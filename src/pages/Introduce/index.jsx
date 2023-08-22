@@ -18,12 +18,11 @@ const Introduce = () => {
         <div className='relative'>
           <div className='w-full'>
             <model-viewer
-              class='w-[300px] md-w[500px] relative h-[60vh] md:h-[100vh]'
+              class='w-[300px] md:w-[600px] relative h-[60vh] md:h-[100vh]'
               id='hotspot-camera-view-demo'
               poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
               src={process.env.PUBLIC_URL + '/models/comission_230717'}
               shadow-intensity='1'
-              ar
               autoplay
               camera-controls
               disable-zoom

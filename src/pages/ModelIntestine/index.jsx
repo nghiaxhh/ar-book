@@ -170,7 +170,7 @@ const ModelIntestine = () => {
         </div>
       </div>
       <model-viewer
-        class='w-full relative h-[80vh] md:h-[100vh]'
+        class='w-full relative h-[80vh] md:!h-[100vh]'
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/intestine.glb'}

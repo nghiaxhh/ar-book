@@ -38,7 +38,7 @@ const ModelEsophagus = () => {
         </div>
       </div>
       <model-viewer
-        class='w-full relative'
+        class='w-full relative h-[80vh] md:!h-[100vh]'
         style={{ height: '40rem' }}
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
