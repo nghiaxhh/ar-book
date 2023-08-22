@@ -14,29 +14,31 @@ const Introduce = () => {
         backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg-moon.png)`
       }}
     >
-      <div className='d-flex justify-center items-center'>
+      <div className='d-flex justify-center items-center flex-col	md:flex-row	'>
         <div className='relative'>
-          <model-viewer
-            class='w-[500px]'
-            style={{ height: '100vh' }}
-            id='hotspot-camera-view-demo'
-            poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
-            src={process.env.PUBLIC_URL + '/models/comission_230717'}
-            shadow-intensity='1'
-            ar
-            autoplay
-            camera-controls
-            disable-zoom
-          >
-            <div
-              id='lazy-load-poster'
-              slot='poster'
-              className='h-full w-full relative'
+          <div className='w-full'>
+            <model-viewer
+              class='w-[300px] md-w[500px] relative h-[60vh] md:h-[100vh]'
+              id='hotspot-camera-view-demo'
+              poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
+              src={process.env.PUBLIC_URL + '/models/comission_230717'}
+              shadow-intensity='1'
+              ar
+              autoplay
+              camera-controls
+              disable-zoom
             >
-              <div className='text-loading text-2xl	font-bold'>Loading...</div>
-            </div>
-          </model-viewer>
+              <div
+                id='lazy-load-poster'
+                slot='poster'
+                className='h-full w-full relative'
+              >
+                <div className='text-loading text-2xl	font-bold'>Loading...</div>
+              </div>
+            </model-viewer>
+          </div>
         </div>
+
         <div className='right-box'>
           <div className='box-content'>
             僕の名前は●●

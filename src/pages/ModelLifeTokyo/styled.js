@@ -4,9 +4,6 @@ export const ModelLifeTokyoWrapper = styled.div`
   model-viewer {
     background-color: #fff;
     margin: 0 auto;
-    width: 100% !important;
-    height: 100vh !important;
-    /* max-width: 1200px; */
   }
 
   .view-button {
@@ -32,20 +29,6 @@ export const ModelLifeTokyoWrapper = styled.div`
     position: absolute;
     bottom: 100px;
     width: 100%;
-  }
-
-  @media screen and (max-width: 480px) {
-    model-viewer {
-      max-width: auto;
-    }
-  }
-
-  .slider {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 30px;
   }
 
   .slides {

@@ -4,9 +4,6 @@ export const ModelIntestineWrapper = styled.div`
   model-viewer {
     background-color: #fff;
     margin: 0 auto;
-    width: 100% !important;
-    height: 100vh !important;
-    /* max-width: 1200px; */
   }
 
   .box-message {
@@ -37,16 +34,7 @@ export const ModelIntestineWrapper = styled.div`
 
   @media screen and (max-width: 480px) {
     model-viewer {
-      max-width: auto;
     }
-  }
-
-  .slider {
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    position: absolute;
-    bottom: 30px;
   }
 
   .slides {

@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const ConversationWrapper = styled.div`
-  width: 400px;
+  width: 90%;
   margin: 20px;
 
   .img-character {
@@ -15,7 +15,7 @@ export const ConversationWrapper = styled.div`
     border-radius: 20px;
     padding: 20px 20px 50px 100px;
     z-index: 9;
-    width: 400px;
+    width: 90%;
     max-height: 120px;
     overflow-y: auto;
     position: absolute;
@@ -26,5 +26,13 @@ export const ConversationWrapper = styled.div`
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+  }
+
+  @media screen and (min-width: 760px) {
+    width: 400px;
+
+    .content {
+      width: 400px;
+    }
   }
 `;
