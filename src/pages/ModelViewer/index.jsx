@@ -34,8 +34,7 @@ const ModelViewer = () => {
   const messageCount = ConversationList[itemSelected].length;
 
   return (
-    <ModelViewerWrapper
-
+    <ModelViewerWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[40px] h-[40px]'
