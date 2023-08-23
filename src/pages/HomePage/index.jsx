@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import BaseLayout from '~/layouts';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { LayoutCommon } from '~/styles/generalStyled';
-import PopupDetail from '../ModelViewer/components/PopupDetail';
 import { HeaderWrapper } from './styled';
+import PopupDetail from '~/components/PopupDetail';
 
 const HomePage = () => {
   const navigate = useNavigate();

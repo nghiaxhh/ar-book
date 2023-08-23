@@ -1,8 +1,8 @@
 import { Button } from 'antd';
 import React from 'react';
-import { ModalWrapper } from '../styled';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_PATH } from '~/routes/route.constant';
+import { ModalWrapper } from './styled';
 
 const PopupDetail = ({ openModal, onCancel }) => {
   const navigate = useNavigate();
