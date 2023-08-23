@@ -144,7 +144,7 @@ const ModalStomach = () => {
           slot='poster'
           className='h-full w-full relative'
         >
-          <div className='text-loading text-2xl	font-bold'>Loading...</div>
+          {/* <div className='text-loading text-sm	font-bold'>Loading...</div> */}
         </div>
       </model-viewer>
 
