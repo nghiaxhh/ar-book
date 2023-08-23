@@ -16,7 +16,7 @@ export const IconNextMessage = () => {
 
 export const IconNextMessageMobile = () => {
   return (
-    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'35px'} />
+    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'50px'} />
   );
 };
 

@@ -39,7 +39,10 @@ const ModelsCommon = (props) => {
                 idx % 2 === 0 ? 'justify-start' : 'justify-end'
               }`}
             >
-              <Conversation content={item.content} />
+              <Conversation
+                content={item.content}
+                type={idx % 2 !== 0 ? 2 : 1}
+              />
             </div>
           ) : null;
         })}

@@ -150,7 +150,10 @@ const ModelLifeTokyo = () => {
                 idx % 2 === 0 ? 'justify-start' : 'justify-end'
               }`}
             >
-              <Conversation content={item.content} />
+              <Conversation
+                content={item.content}
+                type={idx % 2 !== 0 ? 2 : 1}
+              />
             </div>
           ) : null;
         })}
@@ -176,11 +179,10 @@ const ModelLifeTokyo = () => {
             )}
             <div className='d-flex items-center w-[100px]'>
               <div
-                className='text-center w-full p-1 shadow-lg'
+                className='text-center w-full p-1  opacity-div'
                 style={{
                   borderRadius: '100px',
-                  border: '1px solid #FFFFFF',
-                  background: '#dfdfdf'
+                  border: '1px solid #FFFFFF'
                 }}
               >
                 {`${indexMessage + 1} of ${listConversation.length}`}
