@@ -13,6 +13,16 @@ export const ModelEsophagusWrapper = styled.div`
     margin: 0 auto;
   }
 
+  @media screen and (max-width: 640px) {
+    model-viewer {
+    }
+    .box-message {
+      position: absolute;
+      bottom: 65px;
+      width: 100%;
+    }
+  }
+
   .view-button {
     background: #fff;
     border-radius: 4px;

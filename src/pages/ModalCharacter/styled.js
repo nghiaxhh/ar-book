@@ -34,8 +34,14 @@ export const ModelCharacterWrapper = styled.div`
     transform: translate3d(-50%, -50%, 0);
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 640px) {
     model-viewer {
+    }
+
+    .box-message {
+      position: absolute;
+      bottom: 65px;
+      width: 100%;
     }
   }
 

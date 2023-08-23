@@ -31,8 +31,10 @@ export const ModalStomachWrapper = styled.div`
     bottom: 100px;
     width: 100%;
   }
-  @media screen and (max-width: 480px) {
-    model-viewer {
+
+  @media screen and (max-width: 640px) {
+    .box-message {
+      bottom: 65px;
     }
   }
 

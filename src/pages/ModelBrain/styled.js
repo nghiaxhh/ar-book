@@ -31,8 +31,13 @@ export const ModelBrainWrapper = styled.div`
     width: 100%;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 640px) {
     model-viewer {
+    }
+    .box-message {
+      position: absolute;
+      bottom: 65px;
+      width: 100%;
     }
   }
 
