@@ -32,9 +32,19 @@
     fill: #fff;
   }
 }
+
 .splide__arrow--prev {
   left: -1em;
 }
+
 .splide__arrow--next {
   right: -1em;
+}
+
+.opacity-div {
+  background-color: #dfdfdf;
+
+  @media screen and (max-width: 640px) {
+    background-color: #dfdfdf30;
+  }
 }

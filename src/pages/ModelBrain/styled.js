@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const ModelLifeTokyoWrapper = styled.div`
+export const ModelBrainWrapper = styled.div`
   model-viewer {
     background-color: #fff;
     margin: 0 auto;

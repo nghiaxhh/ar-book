@@ -31,8 +31,6 @@ const ModelViewer = () => {
     null
   ];
 
-  const messageCount = ConversationList[itemSelected].length;
-
   return (
     <ModelViewerWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
@@ -88,11 +86,10 @@ const ModelViewer = () => {
             )}
             <div className='d-flex items-center w-[100px]'>
               <div
-                className='text-center w-full p-1 shadow-lg'
+                className='text-center w-full p-1  opacity-div'
                 style={{
                   borderRadius: '100px',
-                  border: '1px solid #FFFFFF',
-                  background: '#dfdfdf'
+                  border: '1px solid #FFFFFF'
                 }}
               >
                 {`${indexMessage + 1} of ${listConversation.length}`}

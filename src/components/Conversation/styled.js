@@ -11,9 +11,8 @@ export const ConversationWrapper = styled.div`
 
   .content {
     display: flex;
-    background-color: #dfdfdf;
     border-radius: 20px;
-    padding: 20px 20px 50px 100px;
+
     z-index: 9;
     width: 90%;
     max-height: 120px;

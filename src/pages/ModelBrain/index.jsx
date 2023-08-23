@@ -5,7 +5,7 @@ import { ICON_LEFT, IconNextStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
-import { ModelLifeTokyoWrapper } from './styled';
+import { ModelBrainWrapper } from './styled';
 
 const listConversation = [
   {
@@ -101,12 +101,12 @@ const listConversation = [
   }
 ];
 
-const ModelLifeTokyo = () => {
+const ModelBrain = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
 
   return (
-    <ModelLifeTokyoWrapper>
+    <ModelBrainWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-slate-300 cursor-pointer w-[40px] h-[40px]'
@@ -149,7 +149,10 @@ const ModelLifeTokyo = () => {
                 idx % 2 === 0 ? 'justify-start' : 'justify-end'
               }`}
             >
-              <Conversation content={item.content} />
+              <Conversation
+                content={item.content}
+                type={idx % 2 !== 0 ? 2 : 1}
+              />
             </div>
           ) : null;
         })}
@@ -175,11 +178,10 @@ const ModelLifeTokyo = () => {
 
             <div className='d-flex items-center w-[100px]'>
               <div
-                className='text-center w-full p-1 '
+                className='text-center w-full p-1 opacity-div'
                 style={{
                   borderRadius: '100px',
-                  border: '1px solid #FFFFFF',
-                  background: '#dfdfdf'
+                  border: '1px solid #FFFFFF'
                 }}
               >
                 {`${indexMessage + 1} of ${listConversation.length}`}
@@ -210,8 +212,8 @@ const ModelLifeTokyo = () => {
           </div>
         </div>
       </div>
-    </ModelLifeTokyoWrapper>
+    </ModelBrainWrapper>
   );
 };
 
-export default ModelLifeTokyo;
+export default ModelBrain;
