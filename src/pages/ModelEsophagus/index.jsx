@@ -1,5 +1,5 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ICON_LEFT,
@@ -25,6 +25,22 @@ const listConversation = [
 const ModelEsophagus = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
+
+  useEffect(() => {
+    document
+      .querySelector('.box-message')
+      .addEventListener('beforexrselect', (ev) => {
+        // Keep slider interactions from affecting the XR scene.
+        ev.preventDefault();
+      });
+
+    document
+      .querySelector('.slider')
+      .addEventListener('beforexrselect', (ev) => {
+        // Keep slider interactions from affecting the XR scene.
+        ev.preventDefault();
+      });
+  }, []);
   return (
     <ModelEsophagusWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
@@ -56,87 +72,87 @@ const ModelEsophagus = () => {
         >
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
-      </model-viewer>
 
-      <div className='box-message'>
-        {listConversation.map((item, idx) => {
-          return indexMessage === idx ? (
+        <div className='box-message'>
+          {listConversation.map((item, idx) => {
+            return indexMessage === idx ? (
+              <div
+                key={idx + 1}
+                className={`w-full d-flex ${
+                  idx % 2 === 0 ? 'justify-start' : 'justify-end'
+                }`}
+              >
+                <Conversation
+                  content={item.content}
+                  type={idx % 2 !== 0 ? 2 : 1}
+                />
+              </div>
+            ) : null;
+          })}
+        </div>
+
+        <div className='slider'>
+          <div className='slides justify-between'>
             <div
-              key={idx + 1}
-              className={`w-full d-flex ${
-                idx % 2 === 0 ? 'justify-start' : 'justify-end'
-              }`}
+              className='cursor-pointer d-flex items-center'
+              onClick={() => {
+                navigate(-1);
+              }}
             >
-              <Conversation
-                content={item.content}
-                type={idx % 2 !== 0 ? 2 : 1}
-              />
+              <IconPreviousStage />
             </div>
-          ) : null;
-        })}
-      </div>
+            <div className='d-flex justify-between w-full '>
+              {indexMessage !== 0 ? (
+                <div
+                  className='cursor-pointer  mx-6'
+                  onClick={() => {
+                    setindexMessage(0);
+                    setindexMessage(indexMessage - 1);
+                  }}
+                >
+                  <ICON_LEFT />
+                </div>
+              ) : (
+                <div className='w-[80px] mx-6' />
+              )}
 
-      <div className='slider'>
-        <div className='slides justify-between'>
-          <div
-            className='cursor-pointer d-flex items-center'
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            <IconPreviousStage />
-          </div>
-          <div className='d-flex justify-between w-full '>
-            {indexMessage !== 0 ? (
-              <div
-                className='cursor-pointer  mx-6'
-                onClick={() => {
-                  setindexMessage(0);
-                  setindexMessage(indexMessage - 1);
-                }}
-              >
-                <ICON_LEFT />
+              <div className='d-flex items-center w-[110px]'>
+                <div
+                  className='text-center w-full p-1  opacity-div'
+                  style={{
+                    borderRadius: '100px',
+                    border: '1px solid #FFFFFF'
+                  }}
+                >
+                  {`${indexMessage + 1} of ${listConversation.length}`}
+                </div>
               </div>
-            ) : (
-              <div className='w-[80px] mx-6' />
-            )}
 
-            <div className='d-flex items-center w-[100px]'>
-              <div
-                className='text-center w-full p-1  opacity-div'
-                style={{
-                  borderRadius: '100px',
-                  border: '1px solid #FFFFFF'
-                }}
-              >
-                {`${indexMessage + 1} of ${listConversation.length}`}
-              </div>
+              {indexMessage + 1 < listConversation.length ? (
+                <div
+                  className='cursor-pointer  mx-6'
+                  onClick={() => {
+                    setindexMessage(indexMessage + 1);
+                  }}
+                >
+                  <ICON_RIGHT />
+                </div>
+              ) : (
+                <div className='w-[80px] mx-6' />
+              )}
             </div>
 
-            {indexMessage + 1 < listConversation.length ? (
-              <div
-                className='cursor-pointer  mx-6'
-                onClick={() => {
-                  setindexMessage(indexMessage + 1);
-                }}
-              >
-                <ICON_RIGHT />
-              </div>
-            ) : (
-              <div className='w-[80px] mx-6' />
-            )}
-          </div>
-
-          <div
-            className='cursor-pointer  d-flex items-center'
-            onClick={() => {
-              navigate(ROUTE_PATH.MODEL_STOMACH);
-            }}
-          >
-            <IconNextStage />
+            <div
+              className='cursor-pointer  d-flex items-center'
+              onClick={() => {
+                navigate(ROUTE_PATH.MODEL_STOMACH);
+              }}
+            >
+              <IconNextStage />
+            </div>
           </div>
         </div>
-      </div>
+      </model-viewer>
     </ModelEsophagusWrapper>
   );
 };
