@@ -14,6 +14,7 @@ import Conversation from '~/components/Conversation';
 const listConversation = [
   {
     key: 1,
+    mainCharacter: true,
     content: 'うわ～、なんかプールみたい！泳いじゃってもいい？？'
   },
   {
@@ -23,6 +24,7 @@ const listConversation = [
   },
   {
     key: 3,
+    mainCharacter: true,
     content:
       '僕の体の中に胃ってあるんだ？見たことないからわからないや胃ってどういう所なの？'
   },
@@ -32,6 +34,7 @@ const listConversation = [
   },
   {
     key: 5,
+    mainCharacter: true,
     content:
       'うん、ご飯大好き！お父さん、お母さんからもたくさん食べると大きくなれるって言われているからね'
   },
@@ -42,6 +45,7 @@ const listConversation = [
   },
   {
     key: 7,
+    mainCharacter: true,
     content: 'あの入り口のきれいなシャワーはなに？'
   },
   {
@@ -51,6 +55,7 @@ const listConversation = [
   },
   {
     key: 9,
+    mainCharacter: true,
     content:
       'シャワーから出ているのは胃液と言うんだ。胃液は胃に入ってきたものをどんどん溶かしていくよ。'
   },
@@ -62,6 +67,7 @@ const listConversation = [
 
   {
     key: 11,
+    mainCharacter: true,
     content: '食べ物から栄養を取り出すためだよ。'
   },
 
@@ -73,6 +79,7 @@ const listConversation = [
 
   {
     key: 13,
+    mainCharacter: true,
     content:
       'その通り！　胃液と混ざった食べ物をプロペラがかき混ぜてドロドロにするんだ。あれ？　胃の中にりんごがぷかぷか浮いているね。'
   },
@@ -83,6 +90,7 @@ const listConversation = [
   },
   {
     key: 15,
+    mainCharacter: true,
     content: 'しっかり噛んでいないでしょ。わかっちゃうよ。'
   },
   {
@@ -92,6 +100,7 @@ const listConversation = [
   },
   {
     key: 17,
+    mainCharacter: true,
     content:
       'しっかり噛まずに飲み込まれた食べ物を細かくするために、プロペラはいつもよりたくさん動かないといけないよね。そうすると胃が疲れちゃうでしょ？'
   },
@@ -102,6 +111,7 @@ const listConversation = [
   },
   {
     key: 19,
+    mainCharacter: true,
     content:
       'そうそう。美味しいなって思えると、食べ過ぎないから体にいいんだ。それに、よく噛むと歯が健康になるし、噛むことで頭の中にある脳に血がめぐりやすくなって脳が元気になるんだ（脳くんぐるぐる回る）'
   }
@@ -122,13 +132,12 @@ const ModalStomach = () => {
         ev.preventDefault();
       });
 
-      document
+    document
       .querySelector('.slider')
       .addEventListener('beforexrselect', (ev) => {
         // Keep slider interactions from affecting the XR scene.
         ev.preventDefault();
       });
-
   }, []);
 
   return (
@@ -170,12 +179,12 @@ const ModalStomach = () => {
               <div
                 key={idx + 1}
                 className={`w-full d-flex ${
-                  idx % 2 === 0 ? 'justify-start' : 'justify-end'
+                  item.mainCharacter ? 'justify-start' : 'justify-end'
                 }`}
               >
                 <Conversation
                   content={item.content}
-                  type={idx % 2 !== 0 ? 2 : 1}
+                  type={item.mainCharacter ? 1 : 2}
                 />
               </div>
             ) : null;

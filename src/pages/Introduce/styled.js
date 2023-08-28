@@ -46,21 +46,20 @@ export const IntroduceWrapper = styled.div`
     outline: 1px solid #4285f4;
   }
 
-  /* .right-box {
-    position: absolute;
-    right: 100px;
-  } */
-
   .box-content {
-    color: black;
+    color: #000;
     text-align: center;
+    font-size: 24px;
+    line-height: 24px;
     font-weight: 400;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12.5px);
+
     opacity: 0.8;
     border-radius: 20px;
     border: 2px solid gray;
     padding: 24px;
-    margin: 20px;
-    max-width: 525px;
+    width: 432px;
+    margin-bottom: 24px;
   }
 `;

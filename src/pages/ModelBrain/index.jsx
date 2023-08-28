@@ -10,6 +10,7 @@ import { ModelBrainWrapper } from './styled';
 const listConversation = [
   {
     key: 1,
+    mainCharacter: true,
     content:
       'これって夢見たこともない部屋に迷い込んじゃったみたいここはどこだろう'
   },
@@ -19,6 +20,7 @@ const listConversation = [
   },
   {
     key: 3,
+    mainCharacter: true,
     content: 'あなたは誰？'
   },
   {
@@ -28,6 +30,7 @@ const listConversation = [
   },
   {
     key: 5,
+    mainCharacter: true,
     content: 'やっぱり夢の中だったんだ'
   },
   {
@@ -37,6 +40,7 @@ const listConversation = [
   },
   {
     key: 7,
+    mainCharacter: true,
     content:
       '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
   },
@@ -46,6 +50,7 @@ const listConversation = [
   },
   {
     key: 9,
+    mainCharacter: true,
     content: '夢の中なら何でも ありデス'
   },
 
@@ -56,6 +61,7 @@ const listConversation = [
 
   {
     key: 11,
+    mainCharacter: true,
     content: '食べ物から栄養を取り出すためだよ。'
   },
 
@@ -67,6 +73,7 @@ const listConversation = [
 
   {
     key: 13,
+    mainCharacter: true,
     content:
       'その通り！　胃液と混ざった食べ物をプロペラがかき混ぜてドロドロにするんだ。あれ？　胃の中にりんごがぷかぷか浮いているね。'
   },
@@ -77,6 +84,7 @@ const listConversation = [
   },
   {
     key: 15,
+    mainCharacter: true,
     content: 'しっかり噛んでいないでしょ。わかっちゃうよ。'
   },
   {
@@ -86,6 +94,7 @@ const listConversation = [
   },
   {
     key: 17,
+    mainCharacter: true,
     content:
       'しっかり噛まずに飲み込まれた食べ物を細かくするために、プロペラはいつもよりたくさん動かないといけないよね。そうすると胃が疲れちゃうでしょ？'
   },
@@ -96,6 +105,7 @@ const listConversation = [
   },
   {
     key: 19,
+    mainCharacter: true,
     content:
       'そうそう。美味しいなって思えると、食べ過ぎないから体にいいんだ。それに、よく噛むと歯が健康になるし、噛むことで頭の中にある脳に血がめぐりやすくなって脳が元気になるんだ（脳くんぐるぐる回る）'
   }
@@ -161,12 +171,12 @@ const ModelBrain = () => {
               <div
                 key={idx + 1}
                 className={`w-full d-flex ${
-                  idx % 2 === 0 ? 'justify-start' : 'justify-end'
+                  item.mainCharacter ? 'justify-start' : 'justify-end'
                 }`}
               >
                 <Conversation
                   content={item.content}
-                  type={idx % 2 !== 0 ? 2 : 1}
+                  type={item.mainCharacter ? 1 : 2}
                 />
               </div>
             ) : null;

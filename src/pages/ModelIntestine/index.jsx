@@ -14,6 +14,7 @@ import { ModelIntestineWrapper } from './styled';
 const listConversation = [
   {
     key: 1,
+    mainCharacter: true,
     content: 'ここはどこなの？なんか工場みたいだけど'
   },
   {
@@ -22,6 +23,7 @@ const listConversation = [
   },
   {
     key: 3,
+    mainCharacter: true,
     content: '腸？'
   },
   {
@@ -31,6 +33,7 @@ const listConversation = [
   },
   {
     key: 5,
+    mainCharacter: true,
     content: 'ウンチ…　言うのは恥ずかしいし、僕の体の中で作ってるなんて…'
   },
   {
@@ -40,6 +43,7 @@ const listConversation = [
   },
   {
     key: 7,
+    mainCharacter: true,
     content:
       'そうかもしれない。ところで、入り口の近くにる、ロボットの腕みたいなのは何だろう？？（柔毛アームが動く）'
   },
@@ -50,6 +54,7 @@ const listConversation = [
   },
   {
     key: 9,
+    mainCharacter: true,
     content: '必要なもの？？'
   },
   {
@@ -59,6 +64,7 @@ const listConversation = [
   },
   {
     key: 11,
+    mainCharacter: true,
     content: 'ふーん。元気のもとってことだね！'
   },
   {
@@ -68,6 +74,7 @@ const listConversation = [
   },
   {
     key: 13,
+    mainCharacter: true,
     content: 'すごい大事なところだね！'
   },
   {
@@ -77,6 +84,7 @@ const listConversation = [
   },
   {
     key: 15,
+    mainCharacter: true,
     content: 'うーん。'
   },
   {
@@ -86,6 +94,7 @@ const listConversation = [
   },
   {
     key: 17,
+    mainCharacter: true,
     content:
       '知らなかった！　飲んだらすぐに体の中に水が染み込んでいくんだと思ってたよ！'
   },
@@ -99,6 +108,7 @@ const listConversation = [
   },
   {
     key: 20,
+    mainCharacter: true,
     content: '時々キュルキュル音がしているのは聞いたことがあるよ！'
   },
   {
@@ -108,6 +118,7 @@ const listConversation = [
   },
   {
     key: 22,
+    mainCharacter: true,
     content: '元気に動いてくれているなら安心な音なんだね？'
   },
   {
@@ -117,6 +128,7 @@ const listConversation = [
   },
   {
     key: 24,
+    mainCharacter: true,
     content: 'わかった！最後の方にあるスタンプと出口みたいなところは何？'
   },
   {
@@ -126,6 +138,7 @@ const listConversation = [
   },
   {
     key: 26,
+    mainCharacter: true,
     content:
       'ご飯を食べてウンチになるまでを教えてもらったけど、どのくらいの時間がかかるの？30分？1時間？'
   },
@@ -135,6 +148,7 @@ const listConversation = [
   },
   {
     key: 28,
+    mainCharacter: true,
     content:
       'そんなに時間がかかるの？じゃあ、今日の食べたご飯は明日か明後日にウンチになるの？？'
   },
@@ -145,6 +159,7 @@ const listConversation = [
   },
   {
     key: 30,
+    mainCharacter: true,
     content:
       '僕が栄養をとるぞー、ウンチ作るぞーって思っていないのに、なんで勝手にやってくるの？'
   },
@@ -166,13 +181,12 @@ const ModelIntestine = () => {
         ev.preventDefault();
       });
 
-      document
+    document
       .querySelector('.slider')
       .addEventListener('beforexrselect', (ev) => {
         // Keep slider interactions from affecting the XR scene.
         ev.preventDefault();
       });
-
   }, []);
   return (
     <ModelIntestineWrapper>
@@ -213,12 +227,12 @@ const ModelIntestine = () => {
               <div
                 key={idx + 1}
                 className={`w-full d-flex ${
-                  idx % 2 === 0 ? 'justify-start' : 'justify-end'
+                  item.mainCharacter ? 'justify-start' : 'justify-end'
                 }`}
               >
                 <Conversation
                   content={item.content}
-                  type={idx % 2 !== 0 ? 2 : 1}
+                  type={item.mainCharacter ? 1 : 2}
                 />
               </div>
             ) : null;
