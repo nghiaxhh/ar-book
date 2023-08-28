@@ -15,18 +15,18 @@ const listConversation = [
   {
     key: 1,
     mainCharacter: true,
-    content: 'うわ～、なんかプールみたい！泳いじゃってもいい？？'
+    content: 'うわ～、なんかプールみたい！<br />泳いじゃってもいい？？'
   },
   {
     key: 2,
     content:
-      'だめだめ！それはやめたほうがいいよ！ここは「胃」というところで、元気くんの体の中にあるんだけどおへその上くらいかな？'
+      'だめだめ！それはやめたほうがいいよ！<br />ここは「胃」というところで、元気くんの体の中にあるんだけどおへその上くらいかな？'
   },
   {
     key: 3,
     mainCharacter: true,
     content:
-      '僕の体の中に胃ってあるんだ？見たことないからわからないや胃ってどういう所なの？'
+      '僕の体の中に胃ってあるんだ？見たことないからわからないや<br />胃ってどういう所なの？'
   },
   {
     key: 4,
@@ -41,7 +41,7 @@ const listConversation = [
   {
     key: 6,
     content:
-      'えらいえらい！元気くんが食べたものが口から食道というところを通ってここ、胃に届くんだ'
+      'えらいえらい！<br />元気くんが食べたものが口から食道というところを通ってここ、胃に届くんだ'
   },
   {
     key: 7,
@@ -50,62 +50,68 @@ const listConversation = [
   },
   {
     key: 8,
+    mainCharacter: true,
     content:
       'えらいえらい！元気くんが食べたものが口から食道というところを通ってここ、胃に届くんだ'
   },
   {
     key: 9,
-    mainCharacter: true,
+
     content:
       'シャワーから出ているのは胃液と言うんだ。胃液は胃に入ってきたものをどんどん溶かしていくよ。'
   },
 
   {
     key: 10,
+    mainCharacter: true,
     content: '溶かしてどうするの？'
   },
 
   {
     key: 11,
-    mainCharacter: true,
+
     content: '食べ物から栄養を取り出すためだよ。'
   },
 
   {
     key: 12,
+    mainCharacter: true,
     content:
       'ふーん。あのプールの中でグルグル回っているの（プロペラが回る）、あれで食べ物と胃液がグルグル混ぜられているね。'
   },
 
   {
     key: 13,
-    mainCharacter: true,
+
     content:
       'その通り！　胃液と混ざった食べ物をプロペラがかき混ぜてドロドロにするんだ。あれ？　胃の中にりんごがぷかぷか浮いているね。'
   },
 
   {
     key: 14,
+    mainCharacter: true,
     content: 'さっき食べたんだよ！'
   },
   {
     key: 15,
-    mainCharacter: true,
+
     content: 'しっかり噛んでいないでしょ。わかっちゃうよ。'
   },
   {
     key: 16,
+    mainCharacter: true,
     content:
       'うーん。ごめんなさい。でも、なんでちゃんと噛まなきゃいけないの？　胃液とプロペラがあったら大丈夫じゃない？'
   },
   {
     key: 17,
-    mainCharacter: true,
+
     content:
       'しっかり噛まずに飲み込まれた食べ物を細かくするために、プロペラはいつもよりたくさん動かないといけないよね。そうすると胃が疲れちゃうでしょ？'
   },
   {
     key: 18,
+    mainCharacter: true,
     content:
       'そっか。ちゃんともぐもぐ噛むと、美味しいなーってずっと思えるもんね。やっぱりちゃんと噛むよ！'
   },
