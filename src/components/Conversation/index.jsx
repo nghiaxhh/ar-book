@@ -19,9 +19,10 @@ const Conversation = ({ content, type = 2 }) => {
           className={` opacity-div content py-[20px] ${
             type === 2 ? 'pr-[100px] pl-[20px]' : 'pr-[20px] pl-[100px]'
           }`}
-        >
-          {content}
-        </div>
+          dangerouslySetInnerHTML={{
+            __html: content
+          }}
+        />
       </div>
     </ConversationWrapper>
   );

@@ -12,7 +12,7 @@ const listConversation = [
     key: 1,
     mainCharacter: true,
     content:
-      'これって夢見たこともない部屋に迷い込んじゃったみたいここはどこだろう'
+      'これって夢？<br/>見たこともない部屋に迷い込んじゃったみたい<br/>ここはどこだろう'
   },
   {
     key: 2,
@@ -36,78 +36,22 @@ const listConversation = [
   {
     key: 6,
     content:
-      '僕は、元気くんをいつも見てるんだけど、元気に勉強して遊んでるねこれからも元気に大きくなってほしいから、体の中を案内したいんだ'
+      '僕は、元気くんをいつも見てるんだけど、元気に勉強して遊んでるね<br/>これからも元気に大きくなってほしいから、体の中を案内したいんだ'
   },
   {
     key: 7,
-    mainCharacter: true,
+
     content:
       '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
   },
   {
     key: 8,
+    mainCharacter: true,
     content: 'えーそんなことできるの？'
   },
   {
     key: 9,
-    mainCharacter: true,
     content: '夢の中なら何でも ありデス'
-  },
-
-  {
-    key: 10,
-    content: '溶かしてどうするの？'
-  },
-
-  {
-    key: 11,
-    mainCharacter: true,
-    content: '食べ物から栄養を取り出すためだよ。'
-  },
-
-  {
-    key: 12,
-    content:
-      'ふーん。あのプールの中でグルグル回っているの（プロペラが回る）、あれで食べ物と胃液がグルグル混ぜられているね。'
-  },
-
-  {
-    key: 13,
-    mainCharacter: true,
-    content:
-      'その通り！　胃液と混ざった食べ物をプロペラがかき混ぜてドロドロにするんだ。あれ？　胃の中にりんごがぷかぷか浮いているね。'
-  },
-
-  {
-    key: 14,
-    content: 'さっき食べたんだよ！'
-  },
-  {
-    key: 15,
-    mainCharacter: true,
-    content: 'しっかり噛んでいないでしょ。わかっちゃうよ。'
-  },
-  {
-    key: 16,
-    content:
-      'うーん。ごめんなさい。でも、なんでちゃんと噛まなきゃいけないの？　胃液とプロペラがあったら大丈夫じゃない？'
-  },
-  {
-    key: 17,
-    mainCharacter: true,
-    content:
-      'しっかり噛まずに飲み込まれた食べ物を細かくするために、プロペラはいつもよりたくさん動かないといけないよね。そうすると胃が疲れちゃうでしょ？'
-  },
-  {
-    key: 18,
-    content:
-      'そっか。ちゃんともぐもぐ噛むと、美味しいなーってずっと思えるもんね。やっぱりちゃんと噛むよ！'
-  },
-  {
-    key: 19,
-    mainCharacter: true,
-    content:
-      'そうそう。美味しいなって思えると、食べ過ぎないから体にいいんだ。それに、よく噛むと歯が健康になるし、噛むことで頭の中にある脳に血がめぐりやすくなって脳が元気になるんだ（脳くんぐるぐる回る）'
   }
 ];
 
@@ -148,7 +92,7 @@ const ModelBrain = () => {
         style={{ height: '40rem' }}
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
-        src={process.env.PUBLIC_URL + '/models/LittlestTokyo.glb'}
+        src={process.env.PUBLIC_URL + '/models/brain.glb'}
         // scale='0.2 0.2 0.2'
         // shadow-intensity='1'
         camera-controls

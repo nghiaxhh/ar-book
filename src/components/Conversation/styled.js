@@ -19,12 +19,12 @@ export const ConversationWrapper = styled.div`
     overflow-y: auto;
     position: absolute;
     bottom: 20px;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    user-select: none;
+    user-select: none; */
   }
 
   @media screen and (min-width: 760px) {
