@@ -118,13 +118,12 @@ const ModelCharacter = () => {
         ev.preventDefault();
       });
 
-      document
+    document
       .querySelector('.slider')
       .addEventListener('beforexrselect', (ev) => {
         // Keep slider interactions from affecting the XR scene.
         ev.preventDefault();
       });
-
   }, []);
   return (
     <ModelCharacterWrapper>
@@ -165,12 +164,12 @@ const ModelCharacter = () => {
               <div
                 key={idx + 1}
                 className={`w-full d-flex ${
-                  idx % 2 === 0 ? 'justify-start' : 'justify-end'
+                  item.mainCharacter ? 'justify-start' : 'justify-end'
                 }`}
               >
                 <Conversation
                   content={item.content}
-                  type={idx % 2 !== 0 ? 2 : 1}
+                  type={item.mainCharacter ? 1 : 2}
                 />
               </div>
             ) : null;
