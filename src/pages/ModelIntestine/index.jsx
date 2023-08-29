@@ -171,7 +171,16 @@ const listConversation = [
 
 const ModelIntestine = () => {
   const navigate = useNavigate();
+  const [viewFocus, setViewFocus] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
+  const listCamOrbit = [
+    '-686.9deg 66.18deg 1.721m',
+    '419.7deg 45.51deg 1.204m',
+    '78.75deg 58.38deg 1.612m',
+    '42.51deg 87.48deg 1.492m'
+  ];
+  const fieldOfView = ['30deg', '12deg', '23.88deg', '22.98deg'];
+  // const cameraTarget = ['', '', '-0,20m 0,24m 0,09m'];
 
   useEffect(() => {
     document
@@ -206,12 +215,15 @@ const ModelIntestine = () => {
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/intestine.glb'}
         // scale='0.2 0.2 0.2'
-        shadow-intensity='1'
-        camera-controls
         ar
+        ar-modes='webxr scene-viewer quick-look'
+        camera-controls
         disable-tap
         interaction-prompt='none'
         autoplay
+        // camera-target={cameraTarget[viewFocus]}
+        camera-orbit={listCamOrbit[viewFocus]}
+        field-of-view={fieldOfView[viewFocus]}
       >
         <div
           id='lazy-load-poster'
@@ -257,6 +269,12 @@ const ModelIntestine = () => {
                   onClick={() => {
                     setindexMessage(0);
                     setindexMessage(indexMessage - 1);
+                    if (
+                      indexMessage === 6 ||
+                      indexMessage === 12 ||
+                      indexMessage === 22
+                    )
+                      setViewFocus(viewFocus - 1);
                   }}
                 >
                   <ICON_LEFT />
@@ -281,6 +299,12 @@ const ModelIntestine = () => {
                   className='cursor-pointer mx-6'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
+                    if (
+                      indexMessage === 5 ||
+                      indexMessage === 11 ||
+                      indexMessage === 21
+                    )
+                      setViewFocus(viewFocus + 1);
                   }}
                 >
                   <ICON_RIGHT />

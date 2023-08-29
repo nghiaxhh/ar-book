@@ -94,8 +94,9 @@ const ModelBrain = () => {
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/brain.glb'}
         // scale='0.2 0.2 0.2'
-        // shadow-intensity='1'
+        shadow-intensity='1'
         camera-controls
+        ar-modes='webxr scene-viewer quick-look'
         ar
         disable-tap
         interaction-prompt='none'

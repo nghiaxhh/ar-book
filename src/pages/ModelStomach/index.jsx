@@ -126,9 +126,16 @@ const listConversation = [
 const ModalStomach = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
-
+  const [viewFocus, setViewFocus] = useState(0);
   const ModelViewerElement = customElements.get('model-viewer');
   ModelViewerElement.minimumRenderScale = 1;
+
+  const listCamOrbit = [
+    '0deg 75deg 2.617m',
+    '7.886deg 82.49deg 1.46m',
+    '-28.78deg 22.5deg 1.732m'
+  ];
+  const fieldOfView = ['35.43deg', '12.19deg', '15.92deg'];
 
   useEffect(() => {
     document
@@ -165,8 +172,11 @@ const ModalStomach = () => {
         src={process.env.PUBLIC_URL + '/models/Stomach.glb'}
         // scale='0.2 0.2 0.2'
         shadow-intensity='1'
+        ar-modes='webxr scene-viewer quick-look'
         camera-controls
         ar
+        camera-orbit={listCamOrbit[viewFocus]}
+        field-of-view={fieldOfView[viewFocus]}
         disable-tap
         interaction-prompt='none'
         autoplay
@@ -215,6 +225,8 @@ const ModalStomach = () => {
                   onClick={() => {
                     setindexMessage(0);
                     setindexMessage(indexMessage - 1);
+                    if (indexMessage === 6 || indexMessage === 9)
+                      setViewFocus(viewFocus - 1);
                   }}
                 >
                   <ICON_LEFT />
@@ -238,6 +250,8 @@ const ModalStomach = () => {
                   className='cursor-pointer mx-6'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
+                    if (indexMessage === 5 || indexMessage === 8)
+                      setViewFocus(viewFocus + 1);
                   }}
                 >
                   <ICON_RIGHT />
