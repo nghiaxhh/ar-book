@@ -26,7 +26,7 @@ const listConversation = [
   {
     key: 4,
     content:
-      '僕は脳の妖精「のうポン」だよみんなの頭の中にいるんだけど、夢の中だけに出てこれるんだよ'
+      '僕は脳の妖精「のうポン」だよ<br/>みんなの頭の中にいるんだけど、夢の中だけに出てこれるんだよ'
   },
   {
     key: 5,
@@ -40,17 +40,18 @@ const listConversation = [
   },
   {
     key: 7,
-
+    mainCharacter: true,
     content:
       '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
   },
   {
     key: 8,
-    mainCharacter: true,
+
     content: 'えーそんなことできるの？'
   },
   {
     key: 9,
+    mainCharacter: true,
     content: '夢の中なら何でも ありデス'
   }
 ];
