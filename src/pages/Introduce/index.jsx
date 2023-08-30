@@ -21,7 +21,7 @@ const Introduce = () => {
         <div className='relative'>
           <div className='w-full'>
             <model-viewer
-              class='w-[300px] md:w-[600px] relative h-[60vh] md:h-[100vh]'
+              class='w-[300px] md:w-[450px] relative h-[60vh] md:h-[100vh]'
               id='hotspot-camera-view-demo'
               poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
               src={process.env.PUBLIC_URL + '/models/comission_230717'}
@@ -48,7 +48,8 @@ const Introduce = () => {
             僕の名前は●●
             <br /> 最近おなかの調子が良くなくて…
             <br />
-            実は、こないだ自分の体の中を探検する 夢を見たんだよね…
+            実は、こないだ自分の体の中を探検する
+            <br /> 夢を見たんだよね…
             <br />
             <br />
             <br />
