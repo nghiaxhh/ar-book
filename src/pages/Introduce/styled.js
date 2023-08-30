@@ -59,7 +59,15 @@ export const IntroduceWrapper = styled.div`
     border-radius: 20px;
     border: 2px solid gray;
     padding: 24px;
-    width: 432px;
+    /* width: 432px; */
     margin-bottom: 24px;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    height: unset;
   }
 `;
