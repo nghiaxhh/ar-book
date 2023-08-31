@@ -1,31 +1,11 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  ICON_LEFT,
-  IconNextStage,
-  IconPreviousStage
-} from '~/assets/icons/left';
-import { ICON_RIGHT } from '~/assets/icons/right';
-import Conversation from '~/components/Conversation';
+import { IconNextStage, IconPreviousStage } from '~/assets/icons/left';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModelThroatWrapper } from './styled';
 
-const listConversation = [
-  {
-    key: 1,
-    mainCharacter: true,
-    content: 'わー暗くて怖い！'
-  },
-  {
-    key: 2,
-    content: '今食道を通ってるんだよ　等？'
-  }
-];
-
 const ModelThroat = () => {
   const navigate = useNavigate();
-  const [indexMessage, setindexMessage] = useState(0);
 
   return (
     <ModelThroatWrapper>
@@ -62,7 +42,7 @@ const ModelThroat = () => {
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
 
-        <div className='box-message'>
+        {/* <div className='box-message'>
           {listConversation.map((item, idx) => {
             return indexMessage === idx ? (
               <div
@@ -78,7 +58,7 @@ const ModelThroat = () => {
               </div>
             ) : null;
           })}
-        </div>
+        </div> */}
 
         <div className='slider'>
           <div className='slides justify-between'>
@@ -90,7 +70,7 @@ const ModelThroat = () => {
             >
               <IconPreviousStage />
             </div>
-            <div className='d-flex justify-between w-full '>
+            {/* <div className='d-flex justify-between w-full '>
               {indexMessage !== 0 ? (
                 <div
                   className='cursor-pointer  mx-6'
@@ -129,7 +109,7 @@ const ModelThroat = () => {
               ) : (
                 <div className='w-[80px] mx-6' />
               )}
-            </div>
+            </div> */}
 
             <div
               className='cursor-pointer  d-flex items-center'
