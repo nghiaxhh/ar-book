@@ -110,7 +110,6 @@ const listConversation = [
   },
   {
     key: 19,
-    mainCharacter: true,
     content:
       'そうそう。美味しいなって思えると、食べ過ぎないから体にいいんだ。それに、よく噛むと歯が健康になるし、噛むことで頭の中にある脳に血がめぐりやすくなって脳が元気になるんだ（脳くんぐるぐる回る）'
   }
@@ -218,7 +217,7 @@ const ModalStomach = () => {
                   onClick={() => {
                     setindexMessage(0);
                     setindexMessage(indexMessage - 1);
-                    if (indexMessage === 6 || indexMessage === 9)
+                    if (indexMessage === 6 || indexMessage === 10)
                       setViewFocus(viewFocus - 1);
                   }}
                 >
@@ -243,7 +242,7 @@ const ModalStomach = () => {
                   className='cursor-pointer mx-6'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
-                    if (indexMessage === 5 || indexMessage === 8)
+                    if (indexMessage === 5 || indexMessage === 9)
                       setViewFocus(viewFocus + 1);
                   }}
                 >

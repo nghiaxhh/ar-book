@@ -271,8 +271,8 @@ const ModelIntestine = () => {
                     setindexMessage(indexMessage - 1);
                     if (
                       indexMessage === 6 ||
-                      indexMessage === 12 ||
-                      indexMessage === 22
+                      indexMessage === 13 ||
+                      indexMessage === 24
                     )
                       setViewFocus(viewFocus - 1);
                   }}
@@ -301,8 +301,8 @@ const ModelIntestine = () => {
                     setindexMessage(indexMessage + 1);
                     if (
                       indexMessage === 5 ||
-                      indexMessage === 11 ||
-                      indexMessage === 21
+                      indexMessage === 12 ||
+                      indexMessage === 23
                     )
                       setViewFocus(viewFocus + 1);
                   }}
