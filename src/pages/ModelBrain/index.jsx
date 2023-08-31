@@ -40,18 +40,16 @@ const listConversation = [
   },
   {
     key: 7,
-    mainCharacter: true,
     content:
       '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
   },
   {
     key: 8,
-
+    mainCharacter: true,
     content: 'えーそんなことできるの？'
   },
   {
     key: 9,
-    mainCharacter: true,
     content: '夢の中なら何でも ありデス'
   }
 ];

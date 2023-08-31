@@ -48,15 +48,9 @@ const listConversation = [
     mainCharacter: true,
     content: 'あの入り口のきれいなシャワーはなに？'
   },
-  {
-    key: 8,
-    mainCharacter: true,
-    content:
-      'えらいえらい！元気くんが食べたものが口から食道というところを通ってここ、胃に届くんだ'
-  },
+
   {
     key: 9,
-
     content:
       'シャワーから出ているのは胃液と言うんだ。胃液は胃に入ってきたものをどんどん溶かしていくよ。'
   },
@@ -69,7 +63,6 @@ const listConversation = [
 
   {
     key: 11,
-
     content: '食べ物から栄養を取り出すためだよ。'
   },
 
