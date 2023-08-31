@@ -1,81 +1,34 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ICON_LEFT, IconNextStage } from '~/assets/icons/left';
+import {
+  ICON_LEFT,
+  IconNextStage,
+  IconPreviousStage
+} from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
-import { ModelBrainWrapper } from './styled';
+import { ModelThroatWrapper } from './styled';
 
 const listConversation = [
   {
     key: 1,
     mainCharacter: true,
-    content:
-      'これって夢？<br/>見たこともない部屋に迷い込んじゃったみたい<br/>ここはどこだろう'
+    content: 'わー暗くて怖い！'
   },
   {
     key: 2,
-    content: 'ここは元気くんの頭の中ですよ'
-  },
-  {
-    key: 3,
-    mainCharacter: true,
-    content: 'あなたは誰？'
-  },
-  {
-    key: 4,
-    content:
-      '僕は脳の妖精「のうポン」だよ<br/>みんなの頭の中にいるんだけど、夢の中だけに出てこれるんだよ'
-  },
-  {
-    key: 5,
-    mainCharacter: true,
-    content: 'やっぱり夢の中だったんだ'
-  },
-  {
-    key: 6,
-    content:
-      '僕は、元気くんをいつも見てるんだけど、元気に勉強して遊んでるね<br/>これからも元気に大きくなってほしいから、体の中を案内したいんだ'
-  },
-  {
-    key: 7,
-    content:
-      '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
-  },
-  {
-    key: 8,
-    mainCharacter: true,
-    content: 'えーそんなことできるの？'
-  },
-  {
-    key: 9,
-    content: '夢の中なら何でも ありデス'
+    content: '今食道を通ってるんだよ　等？'
   }
 ];
 
-const ModelBrain = () => {
+const ModelThroat = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
 
-  useEffect(() => {
-    document
-      .querySelector('.box-message')
-      .addEventListener('beforexrselect', (ev) => {
-        // Keep slider interactions from affecting the XR scene.
-        ev.preventDefault();
-      });
-
-    document
-      .querySelector('.slider')
-      .addEventListener('beforexrselect', (ev) => {
-        // Keep slider interactions from affecting the XR scene.
-        ev.preventDefault();
-      });
-  }, []);
-
   return (
-    <ModelBrainWrapper>
+    <ModelThroatWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
         <div
           className='flex items-center justify-center rounded-full bg-[#dfdfdf33]  sm:bg-[#dfdfdf]  cursor-pointer w-[40px] h-[40px]'
@@ -91,11 +44,11 @@ const ModelBrain = () => {
         style={{ height: '40rem' }}
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
-        src={process.env.PUBLIC_URL + '/models/brain.glb'}
+        src={process.env.PUBLIC_URL + '/models/thor.glb'}
         // scale='0.2 0.2 0.2'
         shadow-intensity='1'
-        camera-controls
         ar-modes='webxr scene-viewer quick-look'
+        camera-controls
         ar
         disable-tap
         interaction-prompt='none'
@@ -129,7 +82,14 @@ const ModelBrain = () => {
 
         <div className='slider'>
           <div className='slides justify-between'>
-            <div className='w-[80px]' />
+            <div
+              className='cursor-pointer d-flex items-center'
+              onClick={() => {
+                navigate(ROUTE_PATH.MODEL_BRAIN);
+              }}
+            >
+              <IconPreviousStage />
+            </div>
             <div className='d-flex justify-between w-full '>
               {indexMessage !== 0 ? (
                 <div
@@ -147,7 +107,7 @@ const ModelBrain = () => {
 
               <div className='d-flex items-center w-[110px]'>
                 <div
-                  className='text-center w-full p-1 opacity-div'
+                  className='text-center w-full p-1  opacity-div'
                   style={{
                     borderRadius: '100px',
                     border: '1px solid #FFFFFF'
@@ -174,7 +134,7 @@ const ModelBrain = () => {
             <div
               className='cursor-pointer  d-flex items-center'
               onClick={() => {
-                navigate(ROUTE_PATH.MODEL_THROAT);
+                navigate(ROUTE_PATH.MODEL_ESOPHAGUS);
               }}
             >
               <IconNextStage />
@@ -182,8 +142,8 @@ const ModelBrain = () => {
           </div>
         </div>
       </model-viewer>
-    </ModelBrainWrapper>
+    </ModelThroatWrapper>
   );
 };
 
-export default ModelBrain;
+export default ModelThroat;

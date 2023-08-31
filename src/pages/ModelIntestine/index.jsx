@@ -256,7 +256,7 @@ const ModelIntestine = () => {
             <div
               className='cursor-pointer d-flex items-center'
               onClick={() => {
-                navigate(-1);
+                navigate(ROUTE_PATH.MODEL_STOMACH);
               }}
             >
               <IconPreviousStage />

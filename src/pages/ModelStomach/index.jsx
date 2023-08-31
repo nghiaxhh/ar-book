@@ -168,11 +168,11 @@ const ModalStomach = () => {
         ar-modes='webxr scene-viewer quick-look'
         camera-controls
         ar
-        camera-orbit={listCamOrbit[viewFocus]}
-        field-of-view={fieldOfView[viewFocus]}
         disable-tap
         interaction-prompt='none'
         autoplay
+        camera-orbit={listCamOrbit[viewFocus]}
+        field-of-view={fieldOfView[viewFocus]}
       >
         <div
           id='lazy-load-poster'
@@ -205,7 +205,7 @@ const ModalStomach = () => {
             <div
               className='cursor-pointer d-flex items-center'
               onClick={() => {
-                navigate(-1);
+                navigate(ROUTE_PATH.MODEL_ESOPHAGUS);
               }}
             >
               <IconPreviousStage />
