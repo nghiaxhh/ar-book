@@ -129,7 +129,7 @@ const listConversation = [
   {
     key: 24,
     mainCharacter: true,
-    content: 'わかった！最後の方にあるスタンプと出口みたいなところは何？'
+    content: 'わかった！<br/>最後の方にあるスタンプと出口みたいなところは何？'
   },
   {
     key: 25,
