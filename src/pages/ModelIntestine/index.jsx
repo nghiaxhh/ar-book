@@ -272,7 +272,7 @@ const ModelIntestine = () => {
                     if (
                       indexMessage === 6 ||
                       indexMessage === 13 ||
-                      indexMessage === 24
+                      indexMessage === 23
                     )
                       setViewFocus(viewFocus - 1);
                   }}
@@ -302,7 +302,7 @@ const ModelIntestine = () => {
                     if (
                       indexMessage === 5 ||
                       indexMessage === 12 ||
-                      indexMessage === 23
+                      indexMessage === 22
                     )
                       setViewFocus(viewFocus + 1);
                   }}
