@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const IntroduceWrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -65,9 +65,5 @@ export const IntroduceWrapper = styled.div`
     @media screen and (max-width: 1000px) {
       font-size: 18px;
     }
-  }
-
-  @media screen and (max-width: 480px) {
-    height: unset;
   }
 `;

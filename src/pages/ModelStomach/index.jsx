@@ -217,7 +217,7 @@ const ModalStomach = () => {
                   onClick={() => {
                     setindexMessage(0);
                     setindexMessage(indexMessage - 1);
-                    if (indexMessage === 6 || indexMessage === 10)
+                    if (indexMessage === 7 || indexMessage === 10)
                       setViewFocus(viewFocus - 1);
                   }}
                 >
@@ -242,7 +242,7 @@ const ModalStomach = () => {
                   className='cursor-pointer mx-6'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
-                    if (indexMessage === 5 || indexMessage === 9)
+                    if (indexMessage === 6 || indexMessage === 9)
                       setViewFocus(viewFocus + 1);
                   }}
                 >
