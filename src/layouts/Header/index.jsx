@@ -40,7 +40,13 @@ const Header = () => {
   return (
     <LayoutCommon>
       <div className='d-flex justify-between items-center h-[80px]'>
-        <div className=' text-logo text-logo-blue'>{t('logo')}</div>
+        <div className=' text-logo text-logo-blue'>
+          <img
+            src={process.env.PUBLIC_URL + '/images/logo.png'}
+            width={'200px'}
+            alt=''
+          />
+        </div>
 
         {!isMobile && (
           <>
