@@ -9,7 +9,13 @@ const Footer = () => {
       >
         <LayoutCommon>
           <div className='home-footer'>
-            <div className='text-logo'>LOGO</div>
+            <div className='text-logo'>
+              <img
+                src={process.env.PUBLIC_URL + '/images/logo_footer.png'}
+                width={'200px'}
+                alt=''
+              />
+            </div>
             <div
               className='d-flex p-3'
               style={{ flexWrap: 'wrap', justifyContent: 'center' }}
