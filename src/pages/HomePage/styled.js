@@ -76,7 +76,7 @@ export const HomePageWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
-  height: 500px;
+  height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,17 +84,46 @@ export const HeaderWrapper = styled.div`
   .box-banner {
     margin: 0 20px;
   }
-  //Ipad
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+
+  .imgLogo {
+    width: 200px;
+  }
+
+  .btn-action {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    border-radius: 16px;
+    background: #faad14;
+    width: 260px;
+    height: 48px;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .text-logo {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 43.58px;
+
+    &-blue {
+      font-size: 20px;
+      color: #096dd9;
+      line-height: 16px;
+    }
   }
 
   @media screen and (min-width: 768px) {
-    height: 1080px;
-    img {
-      object-fit: fill;
+    .imgLogo {
+      width: 280px;
     }
 
     .box-banner {

@@ -1,18 +1,10 @@
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import BaseLayout from '~/layouts';
-import { ROUTE_PATH } from '~/routes/route.constant';
-import { LayoutCommon } from '~/styles/generalStyled';
-import { HeaderWrapper } from './styled';
 import PopupDetail from '~/components/PopupDetail';
+import BaseLayout from '~/layouts';
+import { HeaderWrapper } from './styled';
 
 const HomePage = () => {
-  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
-  const listGame = new Array(6).fill(1).map((_, idx) => {
-    return idx + 1;
-  });
 
   return (
     <BaseLayout>
@@ -20,8 +12,31 @@ const HomePage = () => {
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/HomeImg.png)`
         }}
-      />
-      <LayoutCommon>
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '20px'
+          }}
+        >
+          <img
+            src={process.env.PUBLIC_URL + '/images/logo.png'}
+            className='imgLogo'
+            alt=''
+          />
+        </div>
+        <div
+          om
+          onClick={() => {
+            setOpenModal(true);
+          }}
+          className='btn-action'
+        >
+          読みはじめる
+        </div>
+      </HeaderWrapper>
+      {/* <LayoutCommon>
         <div className=''>
           <div className='text-primary text-base md:text-[26px]'>Trending</div>
           <Splide
@@ -207,7 +222,7 @@ const HomePage = () => {
             })}
           </Splide>
         </div>
-      </LayoutCommon>
+      </LayoutCommon> */}
       {openModal && (
         <PopupDetail
           openModal={openModal}

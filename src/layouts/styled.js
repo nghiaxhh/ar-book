@@ -27,19 +27,6 @@ export const HomePageWrapper = styled.div`
     color: black;
   }
 
-  .text-logo {
-    color: #fff;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 43.58px;
-
-    &-blue {
-      font-size: 20px;
-      color: #096dd9;
-      line-height: 16px;
-    }
-  }
-
   .service-item {
     color: #fff;
     font-size: 13px;
