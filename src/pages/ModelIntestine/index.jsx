@@ -213,7 +213,7 @@ const ModelIntestine = () => {
         class='w-full relative !h-[100vh]'
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
-        src={process.env.PUBLIC_URL + '/models/intestine.glb'}
+        src={process.env.PUBLIC_URL + '/models/intestine_06.glb'}
         // scale='0.2 0.2 0.2'
         ar
         ar-modes='webxr scene-viewer quick-look'
