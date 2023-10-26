@@ -92,8 +92,10 @@ const ModelBrain = () => {
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/brain.glb'}
-        // scale='0.2 0.2 0.2'
+        ar-placement='wall'
+        touch-action='pan-y'
         shadow-intensity='1'
+        xr-environment
         camera-controls
         ar-modes='webxr scene-viewer quick-look'
         ar
