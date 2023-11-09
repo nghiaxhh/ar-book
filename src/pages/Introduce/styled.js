@@ -18,6 +18,12 @@ export const IntroduceWrapper = styled.div`
     margin: 0 10px;
   }
 
+  .right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .slide {
     scroll-snap-align: start;
     flex-shrink: 0;
