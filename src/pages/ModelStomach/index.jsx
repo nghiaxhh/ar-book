@@ -15,105 +15,99 @@ import { ModalStomachWrapper } from './styled';
 
 const listConversation = [
   {
-    key: 1,
-    mainCharacter: true,
-    content: 'うわ～、なんかプールみたい！<br />泳いじゃってもいい？？'
+    key: 'storyteller-1',
+    isStoryteller: true,
+    content: 'タケシくんと　のうポンは、いの　へやへ　やってきました '
   },
+
   {
     key: 2,
     content:
-      'だめだめ！それはやめたほうがいいよ！<br />ここは「胃」というところで、元気くんの体の中にあるんだけどおへその上くらいかな？'
+      'ここは　いの　へや。みんなの　おへその　うえくらいに　ある　ぞうきだよ。<br/>ぼくたちは、くちから　たべものを　たべるよね。<br/>はでかんで　こまかくした　たべものは、しょくどうを　とおって、ここへ　くるんだ'
   },
   {
     key: 3,
     mainCharacter: true,
-    content:
-      '僕の体の中に胃ってあるんだ？見たことないからわからないや<br />胃ってどういう所なの？'
+    content: 'わあ、プールが　ある。およいでも　いい？'
   },
   {
     key: 4,
-    content: '元気くんは、お肉やおさかなやリンゴとかモリモリ食べてるよね？'
+    content: 'う〜ん。それは　やめたほうが　いいんじゃないかな'
   },
   {
     key: 5,
     mainCharacter: true,
-    content:
-      'うん、ご飯大好き！お父さん、お母さんからもたくさん食べると大きくなれるって言われているからね'
+    content: 'ダメなの？　あそこに　シャワーも　あるのに'
   },
   {
     key: 6,
     content:
-      'えらいえらい！<br />元気くんが食べたものが口から食道というところを通ってここ、胃に届くんだ'
+      'シャワーから　でているのは、いえき。いに　はいってきた　たべものを、どんどん　とかしていくんだ'
   },
   {
     key: 7,
     mainCharacter: true,
-    content: 'あの入り口のきれいなシャワーはなに？'
+    content:
+      'とかす！？　プールに　はいらなくて　よかった…。でも、せっかく　たべたのに　とかしちゃうの？'
   },
 
   {
     key: 9,
     content:
-      'シャワーから出ているのは胃液と言うんだ。胃液は胃に入ってきたものをどんどん溶かしていくよ。'
+      'そう。たべものから　えいようを　とりだすために　とかすんだ。<br/>あれを　みて'
   },
 
   {
     key: 10,
-    mainCharacter: true,
-    content: '溶かしてどうするの？'
+    content:
+      'プールの　なかで、プロペラが　まわっているでしょ。いえきと　たべものを　まぜて、ドロドロに　するん'
+  },
+  {
+    key: 'storyteller-2',
+    isStoryteller: true,
+    content:
+      'いの　なかを　みてみると、りんごの　かけらが　ぷかぷか　ういています'
   },
 
   {
     key: 11,
-    content: '食べ物から栄養を取り出すためだよ。'
+    content: 'タケシくんったら、りんごを　よく　かんで　たべなかったでしょ'
   },
 
   {
     key: 12,
     mainCharacter: true,
     content:
-      'ふーん。あのプールの中でグルグル回っているの（プロペラが回る）、あれで食べ物と胃液がグルグル混ぜられているね。'
+      'さっき、おやつに　たべたけど…。よく　かんで　たべたほうが　いいの？'
+  },
+
+  {
+    key: 'storyteller-3',
+    isStoryteller: true,
+    content: '（すると、プロペラが　はげしく　まわりだしました）'
   },
 
   {
     key: 13,
-
     content:
-      'その通り！　胃液と混ざった食べ物をプロペラがかき混ぜてドロドロにするんだ。あれ？　胃の中にりんごがぷかぷか浮いているね。'
+      'よく　かまずに　のみこまれた　たべものは　こまかくするのが　たいへんだから、プロペラを　たくさん　まわさなくちゃ　いけないんだ。その　ぶん、いに　ふたんが　かかっちゃうんだよ'
   },
 
   {
     key: 14,
     mainCharacter: true,
-    content: 'さっき食べたんだよ！'
+    content: 'そうか〜。よく　かんで　たべたほうが、いいんだね'
   },
+
   {
     key: 15,
-
-    content: 'しっかり噛んでいないでしょ。わかっちゃうよ。'
+    content:
+      'うん。それに、しっかり　かむと、つばが　たくさん　でるよね。つばは、いや　ちょうを　たすけてくれる　やくわりが　あるんだよ'
   },
   {
-    key: 16,
-    mainCharacter: true,
-    content:
-      'うーん。ごめんなさい。でも、なんでちゃんと噛まなきゃいけないの？　胃液とプロペラがあったら大丈夫じゃない？'
-  },
-  {
-    key: 17,
-
-    content:
-      'しっかり噛まずに飲み込まれた食べ物を細かくするために、プロペラはいつもよりたくさん動かないといけないよね。そうすると胃が疲れちゃうでしょ？'
-  },
-  {
-    key: 18,
-    mainCharacter: true,
-    content:
-      'そっか。ちゃんともぐもぐ噛むと、美味しいなーってずっと思えるもんね。やっぱりちゃんと噛むよ！'
-  },
-  {
-    key: 19,
-    content:
-      'そうそう。美味しいなって思えると、食べ過ぎないから体にいいんだ。それに、よく噛むと歯が健康になるし、噛むことで頭の中にある脳に血がめぐりやすくなって脳が元気になるんだ（脳くんぐるぐる回る）'
+    key: 'storyteller-4',
+    isStoryteller: true,
+    content: 'ふたりは、つぎの　へやへ　むかいます'
   }
 ];
 
@@ -184,24 +178,30 @@ const ModalStomach = () => {
           {/* <div className='text-loading text-sm	font-bold'>Loading...</div> */}
         </div>
 
-        <div className='box-message'>
-          {!isMobile &&
-            listConversation.map((item, idx) => {
-              return indexMessage === idx ? (
-                <div
-                  key={idx + 1}
-                  className={`w-full d-flex ${
-                    item.mainCharacter ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <Conversation
-                    content={item.content}
-                    type={item.mainCharacter ? 1 : 2}
-                  />
+        {!isMobile &&
+          listConversation.map((item, idx) => {
+            return indexMessage === idx ? (
+              item.isStoryteller ? (
+                <div className='w-full d-flex justify-center'>
+                  <div className='storyteller'>{item.content}</div>
                 </div>
-              ) : null;
-            })}
-        </div>
+              ) : (
+                <div className='box-message'>
+                  <div
+                    key={idx + 1}
+                    className={`w-full d-flex ${
+                      item.mainCharacter ? 'justify-start' : 'justify-end'
+                    }`}
+                  >
+                    <Conversation
+                      content={item.content}
+                      type={item.mainCharacter ? 1 : 2}
+                    />
+                  </div>
+                </div>
+              )
+            ) : null;
+          })}
 
         <div className='slider'>
           <div className='slides justify-between'>

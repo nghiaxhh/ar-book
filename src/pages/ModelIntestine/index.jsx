@@ -11,159 +11,162 @@ import { useMediaQuery } from 'react-responsive';
 
 const listConversation = [
   {
+    key: 'storyteller-1',
+    isStoryteller: true,
+    content: 'タケシくんと　のうポンは、ちょうの　へやへ　やってきました'
+  },
+
+  {
     key: 1,
     mainCharacter: true,
-    content: 'ここはどこなの？なんか工場みたいだけど'
+    content: 'この　へやは、こうじょうみたいだね'
   },
   {
     key: 2,
-    content: 'ここは腸だよ？'
+    content:
+      'ここは　ちょう。おへその　したあたりに　ある　へやなんだ。この、むらさきいろの　ところが　しょうちょう。こっちの　ちゃいろの　ところが　だいちょう'
   },
   {
     key: 3,
     mainCharacter: true,
-    content: '腸？'
+    content: 'どんな　ちがいが　あるの？'
   },
   {
     key: 4,
     content:
-      'さっき胃で食べ物がドロドロになっていたでしょ？そのドロドロのなかから体に必要なものを体に戻して（柔毛アームが動く）、余った要らないものをぎゅっと（ウンチプレス機が動く）まとめてウンチにして体に送り出す（肛門が開いてウンチがポンと飛び出す）のが腸の役目なんだ'
+      'まず、しょうちょうは、いから　はこばれてきた　たべものの　えいようを、どんどん　とりいれて　いくんだ'
   },
   {
     key: 5,
     mainCharacter: true,
-    content: 'ウンチ…　言うのは恥ずかしいし、僕の体の中で作ってるなんて…'
+    content: 'へえ〜。<br/>あっ、あそこで　うごいている　ものは　なに？'
   },
   {
     key: 6,
     content:
-      'はずかしくもなんともないよ！ウンチが出るってとっても大事なこと。余ったいらないものが体の中に溜まり続けたら？'
+      'ここで、からだに　ひつような　えいようと　いらない　のこりかすを、さらに　こまかく　わけて　いるんだ'
   },
   {
     key: 7,
     mainCharacter: true,
-    content:
-      'そうかもしれない。ところで、入り口の近くにる、ロボットの腕みたいなのは何だろう？？（柔毛アームが動く）'
+    content: 'ここで　はんだんして　わけてくれるの？　すご〜い'
   },
   {
     key: 8,
-    content:
-      'それは、体に必要なものを選び出して、からだの中に戻しているんだよ（柔毛アームと、アームの向こうのベルトコンベアが動く）。'
+    content: 'ほら！ロボットアームが　えいようを　とっているのがわかるでしょ！'
   },
-  {
-    key: 9,
-    mainCharacter: true,
-    content: '必要なもの？？'
-  },
+
   {
     key: 10,
     content:
-      'うん、それはおもにブドウ糖やアミノ酸だね。ブドウ糖はからだを動かすもと、アミノ酸は筋肉などのもとなんだ。'
+      'しょうちょうで　ひつような　えいようを　とったあとの　のこりかすが　はこばれるのが、だいちょうなんだ。のこりかすから　みずを　からだの　なかに　とりいれた　あと、ウンチを　つくるんだ'
   },
+  {
+    key: 'storyteller-2',
+    isStoryteller: true,
+    content: 'ウンチと　きいて、タケシくんは　まっかに　なりました。'
+  },
+
   {
     key: 11,
     mainCharacter: true,
-    content: 'ふーん。元気のもとってことだね！'
+    content: 'ウンチ！？　はずかしい！'
   },
   {
     key: 12,
     content:
-      'そうそう。それから、体にとっていらないもの、たとえば悪いバイ菌は体の中にあると元気がなくなっちゃうから入り口のヤリと剣（ヤリと剣が動く）でやっつけているんだよ。'
+      'なに　いってるの。ウンチを　つくって　からだの　そとへ　だすのは、ぼくたちの　からだに　とっても　たいせつな　ことなんだよ'
   },
   {
     key: 13,
     mainCharacter: true,
-    content: 'すごい大事なところだね！'
+    content: 'そっか〜…'
   },
   {
-    key: 14,
+    key: 'storyteller-3',
+    isStoryteller: true,
     content:
-      'そうだよ。それから、体には、栄養以外にもとっても大事なものがあるよね。わかるかな。'
+      'すると、タケシくんの　おなかから　「キュルキュル」と　おとが　きこえてきました. '
   },
+
   {
     key: 15,
     mainCharacter: true,
-    content: 'うーん。'
+    content: 'あれれ？おなかから　おとがきこえてきたよ！'
   },
   {
     key: 16,
     content:
-      'それはお水だよ。腸は、栄養のほかにお水も体のなかに入れる大事な働きがあるんだ。'
+      'いまのは、ちょうが　たべものを　はこぶために　うごいている　おと。たべものや　くうきが　そこを　とおる　ときに、おなかが　なるんだよ'
   },
   {
     key: 17,
     mainCharacter: true,
-    content:
-      '知らなかった！　飲んだらすぐに体の中に水が染み込んでいくんだと思ってたよ！'
+    content: 'じゃあ、おなかが　すく　ときに、グーッて　なるのは？'
   },
   {
     key: 18,
-    content: 'その仕組みは、また後で説明しようかな？'
+    content:
+      'いの　なかに　たべものが　ないから、くうきが　ちょうへと　うごく。その　とき、いの　せまい　でぐちから　ちょうへ　くうきが　うごくため、おなかが　なるんだよ。ふくらませた　ふうせんの　くうきが　ぬけるのと　おなじだね'
   },
   {
+    key: 'storyteller-4',
+    isStoryteller: true,
+    content:
+      'えいようとすいぶんを　とりのぞいた　たべものの　のこりかすが、ウンチに　なって　いきます'
+  },
+
+  {
     key: 19,
-    content: 'ところで元気くんはお腹の音って聞いたことある？'
+    content:
+      'ウンチを　そとに　だす　ための　じゅんびを　しているんだ。あそこに　でぐちが　みえるでしょ？'
   },
   {
     key: 20,
-    mainCharacter: true,
-    content: '時々キュルキュル音がしているのは聞いたことがあるよ！'
+    content:
+      'この　でぐちは　こうもん。おしりの　あなだね。ここから　ウンチが　でるんだよ。スッキリするね！'
   },
   {
+    key: 'storyteller-5',
+    isStoryteller: true,
+    content: 'こうもんから、ウンチが　そとへ　でて　いきます。'
+  },
+
+  {
     key: 21,
-    content:
-      'その音は、腸が食べ物を運ぶために元気に動いてくれているしるしなんだ。'
+    mainCharacter: true,
+    content: 'ウ〜ン、スッキリ！'
   },
   {
     key: 22,
     mainCharacter: true,
-    content: '元気に動いてくれているなら安心な音なんだね？'
+    content:
+      'たべものを　たべてから、ウンチに　なって　でて　いくまで、からだの　なかで　いろいろな　ことが　おきているんだね'
   },
   {
     key: 23,
-    content:
-      'そう！　でもお腹が痛いときにも聞こえるときがないかい？　ぐるぐるぐるーって。それは、腸が危険信号を出している時 なんだ。気を付けてね。'
+    content: 'そう。ぼくたちの　からだは、いつも　がんばって　くれているんだ'
   },
   {
     key: 24,
     mainCharacter: true,
-    content: 'わかった！<br/>最後の方にあるスタンプと出口みたいなところは何？'
+    content:
+      'でも、ウンチや　おならを　がまんすると、おなかが　いたくなるのは　なんで？'
   },
   {
     key: 25,
     content:
-      'ここは、ウンチを外に出すために準備をしているところなんだ。トイレに行ったときにはこの出口からウンチが出るようになるんだよ！'
+      'いや　ちょうは、ごはんを　たべた　あと、たべものを　ちょうに　はこんで　ウンチを　つくるために　はたらいているんだ。ちょうに　おならや　くうきが　たくさん　あると、はたらきが　はげしくなって　いたみを　かんじるんだ。おならや　ウンチを　だすと、ちょうが　あんしんして　いたみが　なくなるよ'
   },
   {
     key: 26,
     mainCharacter: true,
     content:
-      'ご飯を食べてウンチになるまでを教えてもらったけど、どのくらいの時間がかかるの？30分？1時間？'
+      'だから、おならや　ウンチは　がまんしないで　だしたほうが　いいんだね！'
   },
   {
     key: 27,
-    content: '正解は1日から2日くらいかかるんだ。'
-  },
-  {
-    key: 28,
-    mainCharacter: true,
-    content:
-      'そんなに時間がかかるの？じゃあ、今日の食べたご飯は明日か明後日にウンチになるの？？'
-  },
-  {
-    key: 29,
-    content:
-      'そうなんだ。食べたものが体の中をゆっくり動いていって、必要なものと要らないものに分けたりして、元気に過ごせるように見えないところで頑張ってくれているんだよ。'
-  },
-  {
-    key: 30,
-    mainCharacter: true,
-    content:
-      '僕が栄養をとるぞー、ウンチ作るぞーって思っていないのに、なんで勝手にやってくるの？'
-  },
-  {
-    key: 31,
-    content: 'それは次のお話しかな？'
+    content: 'そのとおり。わかってくれて　うれしいよ。'
   }
 ];
 
@@ -180,21 +183,6 @@ const ModelIntestine = () => {
   ];
   const fieldOfView = ['30deg', '12deg', '23.88deg', '22.98deg'];
 
-  // useEffect(() => {
-  //   document
-  //     .querySelector('.box-message')
-  //     .addEventListener('beforexrselect', (ev) => {
-  //       // Keep slider interactions from affecting the XR scene.
-  //       ev.preventDefault();
-  //     });
-
-  //   document
-  //     .querySelector('.slider')
-  //     .addEventListener('beforexrselect', (ev) => {
-  //       // Keep slider interactions from affecting the XR scene.
-  //       ev.preventDefault();
-  //     });
-  // }, []);
   return (
     <ModelIntestineWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
@@ -231,24 +219,30 @@ const ModelIntestine = () => {
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
 
-        <div className='box-message'>
-          {!isMobile &&
-            listConversation.map((item, idx) => {
-              return indexMessage === idx ? (
-                <div
-                  key={idx + 1}
-                  className={`w-full d-flex ${
-                    item.mainCharacter ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <Conversation
-                    content={item.content}
-                    type={item.mainCharacter ? 1 : 2}
-                  />
+        {!isMobile &&
+          listConversation.map((item, idx) => {
+            return indexMessage === idx ? (
+              item.isStoryteller ? (
+                <div className='w-full d-flex justify-center'>
+                  <div className='storyteller'>{item.content}</div>
                 </div>
-              ) : null;
-            })}
-        </div>
+              ) : (
+                <div className='box-message'>
+                  <div
+                    key={idx + 1}
+                    className={`w-full d-flex ${
+                      item.mainCharacter ? 'justify-start' : 'justify-end'
+                    }`}
+                  >
+                    <Conversation
+                      content={item.content}
+                      type={item.mainCharacter ? 1 : 2}
+                    />
+                  </div>
+                </div>
+              )
+            ) : null;
+          })}
 
         <div className='slider'>
           <div className='slides justify-between'>

@@ -11,14 +11,31 @@ import { ModelBrainWrapper } from './styled';
 
 const listConversation = [
   {
+    key: 'storyteller-1',
+    isStoryteller: true,
+    content: 'タケシくんが　きづくと、見たこともない　へや　にいました'
+  },
+
+  {
     key: 1,
     mainCharacter: true,
     content: 'あれれ？　ここは　どこ？　ぼくは　ベッドで　ねていた　はずなのに…'
   },
   {
+    key: 'storyteller-2',
+    isStoryteller: true,
+    content: 'すると、どこからか　こえが　きこえて　きました'
+  },
+  {
     key: 2,
     content: 'ポンばんわ、タケシくん！'
   },
+  {
+    key: 'storyteller-3',
+    isStoryteller: true,
+    content: 'とつぜん　あらわれたのは、ふしぎな　いきもの。'
+  },
+
   {
     key: 3,
     mainCharacter: true,
@@ -55,9 +72,19 @@ const listConversation = [
     content: 'ええ〜っ！？'
   },
   {
+    key: 'storyteller-4',
+    isStoryteller: true,
+    content: 'へやを　みわたす　のうポン'
+  },
+  {
     key: 10,
     content:
       'ここは、タケシくんの　からだを　うごかすしれいしつ。かんがえたり　わらったり　ないたり　おこったりすることもね。'
+  },
+  {
+    key: 'storyteller-5',
+    isStoryteller: true,
+    content: 'かんがえる　たけしくん'
   },
   {
     key: 11,
@@ -158,24 +185,30 @@ const ModelBrain = () => {
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
 
-        <div className='box-message'>
-          {!isMobile &&
-            listConversation.map((item, idx) => {
-              return indexMessage === idx ? (
-                <div
-                  key={idx + 1}
-                  className={`w-full d-flex ${
-                    item.mainCharacter ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <Conversation
-                    content={item.content}
-                    type={item.mainCharacter ? 1 : 2}
-                  />
+        {!isMobile &&
+          listConversation.map((item, idx) => {
+            return indexMessage === idx ? (
+              item.isStoryteller ? (
+                <div className='w-full d-flex justify-center'>
+                  <div className='storyteller'>{item.content}</div>
                 </div>
-              ) : null;
-            })}
-        </div>
+              ) : (
+                <div className='box-message'>
+                  <div
+                    key={idx + 1}
+                    className={`w-full d-flex ${
+                      item.mainCharacter ? 'justify-start' : 'justify-end'
+                    }`}
+                  >
+                    <Conversation
+                      content={item.content}
+                      type={item.mainCharacter ? 1 : 2}
+                    />
+                  </div>
+                </div>
+              )
+            ) : null;
+          })}
 
         <div className='slider'>
           <div className='slides justify-between'>

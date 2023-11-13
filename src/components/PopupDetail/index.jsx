@@ -11,6 +11,7 @@ const PopupDetail = ({ openModal, onCancel }) => {
       open={openModal}
       onCancel={onCancel}
       title=''
+      style={{ top: 20 }}
       footer={
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Button
