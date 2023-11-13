@@ -1,8 +1,10 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import { ICON_LEFT, IconNextStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
+import { SCREEN_SIZE } from '~/common/constants';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModelBrainWrapper } from './styled';
@@ -11,68 +13,113 @@ const listConversation = [
   {
     key: 1,
     mainCharacter: true,
-    content:
-      'これって夢？<br/>見たこともない部屋に迷い込んじゃったみたい<br/>ここはどこだろう'
+    content: 'あれれ？　ここは　どこ？　ぼくは　ベッドで　ねていた　はずなのに…'
   },
   {
     key: 2,
-    content: 'ここは元気くんの頭の中ですよ'
+    content: 'ポンばんわ、タケシくん！'
   },
   {
     key: 3,
     mainCharacter: true,
-    content: 'あなたは誰？'
+    content: 'きみ、だあれ？'
   },
   {
     key: 4,
     content:
-      '僕は脳の妖精「のうポン」だよ<br/>みんなの頭の中にいるんだけど、夢の中だけに出てこれるんだよ'
+      'ぼくは　のうポン。ぞうきの　ようせい　『からだっポン』の　まとめやく、ものしりな　のうの　ようせいさ'
   },
   {
     key: 5,
     mainCharacter: true,
-    content: 'やっぱり夢の中だったんだ'
+    content: 'のうの　ようせい？'
   },
   {
     key: 6,
     content:
-      '僕は、元気くんをいつも見てるんだけど、元気に勉強して遊んでるね<br/>これからも元気に大きくなってほしいから、体の中を案内したいんだ'
+      'ぼくは、きみが　ゆめを　みている　とき、ゆめの　なかに　あらわれるんだ。きみと　こうして　おはなしすることも　できるんだよ'
   },
+
   {
     key: 7,
-    content:
-      '今日は 食べることが大好きな 元気くん が食べたものが体の中でどうなっていくのか案内しマス！'
+    mainCharacter: true,
+    content: 'そうか。ぼくは、ゆめを　みているのか……'
   },
   {
     key: 8,
-    mainCharacter: true,
-    content: 'えーそんなことできるの？'
+    content: 'そして　この　へやは、きみの　あたまの　なか！'
   },
   {
     key: 9,
-    content: '夢の中なら何でも ありデス'
+    mainCharacter: true,
+    content: 'ええ〜っ！？'
+  },
+  {
+    key: 10,
+    content:
+      'ここは、タケシくんの　からだを　うごかすしれいしつ。かんがえたり　わらったり　ないたり　おこったりすることもね。'
+  },
+  {
+    key: 11,
+    mainCharacter: true,
+    content: 'う～ん。どういうことか　わかんないよ～。'
+  },
+  {
+    key: 12,
+    content:
+      'たけしくんには　まだ　ちょっとむずかしいかな。　また　こんど　くわしく　せつめいすることにしよう。'
+  },
+  {
+    key: 13,
+    content:
+      'そこで　きょうは、いまから　きみの　からだの　なかを　たんけんしようと　おもっているんだけど　どうかな？'
+  },
+  {
+    key: 14,
+    mainCharacter: true,
+    content: 'ええっ、ぼくの　からだの　なか！？'
+  },
+  {
+    key: 15,
+    content:
+      'タケシくんが　たべた　ものが　からだの　なかで　どうなっているのか。 <br/>   おなかが　いたく　なったとき、からだの　なかで　なにが　おこっているのか。しりたくない？'
+  },
+  {
+    key: 16,
+    mainCharacter: true,
+    content:
+      'しりたい！　じぶんの　からだの　なかを　たんけんできるなんて、ワクワクしちゃう！'
+  },
+  {
+    key: 17,
+    content: 'よーし。それじゃあ、レッツゴー！'
+  },
+  {
+    key: 18,
+    mainCharacter: true,
+    content: 'ええ〜っ！？もう　しゅっぱつするの～！？'
   }
 ];
 
 const ModelBrain = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
+  const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
 
-  useEffect(() => {
-    document
-      .querySelector('.box-message')
-      .addEventListener('beforexrselect', (ev) => {
-        // Keep slider interactions from affecting the XR scene.
-        ev.preventDefault();
-      });
-
-    document
-      .querySelector('.slider')
-      .addEventListener('beforexrselect', (ev) => {
-        // Keep slider interactions from affecting the XR scene.
-        ev.preventDefault();
-      });
-  }, []);
+  // useEffect(() => {
+  //   document
+  //     .querySelector('.box-message')
+  //     .addEventListener('beforexrselect', (ev) => {
+  //       // Keep slider interactions from affecting the XR scene.
+  //       ev.preventDefault();
+  //     });
+  //   document
+  //     .querySelector('.slider')
+  //     .addEventListener('beforexrselect', (ev) => {
+  //       // Keep slider interactions from affecting the XR scene.
+  //       ev.preventDefault();
+  //     });
+  // }, []);
 
   return (
     <ModelBrainWrapper>
@@ -112,71 +159,74 @@ const ModelBrain = () => {
         </div>
 
         <div className='box-message'>
-          {listConversation.map((item, idx) => {
-            return indexMessage === idx ? (
-              <div
-                key={idx + 1}
-                className={`w-full d-flex ${
-                  item.mainCharacter ? 'justify-start' : 'justify-end'
-                }`}
-              >
-                <Conversation
-                  content={item.content}
-                  type={item.mainCharacter ? 1 : 2}
-                />
-              </div>
-            ) : null;
-          })}
+          {!isMobile &&
+            listConversation.map((item, idx) => {
+              return indexMessage === idx ? (
+                <div
+                  key={idx + 1}
+                  className={`w-full d-flex ${
+                    item.mainCharacter ? 'justify-start' : 'justify-end'
+                  }`}
+                >
+                  <Conversation
+                    content={item.content}
+                    type={item.mainCharacter ? 1 : 2}
+                  />
+                </div>
+              ) : null;
+            })}
         </div>
 
         <div className='slider'>
           <div className='slides justify-between'>
             <div className='w-[80px]' />
-            <div className='d-flex justify-between w-full '>
-              {indexMessage !== 0 ? (
-                <div
-                  className='cursor-pointer  mx-6'
-                  onClick={() => {
-                    setindexMessage(0);
-                    setindexMessage(indexMessage - 1);
-                  }}
-                >
-                  <ICON_LEFT />
-                </div>
-              ) : (
-                <div className='w-[80px] mx-6' />
-              )}
+            {!isMobile && (
+              <div className='d-flex justify-between w-full '>
+                {indexMessage !== 0 ? (
+                  <div
+                    className='cursor-pointer  mx-6'
+                    onClick={() => {
+                      setindexMessage(0);
+                      setindexMessage(indexMessage - 1);
+                    }}
+                  >
+                    <ICON_LEFT />
+                  </div>
+                ) : (
+                  <div className='w-[80px] mx-6' />
+                )}
 
-              <div className='d-flex items-center w-[110px]'>
-                <div
-                  className='text-center w-full p-1 opacity-div'
-                  style={{
-                    borderRadius: '100px',
-                    border: '1px solid #FFFFFF'
-                  }}
-                >
-                  {`${indexMessage + 1} of ${listConversation.length}`}
+                <div className='d-flex items-center w-[110px]'>
+                  <div
+                    className='text-center w-full p-1 opacity-div'
+                    style={{
+                      borderRadius: '100px',
+                      border: '1px solid #FFFFFF'
+                    }}
+                  >
+                    {`${indexMessage + 1} of ${listConversation.length}`}
+                  </div>
                 </div>
+
+                {indexMessage + 1 < listConversation.length ? (
+                  <div
+                    className='cursor-pointer  mx-6'
+                    onClick={() => {
+                      setindexMessage(indexMessage + 1);
+                    }}
+                  >
+                    <ICON_RIGHT />
+                  </div>
+                ) : (
+                  <div className='w-[80px] mx-6' />
+                )}
               </div>
-
-              {indexMessage + 1 < listConversation.length ? (
-                <div
-                  className='cursor-pointer  mx-6'
-                  onClick={() => {
-                    setindexMessage(indexMessage + 1);
-                  }}
-                >
-                  <ICON_RIGHT />
-                </div>
-              ) : (
-                <div className='w-[80px] mx-6' />
-              )}
-            </div>
+            )}
 
             <div
               className='cursor-pointer  d-flex items-center'
               onClick={() => {
-                navigate(ROUTE_PATH.MODEL_THROAT);
+                navigate(ROUTE_PATH.MODEL_STOMACH);
               }}
             >
               <IconNextStage />
