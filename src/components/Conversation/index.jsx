@@ -12,7 +12,7 @@ const Conversation = ({ content, type = 2 }) => {
           }
           width={'100px'}
           alt=''
-          className={`img-character ${type === 2 && 'float-right'}`}
+          className={`img-character ${type === 2 && 'right-[20px]'}`}
         />
 
         <div

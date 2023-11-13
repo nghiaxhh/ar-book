@@ -1,6 +1,8 @@
 import { styled } from 'styled-components';
 
 export const ModelBrainWrapper = styled.div`
+  position: relative;
+
   model-viewer {
     background-color: #fff;
     margin: 0 auto;
