@@ -1,15 +1,13 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  ICON_LEFT,
-  IconNextStage,
-  IconPreviousStage
-} from '~/assets/icons/left';
+import { ICON_LEFT, IconPreviousStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModelIntestineWrapper } from './styled';
+import { SCREEN_SIZE } from '~/common/constants';
+import { useMediaQuery } from 'react-responsive';
 
 const listConversation = [
   {
@@ -171,6 +169,7 @@ const listConversation = [
 
 const ModelIntestine = () => {
   const navigate = useNavigate();
+  const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
   const [viewFocus, setViewFocus] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
   const listCamOrbit = [
@@ -180,23 +179,22 @@ const ModelIntestine = () => {
     '42.51deg 87.48deg 1.492m'
   ];
   const fieldOfView = ['30deg', '12deg', '23.88deg', '22.98deg'];
-  // const cameraTarget = ['', '', '-0,20m 0,24m 0,09m'];
 
-  useEffect(() => {
-    document
-      .querySelector('.box-message')
-      .addEventListener('beforexrselect', (ev) => {
-        // Keep slider interactions from affecting the XR scene.
-        ev.preventDefault();
-      });
+  // useEffect(() => {
+  //   document
+  //     .querySelector('.box-message')
+  //     .addEventListener('beforexrselect', (ev) => {
+  //       // Keep slider interactions from affecting the XR scene.
+  //       ev.preventDefault();
+  //     });
 
-    document
-      .querySelector('.slider')
-      .addEventListener('beforexrselect', (ev) => {
-        // Keep slider interactions from affecting the XR scene.
-        ev.preventDefault();
-      });
-  }, []);
+  //   document
+  //     .querySelector('.slider')
+  //     .addEventListener('beforexrselect', (ev) => {
+  //       // Keep slider interactions from affecting the XR scene.
+  //       ev.preventDefault();
+  //     });
+  // }, []);
   return (
     <ModelIntestineWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
@@ -234,21 +232,22 @@ const ModelIntestine = () => {
         </div>
 
         <div className='box-message'>
-          {listConversation.map((item, idx) => {
-            return indexMessage === idx ? (
-              <div
-                key={idx + 1}
-                className={`w-full d-flex ${
-                  item.mainCharacter ? 'justify-start' : 'justify-end'
-                }`}
-              >
-                <Conversation
-                  content={item.content}
-                  type={item.mainCharacter ? 1 : 2}
-                />
-              </div>
-            ) : null;
-          })}
+          {!isMobile &&
+            listConversation.map((item, idx) => {
+              return indexMessage === idx ? (
+                <div
+                  key={idx + 1}
+                  className={`w-full d-flex ${
+                    item.mainCharacter ? 'justify-start' : 'justify-end'
+                  }`}
+                >
+                  <Conversation
+                    content={item.content}
+                    type={item.mainCharacter ? 1 : 2}
+                  />
+                </div>
+              ) : null;
+            })}
         </div>
 
         <div className='slider'>
@@ -261,66 +260,61 @@ const ModelIntestine = () => {
             >
               <IconPreviousStage />
             </div>
+            {!isMobile && (
+              <div className='d-flex justify-between w-full '>
+                {indexMessage !== 0 ? (
+                  <div
+                    className='cursor-pointer mx-6'
+                    onClick={() => {
+                      setindexMessage(0);
+                      setindexMessage(indexMessage - 1);
+                      if (
+                        indexMessage === 6 ||
+                        indexMessage === 13 ||
+                        indexMessage === 23
+                      )
+                        setViewFocus(viewFocus - 1);
+                    }}
+                  >
+                    <ICON_LEFT />
+                  </div>
+                ) : (
+                  <div className='w-[80px] mx-6' />
+                )}
+                <div className='d-flex items-center w-[110px]'>
+                  <div
+                    className='text-center w-full p-1  opacity-div'
+                    style={{
+                      borderRadius: '100px',
+                      border: '1px solid #FFFFFF'
+                    }}
+                  >
+                    {`${indexMessage + 1} of ${listConversation.length}`}
+                  </div>
+                </div>
 
-            <div className='d-flex justify-between w-full '>
-              {indexMessage !== 0 ? (
-                <div
-                  className='cursor-pointer mx-6'
-                  onClick={() => {
-                    setindexMessage(0);
-                    setindexMessage(indexMessage - 1);
-                    if (
-                      indexMessage === 6 ||
-                      indexMessage === 13 ||
-                      indexMessage === 23
-                    )
-                      setViewFocus(viewFocus - 1);
-                  }}
-                >
-                  <ICON_LEFT />
-                </div>
-              ) : (
-                <div className='w-[80px] mx-6' />
-              )}
-              <div className='d-flex items-center w-[110px]'>
-                <div
-                  className='text-center w-full p-1  opacity-div'
-                  style={{
-                    borderRadius: '100px',
-                    border: '1px solid #FFFFFF'
-                  }}
-                >
-                  {`${indexMessage + 1} of ${listConversation.length}`}
-                </div>
+                {indexMessage + 1 < listConversation.length ? (
+                  <div
+                    className='cursor-pointer mx-6'
+                    onClick={() => {
+                      setindexMessage(indexMessage + 1);
+                      if (
+                        indexMessage === 5 ||
+                        indexMessage === 12 ||
+                        indexMessage === 22
+                      )
+                        setViewFocus(viewFocus + 1);
+                    }}
+                  >
+                    <ICON_RIGHT />
+                  </div>
+                ) : (
+                  <div className='w-[80px] mx-6' />
+                )}
               </div>
-
-              {indexMessage + 1 < listConversation.length ? (
-                <div
-                  className='cursor-pointer mx-6'
-                  onClick={() => {
-                    setindexMessage(indexMessage + 1);
-                    if (
-                      indexMessage === 5 ||
-                      indexMessage === 12 ||
-                      indexMessage === 22
-                    )
-                      setViewFocus(viewFocus + 1);
-                  }}
-                >
-                  <ICON_RIGHT />
-                </div>
-              ) : (
-                <div className='w-[80px] mx-6' />
-              )}
-            </div>
-
-            <div
-              className='cursor-pointer  d-flex items-center'
-              // onClick={() => {
-              //   navigate(ROUTE_PATH.MODEL_BRAIN);
-              // }}
-            >
-              <IconNextStage />
+            )}
+            <div className='cursor-pointer  d-flex items-center'>
+              <div style={{ width: '70px' }} />
             </div>
           </div>
         </div>

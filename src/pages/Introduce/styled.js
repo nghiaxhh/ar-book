@@ -1,5 +1,21 @@
 import { styled } from 'styled-components';
 
+export const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+`;
+
 export const IntroduceWrapper = styled.div`
   min-height: 100vh;
   background-position: center center;
@@ -54,7 +70,6 @@ export const IntroduceWrapper = styled.div`
 
   .box-content {
     color: #000;
-    text-align: center;
     font-size: 24px;
     line-height: 24px;
     font-weight: 400;
