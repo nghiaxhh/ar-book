@@ -6,8 +6,6 @@ import { ICON_RIGHT } from '~/assets/icons/right';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModelIntestineWrapper } from './styled';
-import { SCREEN_SIZE } from '~/common/constants';
-import { useMediaQuery } from 'react-responsive';
 
 const listConversation = [
   {
@@ -172,7 +170,6 @@ const listConversation = [
 
 const ModelIntestine = () => {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
   const [viewFocus, setViewFocus] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
   const listCamOrbit = [
@@ -219,30 +216,29 @@ const ModelIntestine = () => {
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
 
-        {!isMobile &&
-          listConversation.map((item, idx) => {
-            return indexMessage === idx ? (
-              item.isStoryteller ? (
-                <div className='w-full d-flex justify-center'>
-                  <div className='storyteller'>{item.content}</div>
+        {listConversation.map((item, idx) => {
+          return indexMessage === idx ? (
+            item.isStoryteller ? (
+              <div className='w-full d-flex justify-center'>
+                <div className='storyteller'>{item.content}</div>
+              </div>
+            ) : (
+              <div className='box-message'>
+                <div
+                  key={idx + 1}
+                  className={`w-full d-flex ${
+                    item.mainCharacter ? 'justify-start' : 'justify-end'
+                  }`}
+                >
+                  <Conversation
+                    content={item.content}
+                    type={item.mainCharacter ? 1 : 2}
+                  />
                 </div>
-              ) : (
-                <div className='box-message'>
-                  <div
-                    key={idx + 1}
-                    className={`w-full d-flex ${
-                      item.mainCharacter ? 'justify-start' : 'justify-end'
-                    }`}
-                  >
-                    <Conversation
-                      content={item.content}
-                      type={item.mainCharacter ? 1 : 2}
-                    />
-                  </div>
-                </div>
-              )
-            ) : null;
-          })}
+              </div>
+            )
+          ) : null;
+        })}
 
         <div className='slider'>
           <div className='slides justify-between'>
@@ -254,7 +250,7 @@ const ModelIntestine = () => {
             >
               <IconPreviousStage />
             </div>
-            {!isMobile && (
+            {
               <div className='d-flex justify-between w-full '>
                 {indexMessage !== 0 ? (
                   <div
@@ -306,7 +302,7 @@ const ModelIntestine = () => {
                   <div className='w-[80px] mx-6' />
                 )}
               </div>
-            )}
+            }
             <div className='cursor-pointer  d-flex items-center'>
               <div style={{ width: '70px' }} />
             </div>
