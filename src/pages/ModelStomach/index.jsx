@@ -1,6 +1,5 @@
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import {
   ICON_LEFT,
@@ -8,7 +7,6 @@ import {
   IconPreviousStage
 } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
-import { SCREEN_SIZE } from '~/common/constants';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModalStomachWrapper } from './styled';
@@ -113,7 +111,6 @@ const listConversation = [
 
 const ModalStomach = () => {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
   const [indexMessage, setindexMessage] = useState(0);
   const [viewFocus, setViewFocus] = useState(0);
   const ModelViewerElement = customElements.get('model-viewer');
@@ -178,30 +175,29 @@ const ModalStomach = () => {
           {/* <div className='text-loading text-sm	font-bold'>Loading...</div> */}
         </div>
 
-        {!isMobile &&
-          listConversation.map((item, idx) => {
-            return indexMessage === idx ? (
-              item.isStoryteller ? (
-                <div className='w-full d-flex justify-center'>
-                  <div className='storyteller'>{item.content}</div>
+        {listConversation.map((item, idx) => {
+          return indexMessage === idx ? (
+            item.isStoryteller ? (
+              <div className='w-full d-flex justify-center'>
+                <div className='storyteller'>{item.content}</div>
+              </div>
+            ) : (
+              <div className='box-message'>
+                <div
+                  key={idx + 1}
+                  className={`w-full d-flex ${
+                    item.mainCharacter ? 'justify-start' : 'justify-end'
+                  }`}
+                >
+                  <Conversation
+                    content={item.content}
+                    type={item.mainCharacter ? 1 : 2}
+                  />
                 </div>
-              ) : (
-                <div className='box-message'>
-                  <div
-                    key={idx + 1}
-                    className={`w-full d-flex ${
-                      item.mainCharacter ? 'justify-start' : 'justify-end'
-                    }`}
-                  >
-                    <Conversation
-                      content={item.content}
-                      type={item.mainCharacter ? 1 : 2}
-                    />
-                  </div>
-                </div>
-              )
-            ) : null;
-          })}
+              </div>
+            )
+          ) : null;
+        })}
 
         <div className='slider'>
           <div className='slides justify-between'>
@@ -213,7 +209,7 @@ const ModalStomach = () => {
             >
               <IconPreviousStage />
             </div>
-            {!isMobile && (
+            {
               <div className='d-flex justify-between w-full '>
                 {indexMessage !== 0 ? (
                   <div
@@ -256,7 +252,7 @@ const ModalStomach = () => {
                   <div className='w-[80px] mx-6' />
                 )}
               </div>
-            )}
+            }
             <div
               className='cursor-pointer  d-flex items-center'
               onClick={() => {

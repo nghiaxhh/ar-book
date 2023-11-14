@@ -10,14 +10,14 @@ const Conversation = ({ content, type = 2 }) => {
             process.env.PUBLIC_URL +
             `/images/${type === 1 ? 'character' : 'genki'}.png`
           }
-          width={'100px'}
+          width={'150px'}
           alt=''
           className={`img-character ${type === 2 && 'right-[20px]'}`}
         />
 
         <div
           className={` opacity-div content py-[20px] ${
-            type === 2 ? 'pr-[100px] pl-[20px]' : 'pr-[20px] pl-[100px]'
+            type === 2 ? 'pr-[150px] pl-[20px]' : 'pr-[20px] pl-[150px]'
           }`}
           dangerouslySetInnerHTML={{
             __html: content

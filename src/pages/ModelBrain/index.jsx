@@ -1,10 +1,8 @@
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import { ICON_LEFT, IconNextStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
-import { SCREEN_SIZE } from '~/common/constants';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { ModelBrainWrapper } from './styled';
@@ -131,7 +129,6 @@ const listConversation = [
 const ModelBrain = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
-  const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
 
   // useEffect(() => {
   //   document
@@ -166,7 +163,6 @@ const ModelBrain = () => {
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/brain.glb'}
-        ar-placement='wall'
         touch-action='pan-y'
         shadow-intensity='1'
         xr-environment
@@ -185,35 +181,34 @@ const ModelBrain = () => {
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
 
-        {!isMobile &&
-          listConversation.map((item, idx) => {
-            return indexMessage === idx ? (
-              item.isStoryteller ? (
-                <div className='w-full d-flex justify-center'>
-                  <div className='storyteller'>{item.content}</div>
+        {listConversation.map((item, idx) => {
+          return indexMessage === idx ? (
+            item.isStoryteller ? (
+              <div className='w-full d-flex justify-center'>
+                <div className='storyteller'>{item.content}</div>
+              </div>
+            ) : (
+              <div className='box-message'>
+                <div
+                  key={idx + 1}
+                  className={`w-full d-flex ${
+                    item.mainCharacter ? 'justify-start' : 'justify-end'
+                  }`}
+                >
+                  <Conversation
+                    content={item.content}
+                    type={item.mainCharacter ? 1 : 2}
+                  />
                 </div>
-              ) : (
-                <div className='box-message'>
-                  <div
-                    key={idx + 1}
-                    className={`w-full d-flex ${
-                      item.mainCharacter ? 'justify-start' : 'justify-end'
-                    }`}
-                  >
-                    <Conversation
-                      content={item.content}
-                      type={item.mainCharacter ? 1 : 2}
-                    />
-                  </div>
-                </div>
-              )
-            ) : null;
-          })}
+              </div>
+            )
+          ) : null;
+        })}
 
         <div className='slider'>
           <div className='slides justify-between'>
             <div className='w-[80px]' />
-            {!isMobile && (
+            {
               <div className='d-flex justify-between w-full '>
                 {indexMessage !== 0 ? (
                   <div
@@ -254,7 +249,7 @@ const ModelBrain = () => {
                   <div className='w-[80px] mx-6' />
                 )}
               </div>
-            )}
+            }
 
             <div
               className='cursor-pointer  d-flex items-center'
