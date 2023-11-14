@@ -77,9 +77,36 @@ export const HomePageWrapper = styled.div`
 
 export const HeaderWrapper = styled.div`
   height: 100vh;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+
+  .box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+  }
+
+  .main-title {
+    font-weight: 700;
+    font-size: 46px;
+    margin: 20px 0;
+  }
+
+  .sub-title {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .home-page-footer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    bottom: 50px;
+  }
 
   .box-banner {
     margin: 0 20px;
@@ -90,22 +117,22 @@ export const HeaderWrapper = styled.div`
   }
 
   .btn-action {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
     margin: 0 auto;
-    border-radius: 16px;
-    background: #faad14;
+    border-radius: 8px;
     width: 260px;
-    height: 48px;
-    line-height: 48px;
-    color: #fff;
+    font-size: 30px;
+    border: 1px solid gray;
     text-align: center;
     font-family: 'Open Sans';
-    font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    padding: 6px 10px;
+  }
+
+  .btn-action:hover {
+    color: #fff;
+    background-color: #ffc542;
+    border: none;
   }
 
   .text-logo {

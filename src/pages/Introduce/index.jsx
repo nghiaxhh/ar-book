@@ -23,10 +23,7 @@ const Introduce = () => {
   return (
     <Wrapper>
       <video autoPlay muted loop className='video'>
-        <source
-          src='https://static.vecteezy.com/system/resources/previews/007/515/187/mp4/timelapse-of-beautiful-blue-sky-in-pure-daylight-with-puffy-fluffy-white-clouds-background-amazing-flying-through-beautiful-thick-fluffy-clouds-nature-and-cloudscape-concept-free-video.mp4'
-          type='video/mp4'
-        />
+        <source src='/images/skyStar.mp4' type='video/mp4' />
       </video>
 
       <IntroduceWrapper
