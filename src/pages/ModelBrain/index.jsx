@@ -130,21 +130,6 @@ const ModelBrain = () => {
   const navigate = useNavigate();
   const [indexMessage, setindexMessage] = useState(0);
 
-  // useEffect(() => {
-  //   document
-  //     .querySelector('.box-message')
-  //     .addEventListener('beforexrselect', (ev) => {
-  //       // Keep slider interactions from affecting the XR scene.
-  //       ev.preventDefault();
-  //     });
-  //   document
-  //     .querySelector('.slider')
-  //     .addEventListener('beforexrselect', (ev) => {
-  //       // Keep slider interactions from affecting the XR scene.
-  //       ev.preventDefault();
-  //     });
-  // }, []);
-
   return (
     <ModelBrainWrapper>
       <div className={'absolute left-5 md:left-auto md:right-5 top-5 z-50'}>
@@ -184,22 +169,20 @@ const ModelBrain = () => {
         {listConversation.map((item, idx) => {
           return indexMessage === idx ? (
             item.isStoryteller ? (
-              <div className='w-full d-flex justify-center'>
+              <div className='w-full d-flex justify-center p-4'>
                 <div className='storyteller'>{item.content}</div>
               </div>
             ) : (
-              <div className='box-message'>
-                <div
-                  key={idx + 1}
-                  className={`w-full d-flex ${
-                    item.mainCharacter ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <Conversation
-                    content={item.content}
-                    type={item.mainCharacter ? 1 : 2}
-                  />
-                </div>
+              <div
+                key={idx + 1}
+                className={` box-message d-flex absolute bottom-24 ${
+                  item.mainCharacter ? 'left-0' : 'right-0'
+                }`}
+              >
+                <Conversation
+                  content={item.content}
+                  type={item.mainCharacter ? 1 : 2}
+                />
               </div>
             )
           ) : null;

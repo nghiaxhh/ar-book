@@ -6,12 +6,6 @@ export const ModelIntestineWrapper = styled.div`
     margin: 0 auto;
   }
 
-  .box-message {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-  }
-
   .view-button {
     background: #fff;
     border-radius: 4px;
@@ -30,16 +24,6 @@ export const ModelIntestineWrapper = styled.div`
     width: max-content;
     height: max-content;
     transform: translate3d(-50%, -50%, 0);
-  }
-
-  @media screen and (max-width: 640px) {
-    model-viewer {
-    }
-    .box-message {
-      position: absolute;
-      bottom: 65px;
-      width: 100%;
-    }
   }
 
   .slides {

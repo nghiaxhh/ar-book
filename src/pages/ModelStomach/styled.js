@@ -26,16 +26,7 @@ export const ModalStomachWrapper = styled.div`
     transform: translate3d(-50%, -50%, 0);
   }
 
-  .box-message {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-  }
-
   @media screen and (max-width: 640px) {
-    .box-message {
-      bottom: 65px;
-    }
   }
 
   .slides {

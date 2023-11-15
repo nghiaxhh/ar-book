@@ -54,11 +54,19 @@
   font-weight: 600;
   font-family: 'Zen Old Mincho', serif;
   // font-family: 'Shippori Mincho', serif;
-  font-size: 20px;
+  font-size: 14px;
   padding: 16px 24px;
   border-radius: 16px;
-  margin-top: 20px;
+  margin-top: 40px;
   background-color: #fff;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+    font-size: 20px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
 }

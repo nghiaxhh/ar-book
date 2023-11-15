@@ -219,22 +219,24 @@ const ModelIntestine = () => {
         {listConversation.map((item, idx) => {
           return indexMessage === idx ? (
             item.isStoryteller ? (
-              <div className='w-full d-flex justify-center'>
+              <div className='w-full d-flex justify-center p-4'>
                 <div className='storyteller'>{item.content}</div>
               </div>
             ) : (
-              <div className='box-message'>
-                <div
-                  key={idx + 1}
-                  className={`w-full d-flex ${
-                    item.mainCharacter ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <Conversation
-                    content={item.content}
-                    type={item.mainCharacter ? 1 : 2}
-                  />
-                </div>
+              <div
+                key={idx + 1}
+                className={`box-message d-flex absolute ${
+                  item.mainCharacter ? 'left-0' : 'right-0'
+                }   ${
+                  idx < 6 || (idx >= 13 && idx < 23)
+                    ? 'lg:bottom-32 bottom-16'
+                    : 'lg:top-20 top-10'
+                }`}
+              >
+                <Conversation
+                  content={item.content}
+                  type={item.mainCharacter ? 1 : 2}
+                />
               </div>
             )
           ) : null;
