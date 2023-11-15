@@ -89,23 +89,44 @@ export const HeaderWrapper = styled.div`
     margin: 0 20px;
   }
 
+  .box-pc {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+  }
+
+  .box-mobile {
+    display: flex;
+    align-items: baseline;
+    margin-top: 30px;
+  }
+
+  .img-pc {
+    display: none;
+  }
+
   .main-title {
+    text-align: center;
     font-weight: 700;
-    font-size: 46px;
+    font-size: 22px;
     margin: 20px 0;
   }
 
   .sub-title {
-    font-size: 30px;
+    text-align: center;
+    font-size: 18px;
     font-weight: 700;
+    margin-bottom: 50px;
   }
 
   .home-page-footer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
   }
 
   .box-banner {
@@ -113,14 +134,18 @@ export const HeaderWrapper = styled.div`
   }
 
   .imgLogo {
-    width: 200px;
+    height: 20px;
+  }
+
+  .project-name {
+    width: 150px;
   }
 
   .btn-action {
     margin: 0 auto;
     border-radius: 8px;
     width: 260px;
-    font-size: 30px;
+
     border: 1px solid gray;
     text-align: center;
     font-family: 'Open Sans';
@@ -135,26 +160,95 @@ export const HeaderWrapper = styled.div`
     border: none;
   }
 
-  .text-logo {
-    color: #fff;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 43.58px;
-
-    &-blue {
-      font-size: 20px;
-      color: #096dd9;
-      line-height: 16px;
-    }
+  .project-title {
+    width: 220px;
   }
 
   @media screen and (min-width: 768px) {
+    .main-title {
+      font-size: 46px;
+    }
+
     .imgLogo {
-      width: 280px;
+      height: 30px;
+    }
+
+    .project-name {
+      width: 200px;
+    }
+
+    .sub-title {
+      margin-bottom: 100px;
+    }
+
+    .home-page-footer {
+      bottom: 50px;
+      flex-direction: row;
+    }
+
+    .sub-title {
+      font-size: 30px;
+    }
+
+    .project-title {
+      width: 400px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .main-title {
+      font-weight: 700;
+      font-size: 46px;
+      margin: 20px 0;
+    }
+
+    .box-mobile {
+      display: none;
+    }
+
+    .img-pc {
+      display: block;
+    }
+
+    .sub-title {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .btn-action {
+      font-size: 30px;
+    }
+
+    .home-page-footer {
+      flex-direction: row;
+    }
+
+    .imgLogo {
     }
 
     .box-banner {
       margin: 0 40px;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .img-pc {
+      display: block;
+    }
+
+    .box-pc {
+      padding-top: 150px;
+    }
+
+    .main-title {
+      font-weight: 700;
+      font-size: 80px;
+      margin: 20px 0;
+    }
+
+    .sub-title {
+      font-size: 50px;
+      font-weight: 700;
     }
   }
 `;
