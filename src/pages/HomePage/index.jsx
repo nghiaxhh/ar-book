@@ -10,18 +10,34 @@ const HomePage = () => {
   return (
     <BaseLayout>
       <HeaderWrapper>
-        <div
-          style={{ display: 'flex', paddingTop: '50px', alignItems: 'center' }}
-        >
+        <div className='box-mobile'>
+          <div>
+            <img
+              src={process.env.PUBLIC_URL + `/images/tokun_hp.jpg`}
+              alt=''
+              width={'100px'}
+            />
+          </div>
+          <div>
+            <img
+              src={process.env.PUBLIC_URL + `/images/genki_hp.jpg`}
+              alt=''
+              width={'100px'}
+            />
+          </div>
+        </div>
+        <div className='box-pc'>
           <img
-            src={process.env.PUBLIC_URL + `/images/character.png`}
+            src={process.env.PUBLIC_URL + `/images/tokun_hp.jpg`}
             width={'180px'}
+            className='img-pc'
             alt=''
           />
+
           <div className='box-container'>
             <img
               src={process.env.PUBLIC_URL + `/images/organ.png`}
-              width={'280px'}
+              className='project-title'
               alt=''
             />
             <div className='main-title'>たけしくんの ふしぎな たび</div>
@@ -30,8 +46,9 @@ const HomePage = () => {
             </div>
           </div>
           <img
-            src={process.env.PUBLIC_URL + `/images/genki.png`}
+            src={process.env.PUBLIC_URL + `/images/genki_hp.jpg`}
             width={'150px'}
+            className='img-pc'
             alt=''
           />
         </div>
@@ -51,7 +68,7 @@ const HomePage = () => {
           <img
             src={process.env.PUBLIC_URL + '/images/organ_project.png'}
             alt=''
-            className='imgLogo'
+            className='project-name'
           />
         </div>
       </HeaderWrapper>
