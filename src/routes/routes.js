@@ -12,7 +12,6 @@ import { ROUTE_PATH } from './route.constant';
 const ModelBrain = React.lazy(() => import('~/pages/ModelBrain'));
 const ModelIntestine = React.lazy(() => import('~/pages/ModelIntestine'));
 const ModelStomach = React.lazy(() => import('~/pages/ModelStomach'));
-const ModalCharacter = React.lazy(() => import('~/pages/ModalCharacter'));
 
 const router = createBrowserRouter([
   {
@@ -63,15 +62,6 @@ const router = createBrowserRouter([
             element: (
               <Suspense fallback={null}>
                 <ModelIntestine />
-              </Suspense>
-            )
-          },
-
-          {
-            path: ROUTE_PATH.MODEL_CHARACTER,
-            element: (
-              <Suspense fallback={null}>
-                <ModalCharacter />
               </Suspense>
             )
           }
