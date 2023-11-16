@@ -10,6 +10,7 @@ import PageNotFound from '~/pages/PageNotFound';
 import { ROUTE_PATH } from './route.constant';
 
 const ModelBrain = React.lazy(() => import('~/pages/ModelBrain'));
+const ModelFinal = React.lazy(() => import('~/pages/ModelFinal'));
 const ModelIntestine = React.lazy(() => import('~/pages/ModelIntestine'));
 const ModelStomach = React.lazy(() => import('~/pages/ModelStomach'));
 
@@ -54,6 +55,14 @@ const router = createBrowserRouter([
             element: (
               <Suspense fallback={null}>
                 <ModelStomach />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.FINAL_CHAPTER,
+            element: (
+              <Suspense fallback={null}>
+                <ModelFinal />
               </Suspense>
             )
           },

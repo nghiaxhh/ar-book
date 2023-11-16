@@ -1,7 +1,11 @@
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ICON_LEFT, IconPreviousStage } from '~/assets/icons/left';
+import {
+  ICON_LEFT,
+  IconNextStage,
+  IconPreviousStage
+} from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
 import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
@@ -305,7 +309,14 @@ const ModelIntestine = () => {
             )}
           </div>
 
-          <div className=' lg:w-20 w-14' />
+          <div
+            className='cursor-pointer  d-flex items-center  lg:w-20 w-14'
+            onClick={() => {
+              navigate(ROUTE_PATH.FINAL_CHAPTER);
+            }}
+          >
+            <IconNextStage />
+          </div>
         </div>
       </div>
     </ModelIntestineWrapper>
