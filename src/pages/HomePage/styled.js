@@ -76,11 +76,12 @@ export const HomePageWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   .box-container {
     display: flex;
@@ -142,7 +143,7 @@ export const HeaderWrapper = styled.div`
   }
 
   .btn-action {
-    margin: 0 auto;
+    margin: 0 auto 150px;
     border-radius: 8px;
     width: 260px;
 
@@ -164,7 +165,7 @@ export const HeaderWrapper = styled.div`
     width: 220px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     .main-title {
       font-size: 46px;
     }

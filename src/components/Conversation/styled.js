@@ -10,7 +10,7 @@ export const ConversationWrapper = styled.div`
 
   .img-character {
     z-index: 99;
-    width: 80px;
+    width: 50px;
   }
 
   .content {
@@ -28,7 +28,7 @@ export const ConversationWrapper = styled.div`
     padding: 6px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     width: 400px;
     margin: 20px 40px;
 
@@ -39,7 +39,7 @@ export const ConversationWrapper = styled.div`
     }
 
     .img-character {
-      width: 150px;
+      width: 100px;
     }
   }
 `;

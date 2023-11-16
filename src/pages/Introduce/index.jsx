@@ -11,25 +11,16 @@ const Introduce = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
 
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     videoRef.current.play().catch((error) => {
-  //       // Xử lý lỗi khi video không thể tự động chạy
-  //       console.error('Auto-play failed:', error);
-  //     });
-  //   }
-  // }, []);
-
   return (
     <Wrapper>
-      <video autoPlay muted loop className='video'>
+      <video autoPlay muted loop className='video' playsInline>
         <source src='/images/skyStar.mp4' type='video/mp4' />
       </video>
 
       <IntroduceWrapper
       // className='relative'
       // style={{
-      //   backgroundImage: `url('https://i.pinimg.com/originals/a0/dd/4b/a0dd4b75918cb2e954d46d7ee61f4fa2.gif')`
+      //   backgroundImage: `url('/images/sky.gif')`
       // }}
       >
         <div className='d-flex justify-center items-center flex-col	md:flex-row	'>

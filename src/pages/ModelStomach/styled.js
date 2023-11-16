@@ -26,10 +26,9 @@ export const ModalStomachWrapper = styled.div`
     transform: translate3d(-50%, -50%, 0);
   }
 
-  @media screen and (max-width: 640px) {
-  }
-
   .slides {
+    max-width: 1200px;
+    width: 100%;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -38,20 +37,9 @@ export const ModalStomachWrapper = styled.div`
     margin: 0 10px;
   }
 
-  .slide {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: none;
+  .slider {
     display: flex;
-    border: 2px solid #fff;
+    justify-content: center;
   }
 
   .slide.selected {

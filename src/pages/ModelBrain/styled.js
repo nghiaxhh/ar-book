@@ -38,7 +38,14 @@ export const ModelBrainWrapper = styled.div`
     }
   }
 
+  .slider {
+    display: flex;
+    justify-content: center;
+  }
+
   .slides {
+    max-width: 1200px;
+    width: 100%;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
