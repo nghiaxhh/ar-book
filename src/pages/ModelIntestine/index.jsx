@@ -215,102 +215,99 @@ const ModelIntestine = () => {
         >
           {/* <div className='text-loading text-2xl	font-bold'>Loading...</div> */}
         </div>
+      </model-viewer>
+      {listConversation.map((item, idx) => {
+        return indexMessage === idx ? (
+          item.isStoryteller ? (
+            <div className='w-full d-flex justify-center p-4  absolute top-5'>
+              <div className='storyteller'>{item.content}</div>
+            </div>
+          ) : (
+            <div
+              key={idx + 1}
+              className={`box-message d-flex absolute ${
+                item.mainCharacter ? 'left-0' : 'right-0'
+              }  ${
+                idx < 6 || (idx >= 13 && idx < 23)
+                  ? 'lg:bottom-32 md:bottom-24 bottom-14'
+                  : 'lg:top-20 top-12 right-2'
+              }`}
+            >
+              <Conversation
+                content={item.content}
+                type={item.mainCharacter ? 1 : 2}
+              />
+            </div>
+          )
+        ) : null;
+      })}
 
-        {listConversation.map((item, idx) => {
-          return indexMessage === idx ? (
-            item.isStoryteller ? (
-              <div className='w-full d-flex justify-center p-4'>
-                <div className='storyteller'>{item.content}</div>
+      <div className='slider'>
+        <div className='slides justify-between'>
+          <div
+            className='cursor-pointer  d-flex items-center  lg:w-20 w-14'
+            onClick={() => {
+              navigate(ROUTE_PATH.MODEL_STOMACH);
+            }}
+          >
+            <IconPreviousStage />
+          </div>
+
+          <div className='d-flex'>
+            {indexMessage !== 0 ? (
+              <div
+                className='cursor-pointer  mr-6 lg:w-20 w-14'
+                onClick={() => {
+                  setindexMessage(0);
+                  setindexMessage(indexMessage - 1);
+                  if (
+                    indexMessage === 6 ||
+                    indexMessage === 13 ||
+                    indexMessage === 23
+                  )
+                    setViewFocus(viewFocus - 1);
+                }}
+              >
+                <ICON_LEFT />
               </div>
             ) : (
+              <div className='lg:w-20 w-14 mr-4' />
+            )}
+            <div className='d-flex items-center w-[110px]'>
               <div
-                key={idx + 1}
-                className={`box-message d-flex absolute ${
-                  item.mainCharacter ? 'left-0' : 'right-0'
-                }   ${
-                  idx < 6 || (idx >= 13 && idx < 23)
-                    ? 'lg:bottom-32 bottom-16'
-                    : 'lg:top-20 top-10'
-                }`}
+                className='text-center w-full p-1 opacity-div lg:text-[16px] text-[14px]'
+                style={{
+                  borderRadius: '100px',
+                  border: '1px solid #FFFFFF'
+                }}
               >
-                <Conversation
-                  content={item.content}
-                  type={item.mainCharacter ? 1 : 2}
-                />
+                {`${indexMessage + 1} of ${listConversation.length}`}
               </div>
-            )
-          ) : null;
-        })}
-
-        <div className='slider'>
-          <div className='slides justify-between'>
-            <div
-              className='cursor-pointer d-flex items-center'
-              onClick={() => {
-                navigate(ROUTE_PATH.MODEL_STOMACH);
-              }}
-            >
-              <IconPreviousStage />
             </div>
-            {
-              <div className='d-flex justify-between w-full '>
-                {indexMessage !== 0 ? (
-                  <div
-                    className='cursor-pointer mx-6'
-                    onClick={() => {
-                      setindexMessage(0);
-                      setindexMessage(indexMessage - 1);
-                      if (
-                        indexMessage === 6 ||
-                        indexMessage === 13 ||
-                        indexMessage === 23
-                      )
-                        setViewFocus(viewFocus - 1);
-                    }}
-                  >
-                    <ICON_LEFT />
-                  </div>
-                ) : (
-                  <div className='w-[80px] mx-6' />
-                )}
-                <div className='d-flex items-center w-[110px]'>
-                  <div
-                    className='text-center w-full p-1  opacity-div'
-                    style={{
-                      borderRadius: '100px',
-                      border: '1px solid #FFFFFF'
-                    }}
-                  >
-                    {`${indexMessage + 1} of ${listConversation.length}`}
-                  </div>
-                </div>
 
-                {indexMessage + 1 < listConversation.length ? (
-                  <div
-                    className='cursor-pointer mx-6'
-                    onClick={() => {
-                      setindexMessage(indexMessage + 1);
-                      if (
-                        indexMessage === 5 ||
-                        indexMessage === 12 ||
-                        indexMessage === 22
-                      )
-                        setViewFocus(viewFocus + 1);
-                    }}
-                  >
-                    <ICON_RIGHT />
-                  </div>
-                ) : (
-                  <div className='w-[80px] mx-6' />
-                )}
+            {indexMessage + 1 < listConversation.length ? (
+              <div
+                className='cursor-pointer  ml-4  lg:w-20 w-14'
+                onClick={() => {
+                  setindexMessage(indexMessage + 1);
+                  if (
+                    indexMessage === 5 ||
+                    indexMessage === 12 ||
+                    indexMessage === 22
+                  )
+                    setViewFocus(viewFocus + 1);
+                }}
+              >
+                <ICON_RIGHT />
               </div>
-            }
-            <div className='cursor-pointer  d-flex items-center'>
-              <div style={{ width: '70px' }} />
-            </div>
+            ) : (
+              <div className='lg:w-20 w-14 ml-6' />
+            )}
           </div>
+
+          <div className=' lg:w-20 w-14' />
         </div>
-      </model-viewer>
+      </div>
     </ModelIntestineWrapper>
   );
 };

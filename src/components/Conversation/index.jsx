@@ -6,8 +6,7 @@ const Conversation = ({ content, type = 2, isFocus = false }) => {
     <ConversationWrapper type={type} isFocus={isFocus}>
       <img
         src={
-          process.env.PUBLIC_URL +
-          `/images/${type === 1 ? 'character' : 'genki'}.png`
+          process.env.PUBLIC_URL + `/images/${type === 1 ? 'cvc1' : 'cvc2'}.png`
         }
         alt=''
         className={`img-character`}

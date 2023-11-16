@@ -15,7 +15,7 @@ export const LayoutCommon = styled.div`
 
   //Ipad
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     padding: 0;
   }
 `;

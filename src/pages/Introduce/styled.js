@@ -24,6 +24,7 @@ export const IntroduceWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 60px;
 
   .slides {
     display: flex;
@@ -73,10 +74,9 @@ export const IntroduceWrapper = styled.div`
     font-size: 24px;
     line-height: 24px;
     font-weight: 400;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255);
     backdrop-filter: blur(12.5px);
 
-    opacity: 0.8;
     border-radius: 20px;
     border: 2px solid gray;
     padding: 24px;
