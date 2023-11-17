@@ -176,7 +176,7 @@ const ModalStomach = () => {
             <div
               key={idx + 1}
               className={`box-message d-flex absolute ${
-                item.mainCharacter ? 'left-0' : 'right-0'
+                item.mainCharacter ? 'right-0' : 'left-0'
               }   ${
                 idx < 5 || idx >= 8
                   ? 'lg:bottom-32 md:bottom-24 bottom-14'

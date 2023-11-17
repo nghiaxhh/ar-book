@@ -112,7 +112,7 @@ const ModelFinal = () => {
             <div
               key={idx + 1}
               className={` box-message d-flex absolute bottom-28 ${
-                item.mainCharacter ? 'left-0' : 'right-0'
+                item.mainCharacter ? 'right-0' : 'left-0'
               }`}
             >
               <Conversation
