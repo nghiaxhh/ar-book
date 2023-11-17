@@ -78,7 +78,7 @@ export const IntroduceWrapper = styled.div`
     backdrop-filter: blur(12.5px);
     border-radius: 20px;
     border: 2px solid gray;
-    padding: 24px;
+    padding: 16px;
     margin: 24px;
 
     @media screen and (max-width: 1000px) {
