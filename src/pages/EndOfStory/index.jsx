@@ -48,19 +48,29 @@ const EndOfStory = () => {
         {listConversation.map((item, idx) => {
           return indexMessage === idx ? (
             item.isStoryteller ? (
-              <div className='w-full d-flex justify-center p-4 absolute top-20'>
-                <div className='storyteller'>{item.content}</div>
-              </div>
+              <div className='storyteller h-fit'>{item.content}</div>
             ) : (
-              <div
-                key={idx + 1}
-                className={` box-message d-flex absolute lg:bottom-80 bottom-20 ${
-                  item.mainCharacter ? 'left-0' : 'right-0'
-                }`}
-              >
-                <Conversation
-                  content={item.content}
-                  type={item.mainCharacter ? 1 : 2}
+              <div key={idx + 1} className='relative'>
+                <div className='w-full'>
+                  <model-viewer
+                    class='h-[50vh]'
+                    id='hotspot-camera-view-demo'
+                    poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
+                    src={process.env.PUBLIC_URL + '/models/comission_230717'}
+                    shadow-intensity='1'
+                    autoplay
+                    disable-tap
+                    interaction-prompt='none'
+                    camera-controls
+                    disable-zoom
+                  ></model-viewer>
+                </div>
+
+                <div
+                  className={`content absolute left-1/2 -translate-x-1/2 top-[47vh] `}
+                  dangerouslySetInnerHTML={{
+                    __html: item.content
+                  }}
                 />
               </div>
             )
