@@ -23,7 +23,7 @@ export const EndOfStoryWrapper = styled.div`
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   padding: 60px;
 
   .slides {
@@ -33,12 +33,6 @@ export const EndOfStoryWrapper = styled.div`
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     margin: 0 10px;
-  }
-
-  .right-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .slide {
@@ -69,22 +63,20 @@ export const EndOfStoryWrapper = styled.div`
     outline: 1px solid #4285f4;
   }
 
-  .box-content {
-    color: #000;
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 400;
-    background: rgba(255, 255, 255);
-    backdrop-filter: blur(12.5px);
-
+  .content {
+    border: 1px solid gray;
+    background-color: #f7f7f7;
+    font-family: 'Zen Old Mincho', serif;
+    /* font-family: 'Shippori Mincho', serif; */
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px;
     border-radius: 20px;
-    border: 2px solid gray;
-    padding: 24px;
-    /* width: 432px; */
-    margin-bottom: 24px;
+    width: 250px;
 
-    @media screen and (max-width: 1000px) {
-      font-size: 18px;
+    @media screen and (min-width: 992px) {
+      width: 400px;
+      font-size: 20px;
     }
   }
 `;
