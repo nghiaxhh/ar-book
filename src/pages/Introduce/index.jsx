@@ -72,7 +72,7 @@ const Introduce = () => {
 
             {!isMobile && (
               <div
-                className='slides justify-center  cursor-pointer'
+                className='slides justify-center  cursor-pointer w-16'
                 onClick={() => {
                   navigate(ROUTE_PATH.MODEL_BRAIN);
                 }}
