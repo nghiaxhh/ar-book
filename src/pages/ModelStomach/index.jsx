@@ -152,6 +152,8 @@ const ModalStomach = () => {
         disable-tap
         interaction-prompt='none'
         autoplay
+        min-camera-orbit='-35deg 0deg auto'
+        max-camera-orbit='100deg 95deg auto'
         camera-target={listCamTarget[viewFocus]}
         camera-orbit={listCamOrbit[viewFocus]}
         field-of-view={fieldOfView[viewFocus]}
