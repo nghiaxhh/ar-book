@@ -3,14 +3,14 @@ export const ICON_LEFT = () => {
     <img
       src={process.env.PUBLIC_URL + '/images/20.png'}
       alt=''
-      width={'80px'}
+      width={'100%'}
     />
   );
 };
 
 export const IconNextMessage = () => {
   return (
-    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'80px'} />
+    <img src={process.env.PUBLIC_URL + '/images/3.png'} alt='' width={'100%'} />
   );
 };
 
@@ -25,7 +25,7 @@ export const IconNextStage = () => {
     <img
       src={process.env.PUBLIC_URL + '/images/10.png'}
       alt=''
-      width={'80px'}
+      width={'100%'}
     />
   );
 };
@@ -36,7 +36,7 @@ export const IconPreviousStage = () => {
       style={{ transform: 'rotate(180deg)' }}
       src={process.env.PUBLIC_URL + '/images/10.png'}
       alt=''
-      width={'80px'}
+      width={'100%'}
     />
   );
 };

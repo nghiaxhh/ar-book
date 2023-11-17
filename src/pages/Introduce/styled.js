@@ -76,12 +76,10 @@ export const IntroduceWrapper = styled.div`
     font-weight: 400;
     background: rgba(255, 255, 255);
     backdrop-filter: blur(12.5px);
-
     border-radius: 20px;
     border: 2px solid gray;
     padding: 24px;
-    /* width: 432px; */
-    margin-bottom: 24px;
+    margin: 24px;
 
     @media screen and (max-width: 1000px) {
       font-size: 18px;
