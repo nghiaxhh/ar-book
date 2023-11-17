@@ -5,5 +5,6 @@ export const ROUTE_PATH = {
   MODEL_BRAIN: '/model-brain',
   MODEL_STOMACH: '/model-stomach',
   MODEL_INTESTINE: '/model-intestine',
-  FINAL_CHAPTER: '/final-chapter'
+  FINAL_CHAPTER: '/final-chapter',
+  END_OF_SROTY: '/end-of-story'
 };

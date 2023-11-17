@@ -1,5 +1,5 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ICON_LEFT, IconNextStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
@@ -130,29 +130,6 @@ const ModelBrain = () => {
   const navigate = useNavigate();
   const modelViewerRef = useRef(null);
   const [indexMessage, setindexMessage] = useState(0);
-
-  useEffect(() => {
-    const modelViewer = modelViewerRef.current;
-
-    if (modelViewer) {
-      modelViewer.addEventListener('ar-status', handleARStatus);
-    }
-
-    return () => {
-      if (modelViewer) {
-        modelViewer.removeEventListener('ar-status', handleARStatus);
-      }
-    };
-  }, []);
-
-  const handleARStatus = (event) => {
-    const isARActivated = event.detail.status === 'true';
-    if (isARActivated) {
-      console.log('AR mode activated');
-    } else {
-      console.log('AR mode not activated');
-    }
-  };
 
   return (
     <ModelBrainWrapper>

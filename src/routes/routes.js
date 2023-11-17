@@ -13,6 +13,7 @@ const ModelBrain = React.lazy(() => import('~/pages/ModelBrain'));
 const ModelFinal = React.lazy(() => import('~/pages/ModelFinal'));
 const ModelIntestine = React.lazy(() => import('~/pages/ModelIntestine'));
 const ModelStomach = React.lazy(() => import('~/pages/ModelStomach'));
+const EndOfStory = React.lazy(() => import('~/pages/EndOfStory'));
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,14 @@ const router = createBrowserRouter([
             element: (
               <Suspense fallback={null}>
                 <ModelFinal />
+              </Suspense>
+            )
+          },
+          {
+            path: ROUTE_PATH.END_OF_SROTY,
+            element: (
+              <Suspense fallback={null}>
+                <EndOfStory />
               </Suspense>
             )
           },
