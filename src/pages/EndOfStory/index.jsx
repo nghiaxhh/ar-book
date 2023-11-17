@@ -79,7 +79,7 @@ const EndOfStory = () => {
         <div className='slider'>
           <div className='slides justify-between'>
             <div
-              className='cursor-pointer  d-flex items-center  lg:w-20 w-14'
+              className='cursor-pointer  d-flex items-center  lg:w-20 w-10'
               onClick={() => {
                 navigate(ROUTE_PATH.FINAL_CHAPTER);
               }}
@@ -90,7 +90,7 @@ const EndOfStory = () => {
             <div className='d-flex'>
               {indexMessage !== 0 ? (
                 <div
-                  className='cursor-pointer  mr-4 lg:w-20 w-14'
+                  className='cursor-pointer  mr-4 lg:w-20 w-10'
                   onClick={() => {
                     setindexMessage(0);
                     setindexMessage(indexMessage - 1);
@@ -99,10 +99,10 @@ const EndOfStory = () => {
                   <ICON_LEFT />
                 </div>
               ) : (
-                <div className='lg:w-20 w-14  mr-4' />
+                <div className='lg:w-20 w-10  mr-4' />
               )}
 
-              <div className='d-flex items-center w-[110px]'>
+              <div className='d-flex items-center w-[80px]'>
                 <div
                   className='text-center w-full p-1 opacity-div lg:text-[16px] text-[14px]'
                   style={{
@@ -116,7 +116,7 @@ const EndOfStory = () => {
 
               {indexMessage + 1 < listConversation.length ? (
                 <div
-                  className='cursor-pointer  ml-4 lg:w-20 w-14'
+                  className='cursor-pointer  ml-4 lg:w-20 w-10'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
                   }}
@@ -124,10 +124,10 @@ const EndOfStory = () => {
                   <ICON_RIGHT />
                 </div>
               ) : (
-                <div className='lg:w-20 w-14 ml-4' />
+                <div className='lg:w-20 w-10 ml-4' />
               )}
             </div>
-            <div className='cursor-pointer  d-flex items-center  lg:w-20 w-14' />
+            <div className='cursor-pointer  d-flex items-center  lg:w-20 w-10' />
           </div>
         </div>
         <div className='absolute top-[1rem] right-[1rem]'>

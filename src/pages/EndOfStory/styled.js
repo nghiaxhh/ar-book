@@ -27,6 +27,8 @@ export const EndOfStoryWrapper = styled.div`
   padding: 60px;
 
   .slides {
+    max-width: 1200px;
+    width: 100%;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -35,32 +37,9 @@ export const EndOfStoryWrapper = styled.div`
     margin: 0 10px;
   }
 
-  .slide {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: none;
+  .slider {
     display: flex;
-    border: 2px solid #fff;
-  }
-
-  .slide.selected {
-    border: 2px solid #4285f4;
-  }
-
-  .slide:focus {
-    outline: none;
-  }
-
-  .slide:focus-visible {
-    outline: 1px solid #4285f4;
+    justify-content: center;
   }
 
   .content {
