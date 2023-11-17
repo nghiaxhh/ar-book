@@ -117,26 +117,15 @@ const ModalStomach = () => {
   ModelViewerElement.minimumRenderScale = 1;
 
   const listCamOrbit = [
-    '0deg 75deg 2.617m',
-    '7.886deg 82.49deg 1.46m',
-    '-28.78deg 22.5deg 1.732m'
+    '30.89deg 75deg 2.217m',
+    '27.72deg 71.04deg 1.683m',
+    '-18.62deg 22.5deg 1.589m'
   ];
-  const fieldOfView = ['35.43deg', '12.19deg', '15.92deg'];
+  const listCamTarget = ['', '-0.14m 0.22m -0.83m', '0.08m 0.06m -0.56m'];
+  const fieldOfView = ['27.67deg', '13.94deg', '15.73deg'];
 
   // useEffect(() => {
-  //   document
-  //     .querySelector('.box-message')
-  //     .addEventListener('beforexrselect', (ev) => {
-  //       // Keep slider interactions from affecting the XR scene.
-  //       ev.preventDefault();
-  //     });
 
-  //   document
-  //     .querySelector('.slider')
-  //     .addEventListener('beforexrselect', (ev) => {
-  //       // Keep slider interactions from affecting the XR scene.
-  //       ev.preventDefault();
-  //     });
   // }, []);
 
   return (
@@ -156,7 +145,6 @@ const ModalStomach = () => {
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/Stmach_06_2.glb'}
-        // scale='0.2 0.2 0.2'
         shadow-intensity='1'
         ar-modes='webxr scene-viewer quick-look'
         camera-controls
@@ -164,6 +152,7 @@ const ModalStomach = () => {
         disable-tap
         interaction-prompt='none'
         autoplay
+        camera-target={listCamTarget[viewFocus]}
         camera-orbit={listCamOrbit[viewFocus]}
         field-of-view={fieldOfView[viewFocus]}
       >
@@ -187,7 +176,7 @@ const ModalStomach = () => {
               className={`box-message d-flex absolute ${
                 item.mainCharacter ? 'left-0' : 'right-0'
               }   ${
-                idx < 7 || idx >= 10
+                idx < 5 || idx >= 8
                   ? 'lg:bottom-32 md:bottom-24 bottom-14'
                   : 'lg:top-20 top-12 right-2'
               }`}
@@ -218,9 +207,9 @@ const ModalStomach = () => {
                 <div
                   className='cursor-pointer  mr-4 lg:w-20 w-14'
                   onClick={() => {
-                    setindexMessage(0);
+                    // setindexMessage(0)
                     setindexMessage(indexMessage - 1);
-                    if (indexMessage === 7 || indexMessage === 10)
+                    if (indexMessage === 5 || indexMessage === 8)
                       setViewFocus(viewFocus - 1);
                   }}
                 >
@@ -245,7 +234,7 @@ const ModalStomach = () => {
                   className='cursor-pointer   ml-4  lg:w-20 w-14'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
-                    if (indexMessage === 6 || indexMessage === 9)
+                    if (indexMessage === 4 || indexMessage === 7)
                       setViewFocus(viewFocus + 1);
                   }}
                 >

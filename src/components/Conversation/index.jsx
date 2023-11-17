@@ -3,7 +3,7 @@ import { ConversationWrapper } from './styled';
 
 const Conversation = ({ content, type = 2, isFocus = false }) => {
   return (
-    <ConversationWrapper type={type} isFocus={isFocus}>
+    <ConversationWrapper type={type} focus={isFocus}>
       <img
         src={
           process.env.PUBLIC_URL + `/images/${type === 1 ? 'cvc1' : 'cvc2'}.png`

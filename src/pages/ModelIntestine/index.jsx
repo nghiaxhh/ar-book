@@ -177,12 +177,18 @@ const ModelIntestine = () => {
   const [viewFocus, setViewFocus] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
   const listCamOrbit = [
-    '-686.9deg 66.18deg 1.721m',
-    '419.7deg 45.51deg 1.204m',
-    '78.75deg 58.38deg 1.612m',
-    '42.51deg 87.48deg 1.492m'
+    '40.79deg 69.85deg 1.721m',
+    '50.34deg 56.52deg 1.399m',
+    '45.94deg 59.95deg 1.2m',
+    '44.75deg 64.31deg 1.348m'
   ];
-  const fieldOfView = ['30deg', '12deg', '23.88deg', '22.98deg'];
+  const listCamTarget = [
+    '',
+    '-0.17m 0.25m 0.05m',
+    '-0.11m 0.09m 0.32m',
+    '0.15m 0.04m 0.21m'
+  ];
+  const fieldOfView = ['35.5deg', '18.27deg', '18.12deg', '23.8deg'];
 
   return (
     <ModelIntestineWrapper>
@@ -201,15 +207,14 @@ const ModelIntestine = () => {
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/intestine_06.glb'}
-        // scale='0.2 0.2 0.2'
         ar
         ar-modes='webxr scene-viewer quick-look'
         camera-controls
         disable-tap
         interaction-prompt='none'
         autoplay
-        // camera-target={cameraTarget[viewFocus]}
         camera-orbit={listCamOrbit[viewFocus]}
+        camera-target={listCamTarget[viewFocus]}
         field-of-view={fieldOfView[viewFocus]}
       >
         <div
@@ -232,7 +237,7 @@ const ModelIntestine = () => {
               className={`box-message d-flex absolute ${
                 item.mainCharacter ? 'left-0' : 'right-0'
               }  ${
-                idx < 6 || (idx >= 13 && idx < 23)
+                idx < 6 || (idx >= 9 && idx < 19)
                   ? 'lg:bottom-32 md:bottom-24 bottom-14'
                   : 'lg:top-20 top-12 right-2'
               }`}
@@ -262,12 +267,11 @@ const ModelIntestine = () => {
               <div
                 className='cursor-pointer  mr-6 lg:w-20 w-14'
                 onClick={() => {
-                  setindexMessage(0);
                   setindexMessage(indexMessage - 1);
                   if (
                     indexMessage === 6 ||
-                    indexMessage === 13 ||
-                    indexMessage === 23
+                    indexMessage === 9 ||
+                    indexMessage === 19
                   )
                     setViewFocus(viewFocus - 1);
                 }}
@@ -296,8 +300,8 @@ const ModelIntestine = () => {
                   setindexMessage(indexMessage + 1);
                   if (
                     indexMessage === 5 ||
-                    indexMessage === 12 ||
-                    indexMessage === 22
+                    indexMessage === 8 ||
+                    indexMessage === 18
                   )
                     setViewFocus(viewFocus + 1);
                 }}
