@@ -216,6 +216,8 @@ const ModelIntestine = () => {
         camera-orbit={listCamOrbit[viewFocus]}
         camera-target={listCamTarget[viewFocus]}
         field-of-view={fieldOfView[viewFocus]}
+        min-camera-orbit='-10deg 0deg auto'
+        max-camera-orbit='100deg 100deg auto'
       >
         <div
           id='lazy-load-poster'

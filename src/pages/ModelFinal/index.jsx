@@ -88,7 +88,8 @@ const ModelFinal = () => {
         camera-controls
         ar-modes='webxr scene-viewer quick-look'
         ar
-        ar-status
+        min-camera-orbit='-50deg 0deg auto'
+        max-camera-orbit='50deg 100deg auto'
         disable-tap
         interaction-prompt='none'
         autoplay
