@@ -1,24 +1,23 @@
+import { CloseOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ICON_LEFT, IconPreviousStage } from '~/assets/icons/left';
 import { ICON_RIGHT } from '~/assets/icons/right';
-import Conversation from '~/components/Conversation';
 import { ROUTE_PATH } from '~/routes/route.constant';
 import { EndOfStoryWrapper, Wrapper } from './styled';
-import { CloseOutlined } from '@ant-design/icons';
 
 const listConversation = [
   {
     key: 1,
     mainCharacter: true,
     content:
-      'ぼくが　みた　ゆめの　はなしは　これで　おしまい。でも、のうポンが　おしえてくれた　からだの　なかで　おきている　できごとは、ほんとうの　ことなんだ！'
+      'ぼくが　みた　ゆめの　はなしは　これで　おしまい。<br/>でも、のうポンが　おしえてくれた　からだの　なかで　おきている　できごとは、ほんとうの　ことなんだ！'
   },
   {
     key: 'storyteller-1',
     isStoryteller: true,
     content:
-      'いまも、みんなの　からだの　なかでは、のう、い、ちょう…いろいろな　ぞうきが　がんばって　うごいてくれて　いるのです'
+      'いまも、みんなの　からだの　なかでは、のう、い、ちょう… <br/> いろいろな　ぞうきが　がんばって　うごいてくれて　いるのです'
   },
 
   {
@@ -48,7 +47,12 @@ const EndOfStory = () => {
         {listConversation.map((item, idx) => {
           return indexMessage === idx ? (
             item.isStoryteller ? (
-              <div className='storyteller h-fit'>{item.content}</div>
+              <div
+                className='storyteller h-fit'
+                dangerouslySetInnerHTML={{
+                  __html: item.content
+                }}
+              />
             ) : (
               <div key={idx + 1} className='relative'>
                 <div className='w-full'>
