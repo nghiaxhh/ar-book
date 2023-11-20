@@ -20,8 +20,7 @@ export const ConversationWrapper = styled.div`
     width: 90%;
     border: 1px solid gray;
     background-color: #f7f7f7;
-    font-family: 'Zen Old Mincho', serif;
-    /* font-family: 'Shippori Mincho', serif; */
+    font-family: 'Sawarabi Mincho', serif;
 
     font-weight: 600;
     font-size: 14px;
