@@ -169,7 +169,7 @@ const ModalStomach = () => {
       {listConversation.map((item, idx) => {
         return indexMessage === idx ? (
           item.isStoryteller ? (
-            <div className='w-full d-flex justify-center  mt-4 px-4   absolute top-5'>
+            <div className='w-full d-flex justify-center mt-4 px-4 absolute top-5'>
               <div className='storyteller'>{item.content}</div>
             </div>
           ) : (
@@ -196,7 +196,7 @@ const ModalStomach = () => {
       <div className='slider'>
         <div className='slides justify-between'>
           <div
-            className='cursor-pointer  d-flex items-center  lg:w-20 w-10'
+            className='cursor-pointer d-flex items-center lg:w-20 w-10'
             onClick={() => {
               navigate(ROUTE_PATH.MODEL_BRAIN);
             }}
