@@ -160,6 +160,7 @@ const ModelBrain = () => {
         ref={modelViewerRef}
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/brain.glb'}
+        ios-src={process.env.PUBLIC_URL + '/models/brain.usdz'}
         touch-action='pan-y'
         shadow-intensity='1'
         xr-environment

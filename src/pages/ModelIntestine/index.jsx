@@ -215,6 +215,7 @@ const ModelIntestine = () => {
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/intestine_06.glb'}
+        ios-src={process.env.PUBLIC_URL + '/models/intestine_06.usdz'}
         ar
         ar-modes='webxr scene-viewer quick-look'
         camera-controls

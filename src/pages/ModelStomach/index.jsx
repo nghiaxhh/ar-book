@@ -151,6 +151,7 @@ const ModalStomach = () => {
         id='hotspot-camera-view-demo'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/Stmach_06_2.glb'}
+        ios-src={process.env.PUBLIC_URL + '/models/Stmach_06_2.usdz'}
         shadow-intensity='1'
         ar-modes='webxr scene-viewer quick-look'
         camera-controls
