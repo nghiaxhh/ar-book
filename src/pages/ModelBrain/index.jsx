@@ -219,7 +219,7 @@ const ModelBrain = () => {
                   if (
                     indexMessage === 5 ||
                     indexMessage === 11 ||
-                    indexMessage === 16
+                    indexMessage === 18
                   )
                     setViewFocus(viewFocus - 1);
                 }}
@@ -249,7 +249,7 @@ const ModelBrain = () => {
                   if (
                     indexMessage === 4 ||
                     indexMessage === 10 ||
-                    indexMessage === 14
+                    indexMessage === 16
                   )
                     setViewFocus(viewFocus + 1);
                 }}
