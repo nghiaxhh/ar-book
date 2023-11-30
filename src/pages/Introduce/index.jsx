@@ -1,5 +1,5 @@
 import { CloseOutlined } from '@ant-design/icons';
-import React from 'react';
+import React, { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router-dom';
 import { IconNextMessage, IconNextMessageMobile } from '~/assets/icons/left';
@@ -10,6 +10,7 @@ import { IntroduceWrapper, Wrapper } from './styled';
 const Introduce = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ query: SCREEN_SIZE.TABLET });
+  const [indexClick, setIndexClick] = useState(1);
 
   return (
     <Wrapper>
@@ -51,18 +52,30 @@ const Introduce = () => {
 
           <div className='right-box'>
             <div className={`box-content ${isMobile && '!text-[14px]'}`}>
-              やあ、みんな。ぼくの　なまえは　タケシ。
-              <br /> しょうらいは　せかいじゅうを　たびする　たんけんかに　
-              <br />
-              なりたいんだ！そうそう。たびと　いえば　このまえ、じぶ
-              <br /> んの　からだの　なかを　たんけんする　ふしぎな　ゆめを
-              <br />
-              みたんだよ。どんな　ゆめかと　いうとね……
+              {indexClick === 1 ? (
+                <div>
+                  やあ、みんな。ぼくの　なまえは　タケシ。
+                  <br /> しょうらいは　せかいじゅうを　たびする　たんけんかに　
+                  <br />
+                  なりたいんだ！
+                  <br />
+                </div>
+              ) : (
+                <div>
+                  そうそう。たびと　いえば　このまえ、じぶ
+                  <br /> んの　からだの　なかを　たんけんする　ふしぎな　ゆめを
+                  <br />
+                  みたんだよ。どんな　ゆめかと　いうとね……
+                </div>
+              )}
+
               {isMobile && (
                 <div
                   className='slides justify-center cursor-pointer mt-3'
                   onClick={() => {
-                    navigate(ROUTE_PATH.MODEL_BRAIN);
+                    indexClick === 1
+                      ? setIndexClick(2)
+                      : navigate(ROUTE_PATH.MODEL_BRAIN);
                   }}
                 >
                   <IconNextMessageMobile />
@@ -74,7 +87,9 @@ const Introduce = () => {
               <div
                 className='slides justify-center  cursor-pointer w-16'
                 onClick={() => {
-                  navigate(ROUTE_PATH.MODEL_BRAIN);
+                  indexClick === 1
+                    ? setIndexClick(2)
+                    : navigate(ROUTE_PATH.MODEL_BRAIN);
                 }}
               >
                 <IconNextMessage />

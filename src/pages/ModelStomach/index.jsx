@@ -82,7 +82,7 @@ const listConversation = [
   {
     key: 'storyteller-3',
     isStoryteller: true,
-    content: '（すると、プロペラが　はげしく　まわりだしました）'
+    content: 'すると、プロペラが　はげしく　まわりだしました'
   },
 
   {
@@ -118,11 +118,17 @@ const ModalStomach = () => {
 
   const listCamOrbit = [
     '30.89deg 75deg 2.217m',
-    '27.72deg 71.04deg 1.683m',
-    '-18.62deg 22.5deg 1.589m'
+    '30.89deg 69.06deg 2.123m',
+    '41.98deg 65.89deg 1.771m',
+    '-14.65deg 28.04deg 1.74m'
   ];
-  const listCamTarget = ['', '-0.14m 0.22m -0.83m', '0.08m 0.06m -0.56m'];
-  const fieldOfView = ['27.67deg', '13.94deg', '15.73deg'];
+  const listCamTarget = [
+    '',
+    '-0.14m 0.15m -0.87m',
+    '0.11m 0.05m -0.53m',
+    '0.07m 0.07m -0.57m'
+  ];
+  const fieldOfView = ['27.67deg', '15.4deg', '15.4deg', '15.4deg'];
 
   // useEffect(() => {
 
@@ -211,7 +217,11 @@ const ModalStomach = () => {
                   onClick={() => {
                     // setindexMessage(0)
                     setindexMessage(indexMessage - 1);
-                    if (indexMessage === 5 || indexMessage === 8)
+                    if (
+                      indexMessage === 5 ||
+                      indexMessage === 8 ||
+                      indexMessage === 12
+                    )
                       setViewFocus(viewFocus - 1);
                   }}
                 >
@@ -236,7 +246,11 @@ const ModalStomach = () => {
                   className='cursor-pointer   ml-4  lg:w-20 w-10'
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
-                    if (indexMessage === 4 || indexMessage === 7)
+                    if (
+                      indexMessage === 4 ||
+                      indexMessage === 7 ||
+                      indexMessage === 11
+                    )
                       setViewFocus(viewFocus + 1);
                   }}
                 >

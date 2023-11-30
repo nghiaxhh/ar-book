@@ -129,7 +129,17 @@ const listConversation = [
 const ModelBrain = () => {
   const navigate = useNavigate();
   const modelViewerRef = useRef(null);
+  const [viewFocus, setViewFocus] = useState(0);
   const [indexMessage, setindexMessage] = useState(0);
+
+  const listCamOrbit = [
+    '0deg 75deg 3.162m',
+    '38.02deg 76.19deg 3.162m',
+    '-37.23deg 76.19deg 3.162m',
+    '0deg 75deg 3.162m'
+  ];
+  // const listCamTarget = ['', '-0.14m 0.22m -0.83m', '0.08m 0.06m -0.56m'];
+  const fieldOfView = ['30deg', '30deg', '30deg', '30deg'];
 
   return (
     <ModelBrainWrapper>
@@ -161,6 +171,9 @@ const ModelBrain = () => {
         disable-tap
         interaction-prompt='none'
         autoplay
+        // camera-target={listCamTarget[viewFocus]}
+        camera-orbit={listCamOrbit[viewFocus]}
+        field-of-view={fieldOfView[viewFocus]}
       >
         <div
           id='lazy-load-poster'
@@ -201,8 +214,14 @@ const ModelBrain = () => {
               <div
                 className='cursor-pointer  mr-4 lg:w-20 w-10'
                 onClick={() => {
-                  setindexMessage(0);
+                  // setindexMessage(0)
                   setindexMessage(indexMessage - 1);
+                  if (
+                    indexMessage === 5 ||
+                    indexMessage === 11 ||
+                    indexMessage === 16
+                  )
+                    setViewFocus(viewFocus - 1);
                 }}
               >
                 <ICON_LEFT />
@@ -222,18 +241,23 @@ const ModelBrain = () => {
                 {`${indexMessage + 1} of ${listConversation.length}`}
               </div>
             </div>
-
             {indexMessage + 1 < listConversation.length ? (
               <div
-                className='cursor-pointer  ml-4 lg:w-20 w-10'
+                className='cursor-pointer   ml-4  lg:w-20 w-10'
                 onClick={() => {
                   setindexMessage(indexMessage + 1);
+                  if (
+                    indexMessage === 4 ||
+                    indexMessage === 10 ||
+                    indexMessage === 14
+                  )
+                    setViewFocus(viewFocus + 1);
                 }}
               >
                 <ICON_RIGHT />
               </div>
             ) : (
-              <div className='lg:w-20 w-10 ml-4' />
+              <div className='lg:w-20 w-10  ml-4' />
             )}
           </div>
 
