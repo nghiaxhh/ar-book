@@ -179,16 +179,24 @@ const ModelIntestine = () => {
   const listCamOrbit = [
     '40.79deg 69.85deg 1.721m',
     '50.34deg 56.52deg 1.399m',
+    '49.51deg 64.7deg 1.199m',
     '45.94deg 59.95deg 1.2m',
-    '44.75deg 64.31deg 1.348m'
+    '43.57deg 53.22deg 1.385m'
   ];
   const listCamTarget = [
     '',
     '-0.17m 0.25m 0.05m',
+    '0.17m 0.16m 0.39m',
     '-0.11m 0.09m 0.32m',
-    '0.15m 0.04m 0.21m'
+    '0.16m 0.04m 0.21m'
   ];
-  const fieldOfView = ['35.5deg', '18.27deg', '18.12deg', '23.8deg'];
+  const fieldOfView = [
+    '35.5deg',
+    '18.27deg',
+    '22.98deg',
+    '18.12deg',
+    '20.11deg'
+  ];
 
   return (
     <ModelIntestineWrapper>
@@ -273,6 +281,7 @@ const ModelIntestine = () => {
                   if (
                     indexMessage === 6 ||
                     indexMessage === 9 ||
+                    indexMessage === 14 ||
                     indexMessage === 19
                   )
                     setViewFocus(viewFocus - 1);
@@ -303,6 +312,7 @@ const ModelIntestine = () => {
                   if (
                     indexMessage === 5 ||
                     indexMessage === 8 ||
+                    indexMessage === 13 ||
                     indexMessage === 18
                   )
                     setViewFocus(viewFocus + 1);
