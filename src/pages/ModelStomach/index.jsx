@@ -118,17 +118,17 @@ const ModalStomach = () => {
 
   const listCamOrbit = [
     '30.89deg 75deg 2.217m',
-    '30.89deg 69.06deg 2.123m',
-    '41.98deg 65.89deg 1.771m',
+    '32.48deg 59.56deg 1.824m',
+    '36.83deg 64.71deg 1.419m',
     '-14.65deg 28.04deg 1.74m'
   ];
   const listCamTarget = [
     '',
-    '-0.14m 0.15m -0.87m',
-    '0.11m 0.05m -0.53m',
+    '-0.14m 0.13m -0.85m',
+    '0.11m 0.05m -0.54m',
     '0.07m 0.07m -0.57m'
   ];
-  const fieldOfView = ['27.67deg', '15.4deg', '15.4deg', '15.4deg'];
+  const fieldOfView = ['27.67deg', '15.4deg', '12deg', '15.4deg'];
 
   // useEffect(() => {
 
