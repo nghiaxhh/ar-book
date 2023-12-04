@@ -11,7 +11,9 @@ const Conversation = ({ content, type = 2, isFocus = false }) => {
         alt=''
         className={`img-character`}
       />
-
+      {/* <video autoPlay muted loop className='img-character' playsInline>
+        <source src='/images/test.mkv' type='video/mp4' />
+      </video> */}
       <div
         className={`content`}
         dangerouslySetInnerHTML={{

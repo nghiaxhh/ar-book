@@ -78,7 +78,12 @@ const ModelFinal = () => {
       </div>
       <model-viewer
         class='w-full relative !h-[100vh]'
-        style={{ height: '40rem' }}
+        style={{
+          height: '40rem',
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + '/images/viewer.png'
+          })`
+        }}
         id='model-viewer'
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={process.env.PUBLIC_URL + '/models/brain.glb'}
