@@ -2,10 +2,13 @@ import { styled } from 'styled-components';
 
 export const ModelBrainWrapper = styled.div`
   position: relative;
+  background: radial-gradient(50% 50% at 50% 50%, #a4e6fd 0%, #5be3fc 100%);
 
   model-viewer {
-    background-color: #fff;
-    margin: 0 auto;
+    /* background-image: url('https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w='); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .view-button {

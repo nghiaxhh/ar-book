@@ -4,8 +4,9 @@ export const ModelFinalWrapper = styled.div`
   position: relative;
 
   model-viewer {
-    background-color: #fff;
-    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .view-button {

@@ -2,8 +2,9 @@ import { styled } from 'styled-components';
 
 export const ModalStomachWrapper = styled.div`
   model-viewer {
-    background-color: #fff;
-    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .view-button {
