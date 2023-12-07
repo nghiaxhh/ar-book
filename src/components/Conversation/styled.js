@@ -16,7 +16,7 @@ export const ConversationWrapper = styled.div`
 
   .model-nou {
     z-index: 99;
-    width: 60px;
+    width: 100px;
     height: 80px;
   }
 
@@ -50,7 +50,7 @@ export const ConversationWrapper = styled.div`
     }
 
     .model-nou {
-      width: 100px;
+      width: 150px;
       height: 120px;
     }
   }
@@ -68,7 +68,7 @@ export const ConversationWrapper = styled.div`
     }
 
     .model-nou {
-      width: 140px;
+      width: 200px;
       height: 160px;
     }
   }
