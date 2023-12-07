@@ -20,6 +20,7 @@ const listConversation = [
 
   {
     key: 1,
+    indexAction: 2,
     mainCharacter: true,
     content:
       'たべものを　たべてから、ウンチに　なって　でて　いくまで、からだの　なかで　いろいろな　ことが　おきているんだね'
@@ -27,24 +28,33 @@ const listConversation = [
 
   {
     key: 2,
+    indexAction: 3,
     content: 'そう。ぼくたちの　からだは、いつも　がんばって　くれているんだ。'
   },
 
   {
     key: 4,
+    indexAction: 2,
     content:
       'たけしくん。きょうのぼうけんから、あしたから　きをつけなきゃいけないこと　おぼえているかな？'
   },
   {
     key: 5,
+    indexAction: 3,
     mainCharacter: true,
     content:
       'うん！たべものは、よくかんでたべること。それと、おならやウンチはがまんしないことでしょ！'
   },
   {
     key: 6,
+    indexAction: 3,
+    content: 'そう！そのとおり！おぼえてくれていて　うれしいよ！'
+  },
+  {
+    key: 7,
+    indexAction: 3,
     content:
-      'そう！そのとおり！おぼえてくれていて　うれしいよ！<br/>あっ！もう　おきるじかんがちかづいてきたみたい。たけしくん　またあおうね！'
+      'あっ！もう　おきるじかんがちかづいてきたみたい。たけしくん　またあおうね！'
   },
 
   {
@@ -55,6 +65,7 @@ const listConversation = [
 
   {
     key: 11,
+    indexAction: 4,
     mainCharacter: true,
     content: 'あれれ？のうポンどこに行ったの！？のうポン！のうポ～ン！…'
   }
@@ -121,6 +132,7 @@ const ModelFinal = () => {
               }`}
             >
               <Conversation
+                indexAction={item?.indexAction}
                 content={item.content}
                 type={item.mainCharacter ? 1 : 2}
               />

@@ -8,9 +8,16 @@ export const ConversationWrapper = styled.div`
   align-items: center;
   /* justify-content: center; */
 
-  .img-character {
+  .model-takeshi {
     z-index: 99;
-    width: 50px;
+    width: 100px;
+    height: 120px;
+  }
+
+  .model-nou {
+    z-index: 99;
+    width: 60px;
+    height: 80px;
   }
 
   .content {
@@ -37,11 +44,17 @@ export const ConversationWrapper = styled.div`
       border-radius: 16px;
     }
 
-    .img-character {
+    .model-takeshi {
+      width: 150px;
+      height: 200px;
+    }
+
+    .model-nou {
       width: 100px;
+      height: 120px;
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1600px) {
     width: 400px;
     .content {
       width: 400px;
@@ -49,8 +62,14 @@ export const ConversationWrapper = styled.div`
       border-radius: 20px;
     }
 
-    .img-character {
-      width: 100px;
+    .model-takeshi {
+      width: 250px;
+      height: 280px;
+    }
+
+    .model-nou {
+      width: 140px;
+      height: 160px;
     }
   }
 `;

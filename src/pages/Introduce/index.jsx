@@ -31,13 +31,16 @@ const Introduce = () => {
                 class='w-[300px] md:w-[450px] relative h-[60vh] md:h-[100vh]'
                 id='hotspot-camera-view-demo'
                 poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
-                src={process.env.PUBLIC_URL + '/models/comission_230717'}
+                src={process.env.PUBLIC_URL + '/models/takeshi.glb'}
                 shadow-intensity='1'
                 autoplay
                 disable-tap
                 interaction-prompt='none'
                 camera-controls
                 disable-zoom
+                animation-name={
+                  indexClick === 1 ? 'takeshi_Walk' : 'Takeshi_Idle'
+                }
               >
                 <div
                   id='lazy-load-poster'

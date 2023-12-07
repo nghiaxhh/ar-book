@@ -16,6 +16,7 @@ const listConversation = [
 
   {
     key: 1,
+    indexAction: 4,
     mainCharacter: true,
     content: 'あれれ？　ここは　どこ？　ぼくは　ベッドで　ねていた　はずなのに…'
   },
@@ -26,6 +27,7 @@ const listConversation = [
   },
   {
     key: 2,
+    indexAction: 3,
     content: 'ポンばんわ、タケシくん！'
   },
   {
@@ -36,36 +38,43 @@ const listConversation = [
 
   {
     key: 3,
+    indexAction: 2,
     mainCharacter: true,
     content: 'きみ、だあれ？'
   },
   {
     key: 4,
+    indexAction: 2,
     content:
       'ぼくは　のうポン。ぞうきの　ようせい　『からだっポン』の　まとめやく、ものしりな　のうの　ようせいさ'
   },
   {
     key: 5,
+    indexAction: 4,
     mainCharacter: true,
     content: 'のうの　ようせい？'
   },
   {
     key: 6,
+    indexAction: 2,
     content:
       'ぼくは、きみが　ゆめを　みている　とき、ゆめの　なかに　あらわれるんだ。きみと　こうして　おはなしすることも　できるんだよ'
   },
 
   {
     key: 7,
+    indexAction: 4,
     mainCharacter: true,
     content: 'そうか。ぼくは、ゆめを　みているのか……'
   },
   {
     key: 8,
+    indexAction: 3,
     content: 'そして　この　へやは、きみの　あたまの　なか！'
   },
   {
     key: 9,
+    indexAction: 4,
     mainCharacter: true,
     content: 'ええ〜っ！？'
   },
@@ -76,6 +85,7 @@ const listConversation = [
   },
   {
     key: 10,
+    indexAction: 2,
     content:
       'ここは、タケシくんの　からだを　うごかすしれいしつ。かんがえたり　わらったり　ないたり　おこったりすることもね。'
   },
@@ -86,41 +96,49 @@ const listConversation = [
   },
   {
     key: 11,
+    indexAction: 4,
     mainCharacter: true,
     content: 'う～ん。どういうことか　わかんないよ～。'
   },
   {
     key: 12,
+    indexAction: 2,
     content:
       'たけしくんには　まだ　ちょっとむずかしいかな。　また　こんど　くわしく　せつめいすることにしよう。'
   },
   {
     key: 13,
+    indexAction: 3,
     content:
       'そこで　きょうは、いまから　きみの　からだの　なかを　たんけんしようと　おもっているんだけど　どうかな？'
   },
   {
     key: 14,
+    indexAction: 2,
     mainCharacter: true,
     content: 'ええっ、ぼくの　からだの　なか！？'
   },
   {
     key: 15,
+    indexAction: 3,
     content:
       'タケシくんが　たべた　ものが　からだの　なかで　どうなっているのか。 <br/>   おなかが　いたく　なったとき、からだの　なかで　なにが　おこっているのか。しりたくない？'
   },
   {
     key: 16,
+    indexAction: 3,
     mainCharacter: true,
     content:
       'しりたい！　じぶんの　からだの　なかを　たんけんできるなんて、ワクワクしちゃう！'
   },
   {
     key: 17,
+    indexAction: 3,
     content: 'よーし。それじゃあ、レッツゴー！'
   },
   {
     key: 18,
+    indexAction: 2,
     mainCharacter: true,
     content: 'ええ〜っ！？もう　しゅっぱつするの～！？'
   }
@@ -205,6 +223,7 @@ const ModelBrain = () => {
               }`}
             >
               <Conversation
+                indexAction={item?.indexAction}
                 content={item.content}
                 type={item.mainCharacter ? 1 : 2}
               />

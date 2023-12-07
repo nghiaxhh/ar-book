@@ -17,46 +17,69 @@ const listConversation = [
     isStoryteller: true,
     content: 'タケシくんと　のうポンは、いの　へやへ　やってきました '
   },
-
   {
     key: 2,
+    indexAction: 2,
     content:
-      'ここは　いの　へや。みんなの　おへその　うえくらいに　ある　ぞうきだよ。<br/>ぼくたちは、くちから　たべものを　たべるよね。<br/>はでかんで　こまかくした　たべものは、しょくどうを　とおって、ここへ　くるんだ'
+      'ここは　いの　へや。みんなの　おへその　うえくらいに　ある　ぞうきだよ。'
   },
   {
     key: 3,
+    indexAction: 2,
+    content: 'ぼくたちは、くちから　たべものを　たべるよね。'
+  },
+  {
+    key: 4,
+    indexAction: 2,
+    content:
+      'はでかんで　こまかくした　たべものは、しょくどうを　とおって、ここへ　くるんだ'
+  },
+  {
+    key: 5,
+    indexAction: 3,
     mainCharacter: true,
     content: 'わあ、プールが　ある。およいでも　いい？'
   },
   {
-    key: 4,
+    key: 6,
+    indexAction: 4,
     content: 'う〜ん。それは　やめたほうが　いいんじゃないかな'
   },
   {
-    key: 5,
+    key: 7,
+    indexAction: 2,
     mainCharacter: true,
     content: 'ダメなの？　あそこに　シャワーも　あるのに'
   },
   {
-    key: 6,
+    key: 8,
+    indexAction: 2,
     content:
       'シャワーから　でているのは、いえき。いに　はいってきた　たべものを、どんどん　とかしていくんだ'
   },
   {
-    key: 7,
+    key: 9,
+    indexAction: 4,
     mainCharacter: true,
-    content:
-      'とかす！？　プールに　はいらなくて　よかった…。でも、せっかく　たべたのに　とかしちゃうの？'
+    content: 'とかす！？　プールに　はいらなくて　よかった…。'
+  },
+  {
+    key: 10,
+    indexAction: 2,
+    mainCharacter: true,
+    content: 'でも、せっかく　たべたのに　とかしちゃうの？'
   },
 
   {
-    key: 9,
+    key: 11,
+    indexAction: 2,
     content:
       'そう。たべものから　えいようを　とりだすために　とかすんだ。<br/>あれを　みて'
   },
 
   {
-    key: 10,
+    key: 12,
+    indexAction: 2,
     content:
       'プールの　なかで、プロペラが　まわっているでしょ。<br/>いえきと　たべものを　まぜて、ドロドロに　するんだ'
   },
@@ -68,12 +91,14 @@ const listConversation = [
   },
 
   {
-    key: 11,
+    key: 14,
+    indexAction: 4,
     content: 'タケシくんったら、りんごを　よく　かんで　たべなかったでしょ'
   },
 
   {
-    key: 12,
+    key: 15,
+    indexAction: 4,
     mainCharacter: true,
     content:
       'さっき、おやつに　たべたけど…。よく　かんで　たべたほうが　いいの？'
@@ -86,19 +111,22 @@ const listConversation = [
   },
 
   {
-    key: 13,
+    key: 17,
+    indexAction: 4,
     content:
       'よく　かまずに　のみこまれた　たべものは　こまかくするのが　たいへんだから、プロペラを　たくさん　まわさなくちゃ　いけないんだ。その　ぶん、いに　ふたんが　かかっちゃうんだよ'
   },
 
   {
-    key: 14,
+    key: 18,
+    indexAction: 2,
     mainCharacter: true,
     content: 'そうか〜。よく　かんで　たべたほうが、いいんだね'
   },
 
   {
-    key: 15,
+    key: 19,
+    indexAction: 3,
     content:
       'うん。それに、しっかり　かむと、つばが　たくさん　でるよね。<br/>つばは、いや　ちょうを　たすけてくれる　やくわりが　あるんだよ'
   },
@@ -191,13 +219,14 @@ const ModalStomach = () => {
               className={`box-message d-flex absolute ${
                 item.mainCharacter ? 'right-0' : 'left-0'
               }   ${
-                idx < 5 || idx >= 8
+                idx < 7 || idx >= 11
                   ? 'lg:bottom-32 md:bottom-24 bottom-14'
                   : 'lg:top-20 top-12 right-2'
               }`}
             >
               <Conversation
-                isFocus={idx > 7}
+                // isFocus={idx > 7}
+                indexAction={item?.indexAction}
                 content={item.content}
                 type={item.mainCharacter ? 1 : 2}
               />
@@ -225,9 +254,9 @@ const ModalStomach = () => {
                     // setindexMessage(0)
                     setindexMessage(indexMessage - 1);
                     if (
-                      indexMessage === 5 ||
-                      indexMessage === 8 ||
-                      indexMessage === 12
+                      indexMessage === 7 ||
+                      indexMessage === 11 ||
+                      indexMessage === 15
                     )
                       setViewFocus(viewFocus - 1);
                   }}
@@ -254,9 +283,9 @@ const ModalStomach = () => {
                   onClick={() => {
                     setindexMessage(indexMessage + 1);
                     if (
-                      indexMessage === 4 ||
-                      indexMessage === 7 ||
-                      indexMessage === 11
+                      indexMessage === 6 ||
+                      indexMessage === 10 ||
+                      indexMessage === 14
                     )
                       setViewFocus(viewFocus + 1);
                   }}

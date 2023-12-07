@@ -19,47 +19,56 @@ const listConversation = [
   },
 
   {
-    key: 1,
+    key: 2,
+    indexAction: 2,
     mainCharacter: true,
     content: 'この　へやは、こうじょうみたいだね'
   },
   {
-    key: 2,
+    key: 3,
+    indexAction: 2,
     content:
       'ここは　ちょう。おへその　したあたりに　ある　へやなんだ。この、むらさきいろの　ところが　しょうちょう。こっちの　ちゃいろの　ところが　だいちょう'
   },
   {
-    key: 3,
+    key: 4,
+    indexAction: 3,
     mainCharacter: true,
     content: 'どんな　ちがいが　あるの？'
   },
   {
-    key: 4,
+    key: 5,
+    indexAction: 2,
     content:
       'まず、しょうちょうは、いから　はこばれてきた　たべものの　えいようを、どんどん　とりいれて　いくんだ'
   },
   {
-    key: 5,
+    key: 6,
+    indexAction: 2,
     mainCharacter: true,
     content: 'へえ〜。<br/>あっ、あそこで　うごいている　ものは　なに？'
   },
   {
-    key: 6,
+    key: 7,
+    indexAction: 2,
     content:
       'ここで、からだに　ひつような　えいようと　いらない　のこりかすを、さらに　こまかく　わけて　いるんだ'
   },
   {
-    key: 7,
+    key: 8,
+    indexAction: 3,
     mainCharacter: true,
     content: 'ここで　はんだんして　わけてくれるの？　すご〜い'
   },
   {
-    key: 8,
+    key: 9,
+    indexAction: 3,
     content: 'ほら！ロボットアームが　えいようを　とっているのがわかるでしょ！'
   },
 
   {
     key: 10,
+    indexAction: 2,
     content:
       'しょうちょうで　ひつような　えいようを　とったあとの　のこりかすが　はこばれるのが、だいちょうなんだ。のこりかすから　みずを　からだの　なかに　とりいれた　あと、ウンチを　つくるんだ'
   },
@@ -71,16 +80,19 @@ const listConversation = [
 
   {
     key: 11,
+    indexAction: 4,
     mainCharacter: true,
     content: 'ウンチ！？　はずかしい！'
   },
   {
     key: 12,
+    indexAction: 3,
     content:
       'なに　いってるの。ウンチを　つくって　からだの　そとへ　だすのは、ぼくたちの　からだに　とっても　たいせつな　ことなんだよ'
   },
   {
     key: 13,
+    indexAction: 4,
     mainCharacter: true,
     content: 'そっか〜…'
   },
@@ -93,21 +105,25 @@ const listConversation = [
 
   {
     key: 15,
+    indexAction: 2,
     mainCharacter: true,
     content: 'あれれ？おなかから　おとがきこえてきたよ！'
   },
   {
     key: 16,
+    indexAction: 2,
     content:
       'いまのは、ちょうが　たべものを　はこぶために　うごいている　おと。たべものや　くうきが　そこを　とおる　ときに、おなかが　なるんだよ'
   },
   {
     key: 17,
+    indexAction: 2,
     mainCharacter: true,
     content: 'じゃあ、おなかが　すく　ときに、グーッて　なるのは？'
   },
   {
     key: 18,
+    indexAction: 2,
     content:
       'いの　なかに　たべものが　ないから、くうきが　ちょうへと　うごく。<br/>その　とき、いの　せまい　でぐちから　ちょうへ　くうきが　うごくため、おなかが　なるんだよ。ふくらませた　ふうせんの　くうきが　ぬけるのと　おなじだね'
   },
@@ -120,11 +136,13 @@ const listConversation = [
 
   {
     key: 19,
+    indexAction: 2,
     content:
       'ウンチを　そとに　だす　ための　じゅんびを　しているんだ。<br/> あそこに　でぐちが　みえるでしょ？'
   },
   {
     key: 20,
+    indexAction: 3,
     content:
       'この　でぐちは　こうもん。おしりの　あなだね。<br/>ここから　ウンチが　でるんだよ。スッキリするね！'
   },
@@ -136,38 +154,57 @@ const listConversation = [
 
   {
     key: 21,
+    indexAction: 3,
     mainCharacter: true,
     content: 'ウ〜ン、スッキリ！'
   },
   {
     key: 22,
+    indexAction: 2,
     mainCharacter: true,
     content:
       'たべものを　たべてから、ウンチに　なって　でて　いくまで、からだの　なかで　いろいろな　ことが　おきているんだね'
   },
   {
     key: 23,
+    indexAction: 3,
     content: 'そう。ぼくたちの　からだは、いつも　がんばって　くれているんだ'
   },
   {
     key: 24,
+    indexAction: 2,
     mainCharacter: true,
     content:
       'でも、ウンチや　おならを　がまんすると、おなかが　いたくなるのは　なんで？'
   },
   {
     key: 25,
+    indexAction: 2,
     content:
-      'いや　ちょうは、ごはんを　たべた　あと、たべものを　ちょうに　はこんで　ウンチを　つくるために　はたらいているんだ。<br/>ちょうに　おならや　くうきが　たくさん　あると、はたらきが　はげしくなって　いたみを　かんじるんだ。<br/>おならや　ウンチを　だすと、ちょうが　あんしんして　いたみが　なくなるよ'
+      'いや　ちょうは、ごはんを　たべた　あと、たべものを　ちょうに　はこんで　ウンチを　つくるために　はたらいているんだ。'
   },
   {
     key: 26,
+    indexAction: 2,
+    content:
+      'ちょうに　おならや　くうきが　たくさん　あると、はたらきが　はげしくなって　いたみを　かんじるんだ。'
+  },
+  {
+    key: 27,
+    indexAction: 2,
+    content:
+      'おならや　ウンチを　だすと、ちょうが　あんしんして　いたみが　なくなるよ'
+  },
+  {
+    key: 28,
+    indexAction: 3,
     mainCharacter: true,
     content:
       'だから、おならや　ウンチは　がまんしないで　だしたほうが　いいんだね！'
   },
   {
-    key: 27,
+    key: 29,
+    indexAction: 3,
     content: 'そのとおり。わかってくれて　うれしいよ。'
   }
 ];
@@ -254,12 +291,13 @@ const ModelIntestine = () => {
               className={`box-message d-flex absolute ${
                 item.mainCharacter ? 'left-0' : 'right-0'
               }  ${
-                idx < 6 || (idx >= 9 && idx < 19)
+                idx < 6 || (idx >= 9 && idx < 14) || idx >= 19
                   ? 'lg:bottom-32 md:bottom-24 bottom-14'
                   : 'lg:top-20 top-12 right-2'
               }`}
             >
               <Conversation
+                indexAction={item?.indexAction}
                 content={item.content}
                 type={item.mainCharacter ? 1 : 2}
               />
