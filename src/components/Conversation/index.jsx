@@ -4,16 +4,25 @@ import { ConversationWrapper } from './styled';
 const Conversation = ({ content, type = 2, isFocus = false }) => {
   return (
     <ConversationWrapper type={type} focus={isFocus}>
-      <img
+      {/* <img
         src={
           process.env.PUBLIC_URL + `/images/${type === 1 ? 'cvc1' : 'cvc2'}.png`
         }
         alt=''
         className={`img-character`}
+      /> */}
+
+      <model-viewer
+        class='img-character'
+        id='model-viewer'
+        poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
+        src={process.env.PUBLIC_URL + `${type === 1}` ? '' : '/models/nou.glb'}
+        disable-tap
+        interaction-prompt='none'
+        autoplay
+        animation-name='Nou-pon_Moving'
       />
-      {/* <video autoPlay muted loop className='img-character' playsInline>
-        <source src='/images/test.mkv' type='video/mp4' />
-      </video> */}
+
       <div
         className={`content`}
         dangerouslySetInnerHTML={{

@@ -165,7 +165,7 @@ export const HeaderWrapper = styled.div`
     width: 220px;
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     .main-title {
       font-size: 46px;
     }
@@ -196,7 +196,7 @@ export const HeaderWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     .main-title {
       font-weight: 700;
       font-size: 46px;
