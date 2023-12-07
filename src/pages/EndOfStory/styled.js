@@ -52,7 +52,7 @@ export const EndOfStoryWrapper = styled.div`
     border-radius: 20px;
     width: 250px;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 1200px) {
       width: 400px;
       font-size: 20px;
     }

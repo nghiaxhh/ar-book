@@ -24,7 +24,7 @@ export const IntroduceWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
+  /* padding: 60px; */
 
   .slides {
     display: flex;

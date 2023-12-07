@@ -52,7 +52,7 @@
 .storyteller {
   max-width: 400px;
   font-weight: 600;
-  font-family: 'Sawarabi Mincho', serif;
+  // font-family: 'Sawarabi Mincho', serif;
   font-size: 14px;
   padding: 8px;
   border-radius: 8px;
@@ -61,10 +61,11 @@
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 
-  @media screen and (min-width: 520px) {
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1200px) {
     padding-top: 80px;
     font-size: 20px;
     padding: 16px 24px;
