@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ConversationWrapper } from './styled';
 
 const Conversation = ({ content, type = 2, indexAction = 2 }) => {
+  const refModel = useRef();
   const takeshiAction = [
     '',
     '',
@@ -18,9 +19,15 @@ const Conversation = ({ content, type = 2, indexAction = 2 }) => {
     'Nou-pon_Turn.Left'
   ];
 
+  useEffect(() => {
+    if (indexAction === 3) refModel.current.timeScale = 3;
+    // refModel.current.play({ repetitions: 1 });
+  }, []);
+
   return (
     <ConversationWrapper type={type}>
       <model-viewer
+        ref={refModel}
         class={`${type === 1 ? 'model-takeshi' : 'model-nou'}`}
         poster={process.env.PUBLIC_URL + '/images/loading2.gif'}
         src={

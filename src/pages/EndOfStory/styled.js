@@ -45,7 +45,7 @@ export const EndOfStoryWrapper = styled.div`
   .content {
     border: 1px solid gray;
     background-color: #f7f7f7;
-    font-family: 'Sawarabi Mincho', serif;
+    /* font-family: 'Sawarabi Mincho', serif; */
     font-weight: 600;
     font-size: 14px;
     padding: 6px;
