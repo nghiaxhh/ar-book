@@ -25,7 +25,7 @@ export const ConversationWrapper = styled.div`
     border-radius: 8px;
     z-index: 9;
     width: 90%;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     background-color: #f7f7f7;
     /* font-family: 'Sawarabi Mincho', serif; */
 
